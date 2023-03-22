@@ -25,32 +25,21 @@ content:
       captcha: false
 
   # Contact details (edit or remove options as required)
-  email: test@example.org
-  phone: 888 888 88 88
+  email: parsa.abbasi1996@gmail.com
   address:
-    street: 450 Serra Mall
-    city: Stanford
-    region: CA
-    postcode: '94305'
-    country: United States
-    country_code: US
-  coordinates:
-    latitude: '37.4275'
-    longitude: '-122.1697'
-  directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
-  office_hours:
-    - 'Monday 10:00 to 13:00'
-    - 'Wednesday 09:00 to 10:00'
-  appointment_url: 'https://calendly.com'
+    city: Rasht
+    region: Guilan
+    country: Iran
+    country_code: IR
   contact_links:
     - icon: twitter
       icon_pack: fab
       name: DM Me
-      link: 'https://twitter.com/Twitter'
-    - icon: video
-      icon_pack: fas
-      name: Zoom Me
-      link: 'https://zoom.com'
+      link: 'https://twitter.com/ParsaAbbasi1996'
+    - icon: discord
+      icon_pack: fab
+      name: We can have a talk on Discord
+      link: https://discordapp.com/users/705420786529337395
 
 design:
   columns: '2'

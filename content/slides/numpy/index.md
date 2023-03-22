@@ -14,9 +14,9 @@ slides:
   highlight_style: dracula
 ---
 
-# Create slides in Markdown with Wowchemy
+# NumPy
 
-[Wowchemy](https://wowchemy.com/) | [Documentation](https://wowchemy.com/docs/content/slides/)
+[Wowchemy](https://wowchemy.com/) | [Documentation](https://numpy.org/doc/stable/)
 
 ---
 

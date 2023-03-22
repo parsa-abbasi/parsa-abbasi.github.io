@@ -7,7 +7,7 @@ widget: portfolio
 headless: true
 
 # Order that this section appears on the page.
-weight: 65
+weight: 60
 
 title: Projects
 subtitle: ''
@@ -29,8 +29,12 @@ content:
       tag: '*'
     - name: Deep Learning
       tag: Deep Learning
-    - name: Other
-      tag: Demo
+    - name: NLP
+      tag: Natural Language Processing
+    - name: GNN
+      tag: Graph Neural Networks
+    - name: Data Analysis
+      tag: Data Analysis
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

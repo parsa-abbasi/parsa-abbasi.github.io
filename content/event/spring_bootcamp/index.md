@@ -1,31 +1,31 @@
 ---
-title: Example Talk
+title: Python tools for Data Analysis
 
-event: Wowchemy Conference
-event_url: https://example.org
+event: Quera Data Analysis Bootcamp
+event_url: https://quera.org/events/DataAnalysis-Bootcamp
 
-location: Wowchemy HQ
+location: Online
 address:
-  street: 450 Serra Mall
-  city: Stanford
-  region: CA
-  postcode: '94305'
-  country: United States
+  street: 
+  city: 
+  region: 
+  postcode: 
+  country: 
 
 summary: An example talk using Wowchemy's Markdown slides feature.
 abstract: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellusac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam.'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2030-06-01T13:00:00Z'
-date_end: '2030-06-01T15:00:00Z'
-all_day: false
+date: '2023-04-06T10:00:00Z'
+date_end: '2023-04-07T15:30:00Z'
+all_day: true
 
 # Schedule page publish date (NOT talk date).
-publishDate: '2017-01-01T00:00:00Z'
+publishDate: '2023-03-01T00:00:00Z'
 
 authors: []
-tags: []
+tags: ['Data Analysis', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly', 'Web Scraping', 'BeautifulSoup', 'Scrapy', 'Selenium']
 
 # Is this a featured talk? (true/false)
 featured: false
