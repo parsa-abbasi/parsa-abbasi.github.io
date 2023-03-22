@@ -91,7 +91,7 @@ item:
     date_end: ''
     date_start: '2018-08-19'
     description: ''
-    organization: ACM Student Chapter of University of Tehran
+    organization: University of Tehran ACM Student Chapter
     organization_url: https://www.linkedin.com/company/ut_acm/about/
     title: Deep Learning Summer School 2018
     url: ''
