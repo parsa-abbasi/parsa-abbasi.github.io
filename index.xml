@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Parsa Abbasi</title><link>https://parsa-abbasi.github.io/</link><atom:link href="https://parsa-abbasi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Parsa Abbasi</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate><image><url>https://parsa-abbasi.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>Parsa Abbasi</title><link>https://parsa-abbasi.github.io/</link></image><item><title>Example Talk</title><link>https://parsa-abbasi.github.io/talk/example-talk/</link><pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/talk/example-talk/</guid><description>&lt;div class="alert alert-note">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Parsa Abbasi</title><link>https://parsa-abbasi.github.io/</link><atom:link href="https://parsa-abbasi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Parsa Abbasi</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 06 Apr 2023 10:00:00 +0000</lastBuildDate><image><url>https://parsa-abbasi.github.io/media/icon_hu14e12911534d82dc6e859b10a3857b5a_3074_512x512_fill_lanczos_center_3.png</url><title>Parsa Abbasi</title><link>https://parsa-abbasi.github.io/</link></image><item><title>Python tools for Data Analysis</title><link>https://parsa-abbasi.github.io/talk/python-tools-for-data-analysis/</link><pubDate>Thu, 06 Apr 2023 10:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/talk/python-tools-for-data-analysis/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in slides feature.
 &lt;/div>
@@ -9,61 +9,222 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
 &lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://parsa-abbasi.github.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
-&lt;ol>
-&lt;li>The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li>
-&lt;li>The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong>no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong> and having &lt;strong>flexibility to later add even deeper personalization with HTML and CSS&lt;/strong>&lt;/li>
-&lt;li>You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li>
-&lt;/ol>
-&lt;p>&lt;a href="https://wowchemy.com" target="_blank" rel="noopener">
-&lt;figure >
+&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Offline Signature Verification with Convolutional Neural Networks (CNNs)</title><link>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</link><pubDate>Wed, 22 Feb 2023 20:15:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</guid><description>&lt;p>Signature verification has practical applications in various fields, particularly for security, legal, and financial purposes. Deep learning (DL) models have been proved to be promising in recognizing handwritten signatures, with high accuracy. In this expriment, we investigate the use of the InceptionV3, a pre-trained convolutional neural network (CNN), for signature classification.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This project was done as part of the Pattern Recognition course at the Iran University of Science and Technology in the Fall of 2020.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="dataset">Dataset&lt;/h2>
+&lt;p>The dataset used for this project is called &lt;a href="https://arxiv.org/abs/1603.03235" target="_blank" rel="noopener">UTSig&lt;/a>, which consists of 115 classes, each belonging to one authentic person. There are 27 genuine signatures per class, 3 opposite-hand signed samples, and 42 simple forgeries. The dataset can be downloaded &lt;a href="https://drive.google.com/drive/u/1/folders/0B0CjHfsXJLLObEZFNVdoMlFIODg" target="_blank" rel="noopener">from here&lt;/a>.&lt;/p>
+&lt;p>
+&lt;figure id="figure-a-sample-of-the-utsig-dataset">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/main/starters/academic/preview.png" alt="The template is mobile first with a responsive design to ensure that your site looks stunning on every device." loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/a>&lt;/p>
-&lt;h2 id="get-started">Get Started&lt;/h2>
+&lt;div class="w-100" >&lt;img alt="Dataset Sample" srcset="
+/project/signature-verification-with-cnn/dataset_sample_hud2377853091e863c5c5001e36e5e225d_46182_d27d914a8dead64a11dc67de0c1fda92.webp 400w,
+/project/signature-verification-with-cnn/dataset_sample_hud2377853091e863c5c5001e36e5e225d_46182_e0f789903d398e0e26f10c941a38a26c.webp 760w,
+/project/signature-verification-with-cnn/dataset_sample_hud2377853091e863c5c5001e36e5e225d_46182_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://parsa-abbasi.github.io/project/signature-verification-with-cnn/dataset_sample_hud2377853091e863c5c5001e36e5e225d_46182_d27d914a8dead64a11dc67de0c1fda92.webp"
+width="760"
+height="154"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+A sample of the UTSig dataset.
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>To start the implementation, the dataset is downloaded and stored in the Google Drive. The genuine signatures were divided into 22 training images and 5 test images for each person and placed in the appropriate subdirectorie.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="err">!&lt;/span>&lt;span class="n">unzip&lt;/span> &lt;span class="s1">&amp;#39;/content/drive/MyDrive/UTSig.zip&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">dataset_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;/content/UTSig_Crop/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Number of genuine signatures per class (person)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">G_num&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">27&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Number of forgeries signatures per class (person)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">F_num&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">45&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Number of classes (persons)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">c_num&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">115&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mkdir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dataset_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;genuine&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mkdir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dataset_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;genuine/train&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mkdir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dataset_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;genuine/test&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dataset_gen_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">dataset_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;genuine/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="organizing-the-dataset">Organizing the Dataset&lt;/h2>
+&lt;p>We organized the images into the appropriate format for the &lt;code>ImageDataGenerator&lt;/code>. We created subdirectories for each class in the genuine directory, with 22 images for training and 5 images for testing per class.&lt;/p>
 &lt;ul>
-&lt;li>👉 &lt;a href="https://wowchemy.com/templates/" target="_blank" rel="noopener">&lt;strong>Create a new site&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>📚 &lt;a href="https://wowchemy.com/docs/" target="_blank" rel="noopener">&lt;strong>Personalize your site&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>💬 &lt;a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener">Chat with the &lt;strong>Wowchemy community&lt;/strong>&lt;/a> or &lt;a href="https://discourse.gohugo.io" target="_blank" rel="noopener">&lt;strong>Hugo community&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>🐦 Twitter: &lt;a href="https://twitter.com/wowchemy" target="_blank" rel="noopener">@wowchemy&lt;/a> &lt;a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">@GeorgeCushen&lt;/a> &lt;a href="https://twitter.com/search?q=%23MadeWithWowchemy&amp;amp;src=typed_query" target="_blank" rel="noopener">#MadeWithWowchemy&lt;/a>&lt;/li>
-&lt;li>💡 &lt;a href="https://github.com/wowchemy/wowchemy-hugo-themes/issues" target="_blank" rel="noopener">Request a &lt;strong>feature&lt;/strong> or report a &lt;strong>bug&lt;/strong> for &lt;em>Wowchemy&lt;/em>&lt;/a>&lt;/li>
-&lt;li>⬆️ &lt;strong>Updating Wowchemy?&lt;/strong> View the &lt;a href="https://wowchemy.com/docs/hugo-tutorials/update/" target="_blank" rel="noopener">Update Tutorial&lt;/a> and &lt;a href="https://wowchemy.com/updates/" target="_blank" rel="noopener">Release Notes&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="crowd-funded-open-source-software">Crowd-funded open-source software&lt;/h2>
-&lt;p>To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p>
-&lt;h3 id="-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomsponsor">&lt;a href="https://wowchemy.com/sponsor/" target="_blank" rel="noopener">❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a>&lt;/h3>
-&lt;p>As a token of appreciation for sponsoring, you can &lt;strong>unlock &lt;a href="https://wowchemy.com/sponsor/" target="_blank" rel="noopener">these&lt;/a> awesome rewards and extra features 🦄✨&lt;/strong>&lt;/p>
-&lt;h2 id="ecosystem">Ecosystem&lt;/h2>
+&lt;li>genuine
 &lt;ul>
-&lt;li>&lt;strong>&lt;a href="https://github.com/wowchemy/hugo-academic-cli" target="_blank" rel="noopener">Hugo Academic CLI&lt;/a>:&lt;/strong> Automatically import publications from BibTeX&lt;/li>
-&lt;/ul>
-&lt;h2 id="inspiration">Inspiration&lt;/h2>
-&lt;p>&lt;a href="https://academic-demo.netlify.com/" target="_blank" rel="noopener">Check out the latest &lt;strong>demo&lt;/strong>&lt;/a> of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href="https://wowchemy.com/user-stories/" target="_blank" rel="noopener">view the &lt;strong>showcase&lt;/strong>&lt;/a> of personal, project, and business sites.&lt;/p>
-&lt;h2 id="features">Features&lt;/h2>
+&lt;li>train
 &lt;ul>
-&lt;li>&lt;strong>Page builder&lt;/strong> - Create &lt;em>anything&lt;/em> with &lt;a href="https://wowchemy.com/docs/page-builder/" target="_blank" rel="noopener">&lt;strong>widgets&lt;/strong>&lt;/a> and &lt;a href="https://wowchemy.com/docs/content/writing-markdown-latex/" target="_blank" rel="noopener">&lt;strong>elements&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Edit any type of content&lt;/strong> - Blog posts, publications, talks, slides, projects, and more!&lt;/li>
-&lt;li>&lt;strong>Create content&lt;/strong> in &lt;a href="https://wowchemy.com/docs/content/writing-markdown-latex/" target="_blank" rel="noopener">&lt;strong>Markdown&lt;/strong>&lt;/a>, &lt;a href="https://wowchemy.com/docs/import/jupyter/" target="_blank" rel="noopener">&lt;strong>Jupyter&lt;/strong>&lt;/a>, or &lt;a href="https://wowchemy.com/docs/install-locally/" target="_blank" rel="noopener">&lt;strong>RStudio&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Plugin System&lt;/strong> - Fully customizable &lt;a href="https://wowchemy.com/docs/customization/" target="_blank" rel="noopener">&lt;strong>color&lt;/strong> and &lt;strong>font themes&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Display Code and Math&lt;/strong> - Code highlighting and &lt;a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics" target="_blank" rel="noopener">LaTeX math&lt;/a> supported&lt;/li>
-&lt;li>&lt;strong>Integrations&lt;/strong> - &lt;a href="https://analytics.google.com" target="_blank" rel="noopener">Google Analytics&lt;/a>, &lt;a href="https://disqus.com" target="_blank" rel="noopener">Disqus commenting&lt;/a>, Maps, Contact Forms, and more!&lt;/li>
-&lt;li>&lt;strong>Beautiful Site&lt;/strong> - Simple and refreshing one page design&lt;/li>
-&lt;li>&lt;strong>Industry-Leading SEO&lt;/strong> - Help get your website found on search engines and social media&lt;/li>
-&lt;li>&lt;strong>Media Galleries&lt;/strong> - Display your images and videos with captions in a customizable gallery&lt;/li>
-&lt;li>&lt;strong>Mobile Friendly&lt;/strong> - Look amazing on every screen with a mobile friendly version of your site&lt;/li>
-&lt;li>&lt;strong>Multi-language&lt;/strong> - 34+ language packs including English, 中文, and Português&lt;/li>
-&lt;li>&lt;strong>Multi-user&lt;/strong> - Each author gets their own profile page&lt;/li>
-&lt;li>&lt;strong>Privacy Pack&lt;/strong> - Assists with GDPR&lt;/li>
-&lt;li>&lt;strong>Stand Out&lt;/strong> - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li>
-&lt;li>&lt;strong>One-Click Deployment&lt;/strong> - No servers. No databases. Only files.&lt;/li>
+&lt;li>class_0
+&lt;ul>
+&lt;li>0_image_0.png&lt;/li>
+&lt;li>0_image_1.png&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;li>0_image_21.png&lt;/li>
 &lt;/ul>
-&lt;h2 id="themes">Themes&lt;/h2>
-&lt;p>Wowchemy and its templates come with &lt;strong>automatic day (light) and night (dark) mode&lt;/strong> built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href="https://academic-demo.netlify.com/" target="_blank" rel="noopener">Demo&lt;/a> to see it in action! Day/night mode can also be disabled by the site admin in &lt;code>params.toml&lt;/code>.&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/customization" target="_blank" rel="noopener">Choose a stunning &lt;strong>theme&lt;/strong> and &lt;strong>font&lt;/strong>&lt;/a> for your site. Themes are fully customizable.&lt;/p>
-&lt;h2 id="license">License&lt;/h2>
-&lt;p>Copyright 2016-present &lt;a href="https://georgecushen.com" target="_blank" rel="noopener">George Cushen&lt;/a>.&lt;/p>
-&lt;p>Released under the &lt;a href="https://github.com/wowchemy/wowchemy-hugo-themes/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT&lt;/a> license.&lt;/p></description></item><item><title>Slides</title><link>https://parsa-abbasi.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
+&lt;/li>
+&lt;li>class_1&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;li>class_114&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>test
+&lt;ul>
+&lt;li>class_0
+&lt;ul>
+&lt;li>0_image_22.png&lt;/li>
+&lt;li>0_image_23.png&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;li>0_image_26.png&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>class_1&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;li>class_114&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">trange&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">c_num&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">class_id&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">class_id_str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">class_id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">zfill&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">c_num&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># Make a subdirectory for this class&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">train_subdirectory&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">dataset_gen_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;/train/class_&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">c&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mkdir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">train_subdirectory&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">test_subdirectory&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">dataset_gen_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;/test/class_&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">c&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mkdir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">test_subdirectory&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># For each genuine&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">g&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">G_num&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">genuine_id&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">g&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">genuine_id_str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">genuine_id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">zfill&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">G_num&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">file_name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;C&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">class_id_str&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;G&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">genuine_id_str&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;.PNG&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">file_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">dataset_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">file_name&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">g&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="mi">22&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dest_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">train_subdirectory&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">c&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;_image_&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">g&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;.png&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">file_path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dest_path&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dest_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">test_subdirectory&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">c&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;_image_&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">g&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;.png&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">file_path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dest_path&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="preprocessing">Preprocessing&lt;/h2>
+&lt;p>We used the Image Data Generator from &lt;code>Keras&lt;/code> to preprocess our images. We also applied various augmentation techniques such as rotation, zooming, shifting, and flipping to generate more data and reduce overfitting.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">src_path_train&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">dataset_gen_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;/train/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">src_path_test&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">dataset_gen_path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;/test/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">train_datagen&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ImageDataGenerator&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">rescale&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mf">255.0&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">rotation_range&lt;/span>&lt;span class="o">=&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">zoom_range&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.05&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">width_shift_range&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.05&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">height_shift_range&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.05&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">shear_range&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.05&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">horizontal_flip&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">fill_mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;nearest&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">validation_split&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.20&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">test_datagen&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ImageDataGenerator&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rescale&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mf">255.0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">batch_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">16&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">target_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="mi">299&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">299&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">train_generator&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">train_datagen&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">flow_from_directory&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">directory&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">src_path_train&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">target_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">target_size&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">color_mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;rgb&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">batch_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">batch_size&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">class_mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;categorical&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">subset&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;training&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">shuffle&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">valid_generator&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">train_datagen&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">flow_from_directory&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">directory&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">src_path_train&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">target_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">target_size&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">color_mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;rgb&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">batch_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">batch_size&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">class_mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;categorical&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">subset&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;validation&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">shuffle&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">test_generator&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">test_datagen&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">flow_from_directory&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">directory&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">src_path_test&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">target_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">target_size&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">color_mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;rgb&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">batch_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">class_mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">None&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">shuffle&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">test_true_labels&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">test_generator&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">classes&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="model">Model&lt;/h2>
+&lt;p>
+&lt;figure id="figure-the-propsed-model-based-on-inceptionv3">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="InceptionV3" srcset="
+/project/signature-verification-with-cnn/inception_v3_hu1ba8ba5d6b2f15dda1c844dfebbb3d46_170369_1e61465a65494572c37cd2442b0b08c6.webp 400w,
+/project/signature-verification-with-cnn/inception_v3_hu1ba8ba5d6b2f15dda1c844dfebbb3d46_170369_9d810d9e41f217308925202095ea680f.webp 760w,
+/project/signature-verification-with-cnn/inception_v3_hu1ba8ba5d6b2f15dda1c844dfebbb3d46_170369_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://parsa-abbasi.github.io/project/signature-verification-with-cnn/inception_v3_hu1ba8ba5d6b2f15dda1c844dfebbb3d46_170369_1e61465a65494572c37cd2442b0b08c6.webp"
+width="760"
+height="380"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+The propsed model based on InceptionV3
+&lt;/figcaption>&lt;/figure>
+To classify the signatures, we used the &lt;a href="https://keras.io/api/applications/inceptionv3/" target="_blank" rel="noopener">InceptionV3&lt;/a> model, which is pre-trained on the ImageNet database to classify images into 1000 object categories. We modified the model by removing the fully-connected layer at the top, setting all layers to be non-trainable, and adding a 2D Global Average Pooling to transform the feature embedding into a single 2048 size vector. We then added a fully connected layer with 1024 neurons, a Dropout layer, and a softmax layer to calculate the score for each of the classes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Loading Inception-V3 model&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">InceptionV3&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">include_top&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">weights&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;imagenet&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">input_shape&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">299&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">299&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Freeze layers&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="n">layer&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">layers&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">layer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">trainable&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Add our classifier to the end of the model&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">flat1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">GlobalAveragePooling2D&lt;/span>&lt;span class="p">()(&lt;/span>&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">layers&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">output&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">class1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Dense&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1024&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">activation&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;relu&amp;#39;&lt;/span>&lt;span class="p">)(&lt;/span>&lt;span class="n">flat1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dropout1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Dropout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">0.1&lt;/span>&lt;span class="p">)(&lt;/span>&lt;span class="n">class1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">output&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Dense&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">c_num&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">activation&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;softmax&amp;#39;&lt;/span>&lt;span class="p">)(&lt;/span>&lt;span class="n">dropout1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Model&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">outputs&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">output&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">summary&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="training-and-evaluation">Training and Evaluation&lt;/h2>
+&lt;p>We trained the model on our preprocessed data for 10 epochs, and the validation accuracy was 87.39%. We evaluated the model on the test set and achieved an accuracy of 89.39% and a weighted F1-score of 89.25%.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># As the problem have multi-class we should use categorical_crossentropy loss function&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">compile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">loss&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;categorical_crossentropy&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">optimizer&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;adam&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">metrics&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;accuracy&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">STEP_SIZE_TRAIN&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">train_generator&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">train_generator&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">batch_size&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">STEP_SIZE_VALID&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">valid_generator&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">valid_generator&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">batch_size&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model_hist&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">train_generator&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">steps_per_epoch&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">STEP_SIZE_TRAIN&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">validation_data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">valid_generator&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">validation_steps&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">STEP_SIZE_VALID&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">epochs&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
+&lt;figure id="figure-the-learning-curve-of-the-model">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="Learning Curve" srcset="
+/project/signature-verification-with-cnn/learning_curve_hu8a592860ba336f59abda5517d1fdb7c2_31865_64478ac4d4f3a769157ce4a9cefeca22.webp 400w,
+/project/signature-verification-with-cnn/learning_curve_hu8a592860ba336f59abda5517d1fdb7c2_31865_7ea5c9256f1e48c7430280e2029ffb90.webp 760w,
+/project/signature-verification-with-cnn/learning_curve_hu8a592860ba336f59abda5517d1fdb7c2_31865_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://parsa-abbasi.github.io/project/signature-verification-with-cnn/learning_curve_hu8a592860ba336f59abda5517d1fdb7c2_31865_64478ac4d4f3a769157ce4a9cefeca22.webp"
+width="712"
+height="352"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+The learning curve of the model
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;h2 id="classification--unknown-class">Classification + Unknown Class&lt;/h2>
+&lt;p>We added a threshold on the softmax results to consider confidence in our predictions. If the maximum softmax value is less than the defined threshold, we classify the image as an unknown class (class_id=115). This was a post-processing step performed after the model&amp;rsquo;s prediction.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">threshold&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.40&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">new_pred_classes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="n">index&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pr&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">enumerate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pred&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">threshold&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">new_pred_classes&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">115&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">new_pred_classes&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">predicted_class_indices&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">index&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">new_pred_classes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">new_pred_classes&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>In conclusion, using a pre-trained model like InceptionV3 for signature classification can yield high accuracy and F1-scores. Preprocessing the data with augmentation techniques can help generate a more robust model and reduce the chance of overfitting.&lt;/p></description></item><item><title>DeepSentiPers: Novel Deep Learning Models Trained Over Proposed Augmented Persian Sentiment Corpus</title><link>https://parsa-abbasi.github.io/publication/deepsentipers/</link><pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/publication/deepsentipers/</guid><description/></item><item><title>Presenting A Sentiment Analysis System Using Deep Learning Models On Persian Texts (In Persian)</title><link>https://parsa-abbasi.github.io/publication/sentiment-fa/</link><pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/publication/sentiment-fa/</guid><description/></item><item><title>Slides</title><link>https://parsa-abbasi.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
 &lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://wowchemy.com/docs/content/slides/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="features">Features&lt;/h2>
@@ -174,18 +335,115 @@ data-background-image="/media/boards.jpg"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h1 id="questions">Questions?&lt;/h1>
 &lt;p>&lt;a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/content/slides/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Example Project</title><link>https://parsa-abbasi.github.io/project/example/</link><pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/project/example/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p>
-&lt;p>Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p>
-&lt;p>Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p>
-&lt;p>Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p>
-&lt;p>Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p></description></item><item><title>An example conference paper</title><link>https://parsa-abbasi.github.io/publication/example/</link><pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/publication/example/</guid><description>&lt;div class="alert alert-note">
-&lt;div>
-Click the &lt;em>Cite&lt;/em> button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-&lt;/div>
-&lt;/div>
-&lt;div class="alert alert-note">
-&lt;div>
-Create your slides in Markdown - click the &lt;em>Slides&lt;/em> button to check out the example.
-&lt;/div>
-&lt;/div>
-&lt;p>Supplementary notes can be added here, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">code, math, and images&lt;/a>.&lt;/p></description></item><item><title/><link>https://parsa-abbasi.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/admin/config.yml</guid><description/></item></channel></rss>
+&lt;p>&lt;a href="https://wowchemy.com/docs/content/slides/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Slides</title><link>https://parsa-abbasi.github.io/slides/numpy/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/numpy/</guid><description>&lt;h1 id="numpy">NumPy&lt;/h1>
+&lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="features">Features&lt;/h2>
+&lt;ul>
+&lt;li>Efficiently write slides in Markdown&lt;/li>
+&lt;li>3-in-1: Create, Present, and Publish your slides&lt;/li>
+&lt;li>Supports speaker notes&lt;/li>
+&lt;li>Mobile friendly slides&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="controls">Controls&lt;/h2>
+&lt;ul>
+&lt;li>Next: &lt;code>Right Arrow&lt;/code> or &lt;code>Space&lt;/code>&lt;/li>
+&lt;li>Previous: &lt;code>Left Arrow&lt;/code>&lt;/li>
+&lt;li>Start: &lt;code>Home&lt;/code>&lt;/li>
+&lt;li>Finish: &lt;code>End&lt;/code>&lt;/li>
+&lt;li>Overview: &lt;code>Esc&lt;/code>&lt;/li>
+&lt;li>Speaker notes: &lt;code>S&lt;/code>&lt;/li>
+&lt;li>Fullscreen: &lt;code>F&lt;/code>&lt;/li>
+&lt;li>Zoom: &lt;code>Alt + Click&lt;/code>&lt;/li>
+&lt;li>&lt;a href="https://revealjs.com/pdf-export/" target="_blank" rel="noopener">PDF Export&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="code-highlighting">Code Highlighting&lt;/h2>
+&lt;p>Inline code: &lt;code>variable&lt;/code>&lt;/p>
+&lt;p>Code block:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">porridge&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;blueberry&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="n">porridge&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;blueberry&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Eating...&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="math">Math&lt;/h2>
+&lt;p>In-line math: $x + y = z$&lt;/p>
+&lt;p>Block math:&lt;/p>
+&lt;p>$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p>
+&lt;hr>
+&lt;h2 id="fragments">Fragments&lt;/h2>
+&lt;p>Make content appear incrementally&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">{{% fragment %}} One {{% /fragment %}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{% fragment %}} **Two** {{% /fragment %}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{% fragment %}} Three {{% /fragment %}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Press &lt;code>Space&lt;/code> to play!&lt;/p>
+&lt;span class="fragment " >
+One
+&lt;/span>
+&lt;span class="fragment " >
+&lt;strong>Two&lt;/strong>
+&lt;/span>
+&lt;span class="fragment " >
+Three
+&lt;/span>
+&lt;hr>
+&lt;p>A fragment can accept two optional parameters:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>class&lt;/code>: use a custom style (requires definition in custom CSS)&lt;/li>
+&lt;li>&lt;code>weight&lt;/code>: sets the order in which a fragment appears&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="speaker-notes">Speaker Notes&lt;/h2>
+&lt;p>Add speaker notes to your presentation&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{% speaker_note %}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">-&lt;/span> Only the speaker can read these notes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">-&lt;/span> Press &lt;span class="sb">`S`&lt;/span> key to view
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> {{% /speaker_note %}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Press the &lt;code>S&lt;/code> key to view the speaker notes!&lt;/p>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Only the speaker can read these notes&lt;/li>
+&lt;li>Press &lt;code>S&lt;/code> key to view&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h2 id="themes">Themes&lt;/h2>
+&lt;ul>
+&lt;li>black: Black background, white text, blue links (default)&lt;/li>
+&lt;li>white: White background, black text, blue links&lt;/li>
+&lt;li>league: Gray background, white text, blue links&lt;/li>
+&lt;li>beige: Beige background, dark text, brown links&lt;/li>
+&lt;li>sky: Blue background, thin dark text, blue links&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>night: Black background, thick white text, orange links&lt;/li>
+&lt;li>serif: Cappuccino background, gray text, brown links&lt;/li>
+&lt;li>simple: White background, black text, blue links&lt;/li>
+&lt;li>solarized: Cream-colored background, dark green text, blue links&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-noprocess data-shortcode-slide
+data-background-image="/media/boards.jpg"
+>
+&lt;h2 id="custom-slide">Custom Slide&lt;/h2>
+&lt;p>Customize the slide style and background&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">background-image&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/media/boards.jpg&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">background-color&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;#0000FF&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;my-style&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="custom-css-example">Custom CSS Example&lt;/h2>
+&lt;p>Let&amp;rsquo;s make headers navy colored.&lt;/p>
+&lt;p>Create &lt;code>assets/css/reveal_custom.css&lt;/code> with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h1&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h2&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h3&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">navy&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h1 id="questions">Questions?&lt;/h1>
+&lt;p>&lt;a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://wowchemy.com/docs/content/slides/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title/><link>https://parsa-abbasi.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/admin/config.yml</guid><description/></item></channel></rss>
