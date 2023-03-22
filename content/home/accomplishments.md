@@ -95,7 +95,6 @@ item:
     organization_url: https://www.linkedin.com/company/ut_acm/about/
     title: Deep Learning Summer School 2018
     url: ''
-    logo_url: /logo/TehranACM.jpg
 
 design:
   columns: '2'
