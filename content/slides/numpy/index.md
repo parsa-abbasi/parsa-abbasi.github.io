@@ -14,9 +14,12 @@ slides:
   highlight_style: dracula
 ---
 
-# NumPy
+# Introduction to NumPy
+[Installation](https://numpy.org/install/) | [Documentation](https://numpy.org/doc/stable/)
 
-[Wowchemy](https://wowchemy.com/) | [Documentation](https://numpy.org/doc/stable/)
+<div style="font-size:18px; margin-top:80px">
+Last updated: March 25, 2023
+</div>
 
 ---
 

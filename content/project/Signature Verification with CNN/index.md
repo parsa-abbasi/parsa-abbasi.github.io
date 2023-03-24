@@ -31,7 +31,10 @@ slides:
 ---
 Signature verification has practical applications in various fields, particularly for security, legal, and financial purposes. Deep learning (DL) models have been proved to be promising in recognizing handwritten signatures, with high accuracy. In this expriment, we investigate the use of the InceptionV3, a pre-trained convolutional neural network (CNN), for signature classification.
 
-> **Note:** This project was done as part of the Pattern Recognition course at the Iran University of Science and Technology in the Fall of 2020.
+
+{{% callout note %}}
+This project was done as part of the Pattern Recognition course at the Iran University of Science and Technology in the Fall of 2020.
+{{% /callout %}}
 
 ## Dataset
 The dataset used for this project is called [UTSig](https://arxiv.org/abs/1603.03235), which consists of 115 classes, each belonging to one authentic person. There are 27 genuine signatures per class, 3 opposite-hand signed samples, and 42 simple forgeries. The dataset can be downloaded [from here](https://drive.google.com/drive/u/1/folders/0B0CjHfsXJLLObEZFNVdoMlFIODg).
