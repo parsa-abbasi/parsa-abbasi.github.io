@@ -109,8 +109,11 @@ data-background-image="/media/boards.jpg"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h1 id="questions">Questions?&lt;/h1>
 &lt;p>&lt;a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/content/slides/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Slides</title><link>https://parsa-abbasi.github.io/slides/numpy/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/numpy/</guid><description>&lt;h1 id="numpy">NumPy&lt;/h1>
-&lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://wowchemy.com/docs/content/slides/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Slides</title><link>https://parsa-abbasi.github.io/slides/numpy/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/numpy/</guid><description>&lt;h1 id="introduction-to-numpy">Introduction to NumPy&lt;/h1>
+&lt;p>&lt;a href="https://numpy.org/install/" target="_blank" rel="noopener">Installation&lt;/a> | &lt;a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
+&lt;div style="font-size:18px; margin-top:80px">
+Last updated: March 25, 2023
+&lt;/div>
 &lt;hr>
 &lt;h2 id="features">Features&lt;/h2>
 &lt;ul>

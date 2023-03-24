@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CNN | Parsa Abbasi</title><link>https://parsa-abbasi.github.io/tag/cnn/</link><atom:link href="https://parsa-abbasi.github.io/tag/cnn/index.xml" rel="self" type="application/rss+xml"/><description>CNN</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 22 Feb 2023 20:15:00 +0000</lastBuildDate><image><url>https://parsa-abbasi.github.io/media/icon_hu14e12911534d82dc6e859b10a3857b5a_3074_512x512_fill_lanczos_center_3.png</url><title>CNN</title><link>https://parsa-abbasi.github.io/tag/cnn/</link></image><item><title>Offline Signature Verification with Convolutional Neural Networks (CNNs)</title><link>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</link><pubDate>Wed, 22 Feb 2023 20:15:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</guid><description>&lt;p>Signature verification has practical applications in various fields, particularly for security, legal, and financial purposes. Deep learning (DL) models have been proved to be promising in recognizing handwritten signatures, with high accuracy. In this expriment, we investigate the use of the InceptionV3, a pre-trained convolutional neural network (CNN), for signature classification.&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> This project was done as part of the Pattern Recognition course at the Iran University of Science and Technology in the Fall of 2020.&lt;/p>
-&lt;/blockquote>
+&lt;div class="alert alert-note">
+&lt;div>
+This project was done as part of the Pattern Recognition course at the Iran University of Science and Technology in the Fall of 2020.
+&lt;/div>
+&lt;/div>
 &lt;h2 id="dataset">Dataset&lt;/h2>
 &lt;p>The dataset used for this project is called &lt;a href="https://arxiv.org/abs/1603.03235" target="_blank" rel="noopener">UTSig&lt;/a>, which consists of 115 classes, each belonging to one authentic person. There are 27 genuine signatures per class, 3 opposite-hand signed samples, and 42 simple forgeries. The dataset can be downloaded &lt;a href="https://drive.google.com/drive/u/1/folders/0B0CjHfsXJLLObEZFNVdoMlFIODg" target="_blank" rel="noopener">from here&lt;/a>.&lt;/p>
 &lt;p>
