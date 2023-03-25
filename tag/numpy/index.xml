@@ -97,4 +97,274 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;h4 id="-other">🌐 Other&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://visit.figure-eight.com/rs/416-ZBE-142/images/CrowdFlower_DataScienceReport_2016.pdf" target="_blank" rel="noopener">CrowdFlower Data Science Report 2016&lt;/a>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Introduction to NumPy</title><link>https://parsa-abbasi.github.io/slides/numpy/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/numpy/</guid><description>&lt;h2 id="introduction-to-numpy">Introduction to NumPy&lt;/h2>
+&lt;p>&lt;a href="https://numpy.org/install/" target="_blank" rel="noopener">Installation&lt;/a> | &lt;a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
+&lt;div style="font-size:18px; margin-top:80px">
+Last updated: March 26, 2023
+&lt;/div>
+&lt;hr>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>NumPy, short for Numerical Python, is a fundamental library for data analysis and scientific computing in the &lt;code>Python&lt;/code> programming language.&lt;/p>
+&lt;hr>
+&lt;h3 id="advantages-1">Advantages (1)&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Multidimensional Arrays:&lt;/strong> NumPy arrays can have any number of dimensions, which makes it possible to store and manipulate complex data sets.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>High Performance:&lt;/strong> NumPy core is based on a highly optimized &lt;code>C&lt;/code> implementation, which means that it can perform mathematical and numerical operations much faster than pure Python.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="advantages-2">Advantages (2)&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Mathematical Functions:&lt;/strong> NumPy provides a wide variety of mathematical functions for operations, including statistics, linear algebra, and Fourier Transforms.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Efficient and Fast Computation:&lt;/strong> NumPy allows for fast and accurate computation through powerful vectorized operations and optimized mathematical functions.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="n-dimensional-array">N-dimensional array&lt;/h3>
+&lt;p>One of the key features of NumPy is its N-dimensional array object, or &lt;code>ndarray&lt;/code>, which is a fast, flexible container for large datasets in Python.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> An &amp;rsquo;ndarray&amp;rsquo; is a multidimensional, &lt;u>homogeneous&lt;/u> array which means that all the elements in the array are of the same type.&lt;/p>
+&lt;hr>
+&lt;h3 id="creating-a-numpy-array-1">Creating a NumPy array (1)&lt;/h3>
+&lt;p>The easiest way to create an &lt;code>ndarray&lt;/code> is to use the &lt;code>array()&lt;/code> function and pass any sequence-like object (e.g. a list, tuple, or another array) to it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">numpy&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">np&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">2.5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">3.1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">5.6&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">arr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([1. , 2.5, 3.1, 4. , 5.6])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="creating-a-numpy-array-2">Creating a NumPy array (2)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">numpy&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">np&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">arr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1, 2, 3, 4],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [5, 6, 7, 8]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="number-of-dimensions">Number of dimensions&lt;/h3>
+&lt;p>We can check the number of dimensions of an array using the &lt;code>ndim&lt;/code> attribute.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1, 2, 3, 4],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [5, 6, 7, 8]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">arr&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ndim&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="shape-of-an-array">Shape of an array&lt;/h3>
+&lt;p>The &lt;code>shape&lt;/code> attribute returns a tuple of integers indicating the size of the array in each dimension.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1, 2, 3, 4],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [5, 6, 7, 8]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">arr&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">shape&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">(2, 4)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="data-type-1">Data type (1)&lt;/h3>
+&lt;p>The &lt;code>dtype&lt;/code> attribute is an object describing the type of the elements in the array. Unless specified, NumPy tries to infer a good data type for the array that it creates.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1, 2, 3, 4],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [5, 6, 7, 8]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">arr&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dtype&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">dtype(&amp;#39;int64&amp;#39;)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="data-type-2">Data type (2)&lt;/h3>
+&lt;p>A full list of NumPy data types can be found &lt;a href="https://numpy.org/devdocs/user/basics.types.html" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+&lt;div style="font-size:20px">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Type&lt;/th>
+&lt;th>Type code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>bool&lt;/code>&lt;/td>
+&lt;td>&lt;code>?&lt;/code>&lt;/td>
+&lt;td>Boolean (True or False) stored as a byte&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>int8&lt;/code>&lt;/td>
+&lt;td>&lt;code>i1&lt;/code>&lt;/td>
+&lt;td>Byte (-128 to 127)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>int16&lt;/code>&lt;/td>
+&lt;td>&lt;code>i2&lt;/code>&lt;/td>
+&lt;td>Integer (-32768 to 32767)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>int32&lt;/code>&lt;/td>
+&lt;td>&lt;code>i4&lt;/code>&lt;/td>
+&lt;td>Integer (-2147483648 to 2147483647)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>int64&lt;/code>&lt;/td>
+&lt;td>&lt;code>i8&lt;/code>&lt;/td>
+&lt;td>Integer (-9223372036854775808 to 9223372036854775807)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>uint8&lt;/code>&lt;/td>
+&lt;td>&lt;code>u1&lt;/code>&lt;/td>
+&lt;td>Unsigned integer (0 to 255)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>float16&lt;/code>&lt;/td>
+&lt;td>&lt;code>f2&lt;/code>&lt;/td>
+&lt;td>Half precision float: sign bit, 5 bits exponent, 10 bits mantissa&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>float32&lt;/code>&lt;/td>
+&lt;td>&lt;code>f4&lt;/code>&lt;/td>
+&lt;td>Single precision float: sign bit, 8 bits exponent, 23 bits mantissa&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>float64&lt;/code>&lt;/td>
+&lt;td>&lt;code>f8&lt;/code>&lt;/td>
+&lt;td>Double precision float: sign bit, 11 bits exponent, 52 bits mantissa&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>string_&lt;/code>&lt;/td>
+&lt;td>&lt;code>S&lt;/code>&lt;/td>
+&lt;td>Fixed-length ASCII string type (1 byte per character)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>unicode_&lt;/code>&lt;/td>
+&lt;td>&lt;code>U&lt;/code>&lt;/td>
+&lt;td>Fixed-length Unicode type (number of bytes platform specific)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>object&lt;/code>&lt;/td>
+&lt;td>&lt;code>O&lt;/code>&lt;/td>
+&lt;td>Python object type&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h3 id="data-type-examples-1">Data type examples (1)&lt;/h3>
+&lt;p>Boolean&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">False&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">bool&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([ True, False, True])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>String&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s1">&amp;#39;hello&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;world&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;numpy&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">string_&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([b&amp;#39;hello&amp;#39;, b&amp;#39;world&amp;#39;, b&amp;#39;numpy&amp;#39;], dtype=&amp;#39;|S5&amp;#39;)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="data-type-examples-2">Data type examples (2)&lt;/h3>
+&lt;p>Unicode&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="sa">u&lt;/span>&lt;span class="s1">&amp;#39;سلام&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="sa">u&lt;/span>&lt;span class="s1">&amp;#39;بله&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="sa">u&lt;/span>&lt;span class="s1">&amp;#39;خیر&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">unicode_&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([&amp;#39;سلام&amp;#39;, &amp;#39;بله&amp;#39;, &amp;#39;خیر&amp;#39;], dtype=&amp;#39;&amp;lt;U4&amp;#39;)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Object&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([{&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;John&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;age&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">25&lt;/span>&lt;span class="p">},&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="s2">&amp;#34;hello&amp;#34;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">object&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([{&amp;#39;name&amp;#39;: &amp;#39;John&amp;#39;, &amp;#39;age&amp;#39;: 25}, list([1, 2, 3]), &amp;#39;hello&amp;#39;],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> dtype=object)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="casting-data-type">Casting data type&lt;/h3>
+&lt;p>You can explicitly cast an array from one dtype to another using ndarray&amp;rsquo;s &lt;code>astype&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([1, 2, 3, 4, 5])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">astype&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">float64&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([1., 2., 3., 4., 5.])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b> Calling &lt;code>astype&lt;/code> always creates a &lt;u>copy&lt;/u> of the data, even if the new dtype is the same as the old dtype.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="array-creation-functions-1">Array creation functions (1)&lt;/h3>
+&lt;p>&lt;code>zeros&lt;/code> and &lt;code>ones&lt;/code> create arrays of &lt;code>0&lt;/code>&amp;rsquo;s or &lt;code>1&lt;/code>&amp;rsquo;s, respectively, with a given length or shape. &lt;code>empty&lt;/code> creates an array without initializing its values to any particular value.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">zeros&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ones&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1., 1., 1., 1., 1., 1.],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [1., 1., 1., 1., 1., 1.]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">empty&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1., 1.]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="array-creation-functions-2">Array creation functions (2)&lt;/h3>
+&lt;p>zeros_like and ones_like create arrays of 0&amp;rsquo;s or 1&amp;rsquo;s with the same shape and dtype as a given array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">]])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1, 2, 3],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [4, 5, 6]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">zeros_like&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[0, 0, 0],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [0, 0, 0]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ones_like&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1, 1, 1],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [1, 1, 1]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="array-creation-functions-3">Array creation functions (3)&lt;/h3>
+&lt;p>&lt;code>full&lt;/code> creates an array of a given length or shape and fills it with a given value.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">full&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[5, 5],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [5, 5]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">full&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pi&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[3.14159265, 3.14159265],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [3.14159265, 3.14159265]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="array-creation-functions-4">Array creation functions (4)&lt;/h3>
+&lt;p>&lt;code>arange&lt;/code> is an array-valued version of the built-in Python &lt;code>range&lt;/code> function. It returns an array instead of a list.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">arange&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">arange&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([1, 3, 5, 7, 9])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="array-creation-functions-5">Array creation functions (5)&lt;/h3>
+&lt;p>&lt;code>linspace&lt;/code> creates an array of evenly spaced values within a given interval.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">linspace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([ 0., 2.5, 5., 7.5, 10.])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">linspace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">endpoint&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([0., 2., 4., 6., 8.])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="array-creation-functions-6">Array creation functions (6)&lt;/h3>
+&lt;p>&lt;code>eye&lt;/code> and &lt;code>identity&lt;/code> create square &lt;code>N x N&lt;/code> identity matrices. &lt;code>1&lt;/code>&amp;rsquo;s on the diagonal and &lt;code>0&lt;/code>&amp;rsquo;s elsewhere.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eye&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1., 0.],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [0., 1.]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">identity&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[1., 0., 0.],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [0., 1., 0.],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [0., 0., 1.]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b> &lt;code>eye&lt;/code> is more flexible in creating identity matrices with diagonal shifted by any position (using &lt;code>k&lt;/code> parameter), while &lt;code>identity&lt;/code> is simpler and faster for creating square identity matrices with diagonal in center.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="arithmetic-operations-1">Arithmetic operations (1)&lt;/h3>
+&lt;p>Vectorization is the ability of NumPy to perform mathematical computations and array operations on entire arrays without the need to write explicit loops.&lt;/p>
+&lt;p>Any arithmetic operations between equal-size arrays applies the operation &lt;u>element-wise&lt;/u>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">array2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">array2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([-4, -2, 0, 2, 4])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">array2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([5, 8, 9, 8, 5])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="arithmetic-operations-2">Arithmetic operations (2)&lt;/h3>
+&lt;p>Arithmetic operations with scalars propagate the scalar argument to each element in the array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="n">array1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([1. , 0.5 , 0.33333333, 0.25 , 0.2 ])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">**&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([ 1, 4, 9, 16, 25])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="arithmetic-operations-3">Arithmetic operations (3)&lt;/h3>
+&lt;p>Comparison operators between arrays are also vectorized.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">array2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">array2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([False, False, False, True, True])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">array2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([False, False, True, False, False])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="broadcasting-1">Broadcasting (1)&lt;/h3>
+&lt;p>Arithmetic operations between differently sized arrays is called &lt;b>broadcasting&lt;/b>. Broadcasting allows arithmetic operations between arrays of different shapes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">]])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">array2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">array2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">array([[2, 4, 6],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [5, 7, 9]])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="broadcasting-2">Broadcasting (2)&lt;/h3>
+&lt;p>Broadcasting is a powerful mechanism that allows NumPy to work with arrays of different shapes when performing arithmetic operations. However, if the arrays do not have compatible shapes, a &lt;b>ValueError&lt;/b> will be raised.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">]])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">array2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">array1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">array2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ValueError: operands could not be broadcast together with shapes (2,3) (2,)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr></description></item></channel></rss>
