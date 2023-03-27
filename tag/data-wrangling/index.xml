@@ -59,6 +59,7 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Slide 1:&lt;/strong> &lt;a href="https://parsa-abbasi.github.io/slides/numpy/">Introduction to NumPy&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Exercise 1:&lt;/strong> Analyzing Job Offers (&lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_init.ipynb" target="_blank" rel="noopener">Initial&lt;/a> | &lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_solution.ipynb" target="_blank" rel="noopener">Solution&lt;/a>)&lt;/li>
 &lt;li>&lt;strong>Slide 2:&lt;/strong> &lt;a href="https://parsa-abbasi.github.io/slides/pandas/">Introduction to Pandas&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="data-visualization">Data Visualization&lt;/h2>
@@ -86,10 +87,12 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;h4 id="-books">📖 Books&lt;/h4>
 &lt;ul>
 &lt;li>&lt;em>&amp;ldquo;Python Data Science: The Ultimate Guide on What You Need to Know to Work with Data Using Python&amp;rdquo;&lt;/em>, by Oliver Soranson&lt;/li>
+&lt;li>&lt;em>&amp;ldquo;Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython&amp;rdquo;&lt;/em>, by Wes McKinney&lt;/li>
 &lt;/ul>
 &lt;h4 id="-videos">🎞️ Videos&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://youtu.be/W1dzfYW4-KQ" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Data Analytics With Python&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@SimplilearnOfficial" target="_blank" rel="noopener">Simplilearn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://youtu.be/8Y0qQEh7dJg" target="_blank" rel="noopener">&lt;em>&amp;ldquo;NumPy Tutorial : Numpy Full Course&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@derekbanas" target="_blank" rel="noopener">Derek Banas&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://youtu.be/UO98lJQ3QGI" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Matplotlib Tutorial (Part 1): Creating and Customizing Our First Plots&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">Corey Schafer&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://youtu.be/wB9C0Mz9gSo" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Matplotlib Tutorial : Matplotlib Full Course&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@derekbanas" target="_blank" rel="noopener">Derek Banas&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://youtu.be/xi0vhXFPegw" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Exploratory Data Analysis with Pandas Python 2023&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@robmulla" target="_blank" rel="noopener">Rob Mulla&lt;/a>&lt;/li>
