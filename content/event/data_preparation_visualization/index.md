@@ -35,7 +35,7 @@ image:
   focal_point: Right
 
 links: []
-url_code: ''
+url_code: 'https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python'
 url_pdf: ''
 url_slides: ''
 url_video: ''
@@ -101,6 +101,7 @@ Now let's learn everything we need to know about these two libraries!
 {{< figure src="numpy_pandas.png" id="preparation" >}}
 
 * **Slide 1:** [Introduction to NumPy](/slides/numpy/)
+* **Exercise 1:** Analyzing Job Offers ([Initial](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_init.ipynb) | [Solution](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_solution.ipynb))
 * **Slide 2:** [Introduction to Pandas](/slides/pandas/)
 
 ## Data Visualization
@@ -120,8 +121,10 @@ Now that we understand the importance of data visualization let's dive into the 
 ## Sources and Useful Links
 #### 📖 Books
 * *"Python Data Science: The Ultimate Guide on What You Need to Know to Work with Data Using Python"*, by Oliver Soranson
+* *"Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython"*, by Wes McKinney
 #### 🎞️ Videos
 * [*"Data Analytics With Python"*](https://youtu.be/W1dzfYW4-KQ) by [Simplilearn](https://www.youtube.com/@SimplilearnOfficial)
+* [*"NumPy Tutorial : Numpy Full Course"*](https://youtu.be/8Y0qQEh7dJg) by [Derek Banas](https://www.youtube.com/@derekbanas)
 * [*"Matplotlib Tutorial (Part 1): Creating and Customizing Our First Plots"*](https://youtu.be/UO98lJQ3QGI) by [Corey Schafer](https://www.youtube.com/@coreyms)
 * [*"Matplotlib Tutorial : Matplotlib Full Course"*](https://youtu.be/wB9C0Mz9gSo) by [Derek Banas](https://www.youtube.com/@derekbanas)
 * [*"Exploratory Data Analysis with Pandas Python 2023"*](https://youtu.be/xi0vhXFPegw) by [Rob Mulla](https://www.youtube.com/@robmulla)
