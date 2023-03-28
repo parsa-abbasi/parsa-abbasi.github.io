@@ -1017,6 +1017,24 @@ array([[0.        , 0.        , 0.        , 0.        ],
 
 ---
 
+### Conditional Logic
+The `np.where` function is a vectorized version of the ternary expression `x if condition else y`.
+
+```python
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([6, 7, 8, 9, 10])
+```
+
+```python
+np.where(x > 3, x, y)
+```
+
+```output
+array([ 6,  7,  8,  4,  5])
+```
+
+---
+
 ### Universal Functions
 A universal function (or ufunc for short) is a function that performs element-wise operations on data in ndarrays. They are fast vectorized wrappers for simple functions that take one or more scalar values and produce one or more scalar results.
 
@@ -1832,6 +1850,70 @@ rng.rand(5)
 
 ```output
 array([0.19151945, 0.62210877, 0.43772774, 0.78535858, 0.77997581])
+```
+
+---
+
+### Datetimes and Timedeltas (1)
+Starting with NumPy 1.7, NumPy provides a set of datetime functions that can be used to create `datetime64` and `timedelta64` objects.
+
+```python
+np.datetime64('2018-01-01')
+```
+
+```output
+numpy.datetime64('2018-01-01')
+```
+
+```python
+np.datetime64('2018-01-01 12:00')
+```
+
+```output
+numpy.datetime64('2018-01-01T12:00')
+```
+
+```python
+np.array(['2007-07-13', '2006-01-13', '2010-08-13'], dtype='datetime64')
+```
+
+```output
+array(['2007-07-13', '2006-01-13', '2010-08-13'], dtype='datetime64[D]')
+```
+
+---
+
+### Datetimes and Timedeltas (2)
+
+```python
+np.arange('2005-02', '2005-03', dtype='datetime64[D]') 
+```
+
+```output
+array(['2005-02-01', '2005-02-02', '2005-02-03', '2005-02-04',
+       '2005-02-05', '2005-02-06', '2005-02-07', '2005-02-08',
+       '2005-02-09', '2005-02-10', '2005-02-11', '2005-02-12',
+       '2005-02-13', '2005-02-14', '2005-02-15', '2005-02-16',
+       '2005-02-17', '2005-02-18', '2005-02-19', '2005-02-20',
+       '2005-02-21', '2005-02-22', '2005-02-23', '2005-02-24',
+       '2005-02-25', '2005-02-26', '2005-02-27', '2005-02-28'],
+      dtype='datetime64[D]')
+```
+
+```python
+np.datetime64('2009-01-01') - np.datetime64('2008-01-01')
+```
+
+```output
+numpy.timedelta64(365,'D')
+```
+
+```python
+np.timedelta64(1,'W') / np.timedelta64(1,'D')
+```
+
+```output
+7.0
 ```
 
 ---
