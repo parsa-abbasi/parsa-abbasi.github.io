@@ -1,10 +1,10 @@
 ---
 title: Introduction to NumPy
-summary: An introduction to using Wowchemy's Slides feature.
+summary: An introduction to NumPy library for data analysis and scientific computing in Python.
 authors: ["Parsa Abbasi"]
 tags: ["NumPy"]
 categories: []
-date: '2019-02-05T00:00:00Z'
+date: '2023-03-28T00:00:00Z'
 slides:
   # Choose a theme from https://github.com/hakimel/reveal.js#theming
   # black, white, league, beige, night, serif, simple, solarized, sky, moon, blood, dracula 
@@ -23,12 +23,12 @@ Last updated: March 28, 2023
 
 ---
 
-### Introduction
+### What is NumPy?
 NumPy, short for Numerical Python, is a fundamental library for data analysis and scientific computing in the `Python` programming language. 
 
 ---
 
-### Advantages (1)
+### Why NumPy? (1)
 
 - **Multidimensional Arrays:** NumPy arrays can have any number of dimensions, which makes it possible to store and manipulate complex data sets.
 
@@ -36,7 +36,7 @@ NumPy, short for Numerical Python, is a fundamental library for data analysis an
 
 ---
 
-### Advantages (2)
+### Why NumPy? (2)
 
 - **Mathematical Functions:** NumPy provides a wide variety of mathematical functions for operations, including statistics, linear algebra, and Fourier Transforms.
 
@@ -137,7 +137,7 @@ arr.size
 ---
 
 ### Visualization
-<img src="ndarray.jpg" alt="N-dimensional array" max-width="1024px"/>
+<img src="ndarray.jpg" alt="N-dimensional array"/>
 
 ---
 
@@ -665,19 +665,19 @@ array([[1, 2, 3],
 
 ### Broadcasting Example (1)
 
-<img src="broadcasting1d.jpg" max-width="1024px">
+<img src="broadcasting1d.jpg">
 
 ---
 
 ### Broadcasting Example (2)
 
-<img src="broadcasting2d.jpg" max-width="1024px">
+<img src="broadcasting2d.jpg">
 
 ---
 
 ### Broadcasting Example (3)
 
-<img src="broadcasting3d.jpg" max-width="1024px">
+<img src="broadcasting3d.jpg">
 
 ---
 
@@ -907,7 +907,7 @@ print(array)
 
 ### Slicing Example (4)
 
-<img src="slicing.jpg" max-width="1024px">
+<img src="slicing.jpg">
 
 ---
 
