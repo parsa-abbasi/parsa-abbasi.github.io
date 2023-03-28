@@ -100,16 +100,16 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;h4 id="-other">🌐 Other&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://visit.figure-eight.com/rs/416-ZBE-142/images/CrowdFlower_DataScienceReport_2016.pdf" target="_blank" rel="noopener">CrowdFlower Data Science Report 2016&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Introduction to NumPy</title><link>https://parsa-abbasi.github.io/slides/numpy/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/numpy/</guid><description>&lt;h2 id="introduction-to-numpy">Introduction to NumPy&lt;/h2>
+&lt;/ul></description></item><item><title>Introduction to NumPy</title><link>https://parsa-abbasi.github.io/slides/numpy/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/numpy/</guid><description>&lt;h2 id="introduction-to-numpy">Introduction to NumPy&lt;/h2>
 &lt;p>&lt;a href="https://numpy.org/install/" target="_blank" rel="noopener">Installation&lt;/a> | &lt;a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
 &lt;div style="font-size:18px; margin-top:80px">
 Last updated: March 28, 2023
 &lt;/div>
 &lt;hr>
-&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;h3 id="what-is-numpy">What is NumPy?&lt;/h3>
 &lt;p>NumPy, short for Numerical Python, is a fundamental library for data analysis and scientific computing in the &lt;code>Python&lt;/code> programming language.&lt;/p>
 &lt;hr>
-&lt;h3 id="advantages-1">Advantages (1)&lt;/h3>
+&lt;h3 id="why-numpy-1">Why NumPy? (1)&lt;/h3>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>Multidimensional Arrays:&lt;/strong> NumPy arrays can have any number of dimensions, which makes it possible to store and manipulate complex data sets.&lt;/p>
@@ -119,7 +119,7 @@ Last updated: March 28, 2023
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="advantages-2">Advantages (2)&lt;/h3>
+&lt;h3 id="why-numpy-2">Why NumPy? (2)&lt;/h3>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>Mathematical Functions:&lt;/strong> NumPy provides a wide variety of mathematical functions for operations, including statistics, linear algebra, and Fourier Transforms.&lt;/p>
@@ -169,7 +169,7 @@ Last updated: March 28, 2023
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">8
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="visualization">Visualization&lt;/h3>
-&lt;img src="ndarray.jpg" alt="N-dimensional array" max-width="1024px"/>
+&lt;img src="ndarray.jpg" alt="N-dimensional array"/>
 &lt;hr>
 &lt;h3 id="reshaping-an-array">Reshaping an array&lt;/h3>
 &lt;p>We can change the shape of an array by using:&lt;/p>
@@ -416,13 +416,13 @@ Last updated: March 28, 2023
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [4, 5, 6]])
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="broadcasting-example-1">Broadcasting Example (1)&lt;/h3>
-&lt;img src="broadcasting1d.jpg" max-width="1024px">
+&lt;img src="broadcasting1d.jpg">
 &lt;hr>
 &lt;h3 id="broadcasting-example-2">Broadcasting Example (2)&lt;/h3>
-&lt;img src="broadcasting2d.jpg" max-width="1024px">
+&lt;img src="broadcasting2d.jpg">
 &lt;hr>
 &lt;h3 id="broadcasting-example-3">Broadcasting Example (3)&lt;/h3>
-&lt;img src="broadcasting3d.jpg" max-width="1024px">
+&lt;img src="broadcasting3d.jpg">
 &lt;hr>
 &lt;h3 id="broadcasting-value-error">Broadcasting Value Error&lt;/h3>
 &lt;p>If the arrays have different shapes and the dimension sizes cannot be matched, then a &lt;code>ValueError&lt;/code> is raised.&lt;/p>
@@ -509,7 +509,7 @@ The pattern for slicing is:&lt;/p>
 &lt;/div>
 &lt;hr>
 &lt;h3 id="slicing-example-4">Slicing Example (4)&lt;/h3>
-&lt;img src="slicing.jpg" max-width="1024px">
+&lt;img src="slicing.jpg">
 &lt;hr>
 &lt;h3 id="boolean-indexing-1">Boolean Indexing (1)&lt;/h3>
 &lt;p>Boolean indexing is used to select elements of an ndarray based on a boolean mask that has the same shape as the ndarray. The boolean mask is usually the result of a comparison operation.&lt;/p>
