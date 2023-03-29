@@ -1372,7 +1372,7 @@ Name: col2, dtype: datetime64[ns]
 
 ---
 
-### Data File I/O (1)
+### Data File I/O
 Pandas can read and write data from a variety of file formats. The most common file formats are CSV, Excel, and JSON.
 
 ```python
@@ -1388,8 +1388,62 @@ df = pd.read_json('data.json')
 ```
 
 ---
+### Read JSON Example
 
-### Data File I/O (2)
+```json
+{
+    "col1": {
+        "0": "A",
+        "1": "B",
+        "2": "C"
+    },
+    "col2": {
+        "0": [1, 2, 3],
+        "1": [4, 5, 6],
+        "2": [7, 8, 9]
+    }
+}
+```
+
+```python
+df = pd.read_json('data.json')
+```
+
+<img src="ReadJSON.jpg" style="max-width:150px">
+
+---
+
+### Write CSV Parameters
+The `to_csv()` method has a number of useful parameters. The following table shows some of the most commonly used parameters.
+
+<div style="font-size:20px">
+<table>
+        <thead>
+                <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                </tr>
+        </thead>
+        <tbody>
+                <tr>
+                        <td><code>index</code></td>
+                        <td>Write row names (index). Default is <code>True</code>.</td>
+                </tr>
+                <tr>
+                        <td><code>header</code></td>
+                        <td>Write column names. Default is <code>True</code>.</td>
+                </tr>
+                <tr>
+                        <td><code>sep</code></td>
+                        <td>Delimiter to use. Default is comma (,).</td>
+                </tr>
+        </tbody>
+</table>
+</div>
+
+---
+
+### Read CSV Parameters
 The `read_csv()` method has a number of useful parameters. The following table shows some of the most commonly used parameters.
 
 <div style="font-size:20px">
@@ -1435,31 +1489,6 @@ The `read_csv()` method has a number of useful parameters. The following table s
 
 ---
 
-### Read JSON Example
-
-```json
-{
-    "col1": {
-        "0": "A",
-        "1": "B",
-        "2": "C"
-    },
-    "col2": {
-        "0": [1, 2, 3],
-        "1": [4, 5, 6],
-        "2": [7, 8, 9]
-    }
-}
-```
-
-```python
-df = pd.read_json('data.json')
-```
-
-<img src="ReadJSON.jpg" style="max-width:150px">
-
----
-
 ### Read CSV Example (1)
 
 ```csv
@@ -1479,9 +1508,148 @@ df = pd.read_csv('data.csv', na_values=['N/A', '?'],
 ---
 
 ### Read CSV Example (2)
+We can also use the `read_csv()` method to read data from a URL.
 
-imdb = pd.read_csv('imdb.csv')
+```python
+imdb = pd.read_csv('https://parsa-abbasi.github.io/slides/pandas/imdb_top_250_movies.csv', index_col='rank')
+```
+
+```python
+imdb.head()
+```
+
+<img src="DataFrameIMDB.jpg">
 
 ---
 
 ### Grouping (1)
+The `groupby()` method can be used to group rows of data based on one or more columns. The result of the `groupby()` method is a `DataFrameGroupBy` object.
+
+```python
+imdb.groupby('year')
+```
+
+```python
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000020B1B5B0A90>
+```
+
+---
+
+### Grouping (2)
+The `DataFrameGroupBy` object has a number of useful methods. The following table shows some of the most commonly used methods.
+
+<div style="font-size:20px">
+<table>
+        <thead>
+                <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                </tr>
+        </thead>
+        <tbody>
+                <tr>
+                        <td><code>count()</code></td>
+                        <td>Number of non-NA values.</td>
+                </tr>
+                <tr>
+                        <td><code>sum()</code></td>
+                        <td>Sum of values.</td>
+                </tr>
+                <tr>
+                        <td><code>mean()</code></td>
+                        <td>Mean of values.</td>
+                </tr>
+                <tr>
+                        <td><code>median()</code></td>
+                        <td>Arithmetic median of values.</td>
+                </tr>
+                <tr>
+                        <td><code>min()</code></td>
+                        <td>Minimum.</td>
+                </tr>
+                <tr>
+                        <td><code>max()</code></td>
+                        <td>Maximum.</td>
+                </tr>
+                <tr>
+                        <td><code>size()</code></td>
+                        <td>Number of elements in the object.</td>
+                </tr>
+        </tbody>
+</table>
+</div>
+
+---
+
+### Grouping Example (1)
+
+```python
+imdb.groupby('year').count()['name']
+```
+
+```python
+year
+1921    1
+1924    1
+1925    1
+1926    1
+1927    1
+       ..
+2018    4
+2019    6
+2020    2
+2021    2
+2022    1
+Name: name, Length: 86, dtype: int64
+```
+
+---
+
+### Grouping Example (2)
+
+```python
+imdb.groupby('year')['rating'].mean()
+```
+
+```python
+year
+1921    8.30
+1924    8.20
+1925    8.10
+1926    8.10
+1927    8.30
+        ... 
+2018    8.35
+2019    8.30
+2020    8.30
+2021    8.50
+2022    8.30
+Name: rating, Length: 86, dtype: float64
+```
+
+---
+
+### Transforming
+The `transform()` method can be used to apply a function to each group independently. The result of the `transform()` method is a `Series` object.
+
+```python
+imdb.groupby('year')['rating'].transform(lambda x: x - x.mean())
+```
+
+```python
+rank
+1      0.500000
+2      0.000000
+3      0.500000
+4      0.400000
+5      0.633333
+         ...   
+246   -0.140000
+247   -0.060000
+248   -0.166667
+249   -0.100000
+250   -0.350000
+Name: rating, Length: 250, dtype: float64
+```
+
+---
