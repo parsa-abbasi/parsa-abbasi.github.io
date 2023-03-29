@@ -1015,7 +1015,812 @@ If you run the above code again, you will get the same sequence of random number
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h2 id="finishing-up">Finishing Up&lt;/h2>
 &lt;p>Thank you for keeping up with me until the end!&lt;/p>
-&lt;p>If you have any questions or suggestions, please send me an email at &lt;a href="mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20numpy">parsa.abbasi1996@gmail.com&lt;/a>.&lt;/p></description></item><item><title>Offline Signature Verification with Convolutional Neural Networks (CNNs)</title><link>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</link><pubDate>Wed, 22 Feb 2023 20:15:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</guid><description>&lt;p>Signature verification has practical applications in various fields, particularly for security, legal, and financial purposes. Deep learning (DL) models have been proved to be promising in recognizing handwritten signatures, with high accuracy. In this expriment, we investigate the use of the InceptionV3, a pre-trained convolutional neural network (CNN), for signature classification.&lt;/p>
+&lt;p>If you have any questions or suggestions, please send me an email at &lt;a href="mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20numpy">parsa.abbasi1996@gmail.com&lt;/a>.&lt;/p></description></item><item><title>Introduction to Pandas</title><link>https://parsa-abbasi.github.io/slides/pandas/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/pandas/</guid><description>&lt;h2 id="introduction-to-pandas">Introduction to Pandas&lt;/h2>
+&lt;p>&lt;a href="https://pandas.pydata.org/docs/getting_started/install.html" target="_blank" rel="noopener">Installation&lt;/a> | &lt;a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
+&lt;div style="font-size:18px; margin-top:80px">
+Last updated: March 28, 2023
+&lt;/div>
+&lt;hr>
+&lt;h3 id="what-is-pandas">What is Pandas?&lt;/h3>
+&lt;p>Pandas is a popular Python library that offers high-performance and easy-to-use data manipulation and analysis tools. It is a go-to library for working with structured and semi-structured data such as tables and time-series data. Pandas provides a wide range of functions and data structures that allow data scientists, analysts, and researchers to quickly clean, transform, and manipulate data to extract meaningful insights.&lt;/p>
+&lt;hr>
+&lt;h3 id="why-pandas-1">Why Pandas? (1)&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Efficient Handling of Tabular Data:&lt;/strong> Pandas can efficiently handle tabular data, enabling users to work with data from various file formats like CSV, Excel, SQL databases, and more.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Support for Huge Datasets:&lt;/strong> Pandas is designed to work with large datasets, and it provides several tools to efficiently process, filter, and manipulate large datasets without running out of memory. This enables users to work with datasets that are too big to fit into memory on a single machine.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="why-pandas-2">Why Pandas? (2)&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Easy Data Manipulation:&lt;/strong> Pandas provides a wide range of functions that allow users to quickly clean, transform, and manipulate data to extract meaningful insights.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Time Series Analysis:&lt;/strong> Pandas has built-in support for time series data analysis, making it easy to work with time-stamped data, such as stock prices, weather data, or social media metrics.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="series">Series&lt;/h3>
+&lt;p>A &lt;code>Series&lt;/code> is a one-dimensional array of labeled data that can hold any data type, such as numbers, strings, booleans, or even objects. A &lt;code>Series&lt;/code> has two main components:&lt;/p>
+&lt;ol>
+&lt;li>The index: a sequence of labels that identify each element in the series.&lt;/li>
+&lt;li>The values: the actual data stored in the series.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="creating-a-series">Creating a Series&lt;/h3>
+&lt;p>You can create a series from various sources, such as lists, dictionaries, numpy arrays, or scalars. You just need to pass the data to the &lt;code>pd.Series()&lt;/code> function.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">pandas&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">pd&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">my_list&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">30&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">40&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">50&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">my_series&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Series&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_list&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_series&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mi">40&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="mi">50&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="setting-index-labels">Setting Index Labels&lt;/h3>
+&lt;p>We can specify the index labels when creating a series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">my_series&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Series&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_list&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">index&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;b&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;c&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_series&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">a&lt;/span> &lt;span class="mi">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">b&lt;/span> &lt;span class="mi">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">c&lt;/span> &lt;span class="mi">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">d&lt;/span> &lt;span class="mi">40&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">e&lt;/span> &lt;span class="mi">50&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="extracting-components">Extracting Components&lt;/h3>
+&lt;p>We can get the index and values of a series using the &lt;code>index&lt;/code> and &lt;code>values&lt;/code> attributes. The values of a series are always stored as a &lt;u>numpy&lt;/u> array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">a&lt;/span> &lt;span class="mi">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">b&lt;/span> &lt;span class="mi">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">c&lt;/span> &lt;span class="mi">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">d&lt;/span> &lt;span class="mi">40&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">e&lt;/span> &lt;span class="mi">50&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_series&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">index&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_series&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">values&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Index&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;b&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;c&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;object&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="mi">10&lt;/span> &lt;span class="mi">20&lt;/span> &lt;span class="mi">30&lt;/span> &lt;span class="mi">40&lt;/span> &lt;span class="mi">50&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dictionary-to-series">Dictionary to Series&lt;/h3>
+&lt;p>A Series can be also created from a dictionary. The keys of the dictionary will be used as the index labels.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">population_dict&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39;Amsterdam&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">821752&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Rotterdam&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">623652&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;The Hague&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">514861&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Utrecht&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">345043&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Eindhoven&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">223027&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">population&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Series&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population_dict&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mi">514861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mi">345043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mi">223027&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="name-attribute">Name Attribute&lt;/h3>
+&lt;p>Both the Series object itself and its index have a &lt;code>name&lt;/code> attribute. This can be useful when you are working with multiple series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">population&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;Population&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">population&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">index&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;City&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mi">514861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mi">345043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mi">223027&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="accessing-elements-1">Accessing Elements (1)&lt;/h3>
+&lt;p>We can access the elements of a series using the index labels.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Amsterdam&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Rotterdam&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="accessing-elements-2">Accessing Elements (2)&lt;/h3>
+&lt;p>We can also access the elements of a series using the index positions.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="slicing-a-series-1">Slicing a Series (1)&lt;/h3>
+&lt;p>We can also slice a series using the index labels.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mi">514861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mi">345043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mi">223027&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Amsterdam&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s1">&amp;#39;Utrecht&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mi">514861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mi">345043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="slicing-a-series-2">Slicing a Series (2)&lt;/h3>
+&lt;p>Instead of using the index labels, we can also use the index positions to slice a series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mi">514861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mi">345043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mi">223027&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">[:&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="arithmetic-operations-1">Arithmetic Operations (1)&lt;/h3>
+&lt;p>We can perform arithmetic operations on a series. The operations will be applied to each element of the series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mi">514861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mi">345043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mi">223027&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">1000&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mf">821.752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mf">623.652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mf">514.861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mf">345.043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mf">223.027&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="arithmetic-operations-2">Arithmetic Operations (2)&lt;/h3>
+&lt;p>We can also perform arithmetic operations between two series. The operations will be applied to each element of the series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">series1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Series&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">index&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;b&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;c&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">series2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Series&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">6&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">9&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">index&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;b&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;f&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">series1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">series2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">a&lt;/span> &lt;span class="mf">7.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">b&lt;/span> &lt;span class="mf">9.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">c&lt;/span> &lt;span class="n">NaN&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">d&lt;/span> &lt;span class="mf">12.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">e&lt;/span> &lt;span class="mf">14.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">f&lt;/span> &lt;span class="n">NaN&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="boolean-operations">Boolean Operations&lt;/h3>
+&lt;p>We can also perform boolean operations on a series. The result will be a boolean series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mi">514861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mi">345043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mi">223027&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">500000&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="kc">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="kc">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">bool&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="filtering-a-series">Filtering a Series&lt;/h3>
+&lt;p>We can use the boolean series to filter the original series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mi">514861&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mi">345043&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mi">223027&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">population&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">500000&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">City&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mi">821752&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mi">623652&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="series-methods">Series Methods&lt;/h3>
+&lt;p>Series objects have many useful methods that can be used to perform calculations on the data.
+For example, we can use the &lt;code>describe()&lt;/code> method to get some basic statistics about the series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">population&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">describe&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">count&lt;/span> &lt;span class="mf">5.000000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mean&lt;/span> &lt;span class="mf">505667.000000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">std&lt;/span> &lt;span class="mf">234307.573534&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">min&lt;/span> &lt;span class="mf">223027.000000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">25&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="mf">345043.000000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">50&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="mf">514861.000000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">75&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="mf">623652.000000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">max&lt;/span> &lt;span class="mf">821752.000000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Population&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can find a list of all the methods &lt;a href="https://pandas.pydata.org/pandas-docs/stable/reference/series.html" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+&lt;hr>
+&lt;h3 id="unique-values">Unique Values&lt;/h3>
+&lt;p>We can use the &lt;code>unique()&lt;/code> and &lt;code>nunique()&lt;/code> methods to get the unique values and the number of unique values.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="n">Utrecht&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="n">Leiden&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="n">Utrecht&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="n">Radboud&lt;/span> &lt;span class="n">University&lt;/span> &lt;span class="n">Nijmegen&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="n">Leiden&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">5&lt;/span> &lt;span class="n">University&lt;/span> &lt;span class="n">of&lt;/span> &lt;span class="n">Groningen&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">6&lt;/span> &lt;span class="n">Tilburg&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">universities&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">unique&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">universities&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">nunique&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Utrecht University&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;Leiden University&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;Radboud University Nijmegen&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;University of Groningen&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;Tilburg University&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="value-counts">Value Counts&lt;/h3>
+&lt;p>We can use the &lt;code>value_counts()&lt;/code> method to get the number of times each value appears in the series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="n">Utrecht&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="n">Leiden&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="n">Utrecht&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="n">Radboud&lt;/span> &lt;span class="n">University&lt;/span> &lt;span class="n">Nijmegen&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="n">Leiden&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">5&lt;/span> &lt;span class="n">University&lt;/span> &lt;span class="n">of&lt;/span> &lt;span class="n">Groningen&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">6&lt;/span> &lt;span class="n">Tilburg&lt;/span> &lt;span class="n">University&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">universities&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value_counts&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="n">University&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Leiden&lt;/span> &lt;span class="n">University&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Radboud&lt;/span> &lt;span class="n">University&lt;/span> &lt;span class="n">Nijmegen&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">University&lt;/span> &lt;span class="n">of&lt;/span> &lt;span class="n">Groningen&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tilburg&lt;/span> &lt;span class="n">University&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="ascending-sort">Ascending Sort&lt;/h3>
+&lt;p>We can use the &lt;code>sort_values()&lt;/code> method to sort the series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">area&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Series&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="s1">&amp;#39;Rotterdam&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">41.4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Utrecht&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">30.5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Amsterdam&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">219.3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Eindhoven&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">30.5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;The Hague&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">31.4&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sort_values&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mf">31.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mf">41.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mf">219.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="descending-sort">Descending Sort&lt;/h3>
+&lt;p>We can also sort the series in descending order using the &lt;code>ascending&lt;/code> parameter.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sort_values&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ascending&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mf">219.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mf">41.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mf">31.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="inplace-argument">Inplace Argument&lt;/h3>
+&lt;p>The result of the &lt;code>sort_values()&lt;/code> method is a new series, so we need to assign it to a variable if we want to keep it. We can also sort the series in-place using the &lt;code>inplace&lt;/code> parameter.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sort_values&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ascending&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">inplace&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">area&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mf">219.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mf">41.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mf">31.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="sorting-by-index">Sorting by Index&lt;/h3>
+&lt;p>We can also sort the series by the index using the &lt;code>sort_index()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mf">41.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mf">219.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mf">31.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sort_index&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mf">219.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mf">41.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mf">31.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="nan-values-1">NaN Values (1)&lt;/h3>
+&lt;p>NaN values are used to represent missing data. We can use the &lt;code>isnull()&lt;/code> method to check for NaN values.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="mf">41.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="mf">219.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Maastricht&lt;/span> &lt;span class="n">NaN&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="mf">30.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="mf">31.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isnull&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Rotterdam&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Utrecht&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Amsterdam&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Maastricht&lt;/span> &lt;span class="kc">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Eindhoven&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">The&lt;/span> &lt;span class="n">Hague&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">bool&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="nan-values-2">NaN Values (2)&lt;/h3>
+&lt;p>We can use the &lt;code>sum()&lt;/code> method to count the number of NaN values.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isnull&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sum&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="aggregation">Aggregation&lt;/h3>
+&lt;p>Similar to numpy arrays, we can use many aggregation methods on a series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sum&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mf">353.1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mean&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mf">70.62&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">area&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">std&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mf">83.24209872414319&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dataframe">DataFrame&lt;/h3>
+&lt;p>A DataFrame is a 2-dimensional data structure that can store data of different types in each column. It is similar to a spreadsheet or a SQL table.&lt;/p>
+&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b>
+While a DataFrame is physically 2-dimensional, but it can be used to represent higher dimensional data in a tabular format using &lt;a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#hierarchical-indexing-multiindex">hierarchical indexing&lt;/a>.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="dataframe-components">DataFrame Components&lt;/h3>
+&lt;p>A DataFrame is made up of three components:&lt;br>
+the index, the columns, and the data.&lt;/p>
+&lt;img src="DataFrameExample1.jpg" style="max-width:320px">
+&lt;hr>
+&lt;h3 id="dataframe-creation-1">DataFrame Creation (1)&lt;/h3>
+&lt;p>The most straightforward way to create a DataFrame is to pass a dictionary to the &lt;code>pd.DataFrame()&lt;/code> constructor.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Valheim&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Among Us&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Minecraft&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Fortnite&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genshin Impact&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">2021&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2018&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2011&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2017&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Survival&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Social Deduction&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Sandbox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Battle Royale&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Action RPG&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Iron Gate Studio&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;InnerSloth&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Mojang&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Epic Games&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;miHoYo&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">19.99&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">4.99&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">26.95&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.00&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.00&lt;/span>&lt;span class="p">]}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dataframe-creation-2">DataFrame Creation (2)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameExample2.jpg" style="max-width:700px">
+&lt;hr>
+&lt;h3 id="dataframe-creation-3">DataFrame Creation (3)&lt;/h3>
+&lt;p>We could also pass a list of dictionaries to the &lt;code>pd.DataFrame()&lt;/code> constructor.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[{&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Valheim&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2021&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Survival&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Iron Gate Studio&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">19.99&lt;/span>&lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Among Us&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2018&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Social Deduction&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;InnerSloth&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">4.99&lt;/span>&lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Minecraft&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2011&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Sandbox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Mojang&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">26.95&lt;/span>&lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Fortnite&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2017&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Battle Royale&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Epic Games&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">0.00&lt;/span>&lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Genshin Impact&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Action RPG&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;miHoYo&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">0.00&lt;/span>&lt;span class="p">}]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dataframe-creation-4">DataFrame Creation (4)&lt;/h3>
+&lt;p>We could also pass a list of lists or tuples to the &lt;code>pd.DataFrame()&lt;/code> constructor.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[[&lt;/span>&lt;span class="s1">&amp;#39;Valheim&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2021&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Survival&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Iron Gate Studio&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">19.99&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Among Us&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2018&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Social Deduction&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;InnerSloth&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">4.99&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Minecraft&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2011&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Sandbox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Mojang&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">26.95&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Fortnite&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2017&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Battle Royale&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Epic Games&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.00&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Genshin Impact&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Action RPG&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;miHoYo&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.00&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">columns&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="head-and-tail">Head and Tail&lt;/h3>
+&lt;p>We can see the first &lt;code>n&lt;/code> rows and the last &lt;code>n&lt;/code> rows of a DataFrame using the &lt;code>head(n)&lt;/code> and &lt;code>tail(n)&lt;/code> methods. The default value of &lt;code>n&lt;/code> is 5.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">head&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameExample3.jpg" style="max-width:660px">
+&lt;hr>
+&lt;h3 id="sample">Sample&lt;/h3>
+&lt;p>We can also get a random sample of &lt;code>n&lt;/code> rows using the &lt;code>sample(n)&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sample&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameExample4.jpg" style="max-width:659px">
+&lt;hr>
+&lt;h3 id="get-column-names">Get Column Names&lt;/h3>
+&lt;p>We can get the column names of a DataFrame using the &lt;code>columns&lt;/code> attribute.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">columns&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Index&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;object&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We can also get the column names as a list using the &lt;code>tolist()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">columns&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tolist&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="rename-columns">Rename Columns&lt;/h3>
+&lt;p>We can rename the columns of a DataFrame using the &lt;code>rename()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">rename&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">columns&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39;Name&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Game&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Year&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Release Year&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Genre&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Game Genre&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Developer&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Game Developer&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Price&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">},&lt;/span> &lt;span class="n">inplace&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># or df.columns = [&amp;#39;Game&amp;#39;, &amp;#39;Release Year&amp;#39;, &amp;#39;Game Genre&amp;#39;, &amp;#39;Game Developer&amp;#39;, &amp;#39;Game Price&amp;#39;]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameExample5.jpg" style="max-width:700px">
+&lt;hr>
+&lt;h3 id="column-data-types">Column Data Types&lt;/h3>
+&lt;p>We can get the type of a column using the &lt;code>dtypes&lt;/code> attribute.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dtypes&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Game&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Release&lt;/span> &lt;span class="n">Year&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Game&lt;/span> &lt;span class="n">Genre&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Game&lt;/span> &lt;span class="n">Developer&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Game&lt;/span> &lt;span class="n">Price&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Genre&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dtype&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;O&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="retrieve-a-column">Retrieve A Column&lt;/h3>
+&lt;p>We can retrieve the values of a column using the &lt;code>[]&lt;/code> operator. If the column name is a string with no spaces, we can also use the &lt;code>.&lt;/code> operator. The result is a Series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Game&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="n">Valheim&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="n">Among&lt;/span> &lt;span class="n">Us&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="n">Minecraft&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="n">Fortnite&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="n">Genshin&lt;/span> &lt;span class="n">Impact&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Game&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="retrieve-multiple-columns">Retrieve Multiple Columns&lt;/h3>
+&lt;p>We can also retrieve multiple columns. The result is a DataFrame with only the selected columns.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">[[&lt;/span>&lt;span class="s1">&amp;#39;Game&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Game Genre&amp;#39;&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameExample6.jpg" style="max-width:385px">
+&lt;hr>
+&lt;h3 id="get-index">Get Index&lt;/h3>
+&lt;p>We can get the index of a DataFrame using the &lt;code>index&lt;/code> attribute.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">index&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">RangeIndex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">start&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">stop&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">step&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>RangeIndex&lt;/code> is a special type of index that is used when the index is a sequence of numbers. We can also get the index as a list using the &lt;code>tolist()&lt;/code> method.&lt;/p>
+&lt;hr>
+&lt;h3 id="set-index">Set Index&lt;/h3>
+&lt;p>We can set the index of a DataFrame using the &lt;code>set_index()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">set_index&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Game&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">inplace&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameExample7.jpg" style="max-width:800px">
+&lt;hr>
+&lt;h3 id="reset-index">Reset Index&lt;/h3>
+&lt;p>We can reset the index of a DataFrame using the &lt;code>reset_index()&lt;/code> method. The &lt;code>drop&lt;/code> parameter determines whether the old index is dropped or not.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">reset_index&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">drop&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">inplace&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameExample5.jpg" style="max-width:700px">
+&lt;hr>
+&lt;h3 id="retrieve-a-row">Retrieve A Row&lt;/h3>
+&lt;p>We can retrieve a row using the &lt;code>loc[]&lt;/code> or &lt;code>iloc[]&lt;/code> operator. The difference between the two is that &lt;code>loc&lt;/code> uses the index &lt;u>label&lt;/u>, while &lt;code>iloc&lt;/code> uses the index &lt;u>position&lt;/u>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">([[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="p">]],&lt;/span> &lt;span class="n">index&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">columns&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">iloc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">col1&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">col2&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">loc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="ne">KeyError&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="slice-rows">Slice Rows&lt;/h3>
+&lt;p>We can also slice rows using the &lt;code>loc[]&lt;/code> or &lt;code>iloc[]&lt;/code> operator. Be aware that the &lt;code>loc&lt;/code> operator includes the last index, while the &lt;code>iloc&lt;/code> operator does not.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="mi">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mi">7&lt;/span> &lt;span class="mi">8&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">iloc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="mi">5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">loc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="mi">5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="retrieve-a-cell">Retrieve A Cell&lt;/h3>
+&lt;p>The &lt;code>loc[]&lt;/code> and &lt;code>iloc[]&lt;/code> operators can also be used to retrieve a cell.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="mi">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mi">7&lt;/span> &lt;span class="mi">8&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">iloc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">loc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="changing-values">Changing Values&lt;/h3>
+&lt;p>We can change the values of a cell after retrieving it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">iloc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="mi">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mi">7&lt;/span> &lt;span class="mi">8&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">loc&lt;/span>&lt;span class="p">[[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">100&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="mi">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mi">7&lt;/span> &lt;span class="mi">100&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="replace-values">Replace Values&lt;/h3>
+&lt;p>We can replace values in a DataFrame using the &lt;code>replace()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">200&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="mi">200&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mi">7&lt;/span> &lt;span class="mi">200&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dataframe-info">DataFrame Info&lt;/h3>
+&lt;p>We can get a summary of a DataFrame using the &lt;code>info()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="err">&amp;#39;&lt;/span>&lt;span class="nc">pandas&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">core&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">frame&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="s1">&amp;#39;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RangeIndex&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="n">entries&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Data&lt;/span> &lt;span class="n">columns&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">total&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="n">columns&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># Column Non-Null Count Dtype &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">---&lt;/span> &lt;span class="o">------&lt;/span> &lt;span class="o">--------------&lt;/span> &lt;span class="o">-----&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">0&lt;/span> &lt;span class="n">Game&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="n">non&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">null&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">1&lt;/span> &lt;span class="n">Game&lt;/span> &lt;span class="n">Genre&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="n">non&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">null&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">2&lt;/span> &lt;span class="n">Game&lt;/span> &lt;span class="n">Developer&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="n">non&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">null&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">3&lt;/span> &lt;span class="n">Release&lt;/span> &lt;span class="n">Year&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="n">non&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">null&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">4&lt;/span> &lt;span class="n">Game&lt;/span> &lt;span class="n">Price&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="n">non&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">null&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtypes&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">int64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nb">object&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">memory&lt;/span> &lt;span class="n">usage&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">328.0&lt;/span>&lt;span class="o">+&lt;/span> &lt;span class="nb">bytes&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dataframe-description">DataFrame Description&lt;/h3>
+&lt;p>We can also get a description of a DataFrame.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">describe&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameDescribe.jpg" style="max-width:380px">
+&lt;hr>
+&lt;h3 id="casting-data-types">Casting Data Types&lt;/h3>
+&lt;p>Similar to NumPy, we can cast the data types of a DataFrame using the &lt;code>astype()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">astype&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;int64&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="apply-function">Apply Function&lt;/h3>
+&lt;p>Using the &lt;code>apply()&lt;/code> method, we can apply a function to a column, row, or DataFrame.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">dollar_to_euro&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">price&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">price&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">0.92&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">apply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dollar_to_euro&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Or df[&amp;#39;Game Price&amp;#39;] = df[&amp;#39;Game Price&amp;#39;].apply(lambda price: price * 0.92)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mf">17.48&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mf">3.68&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mf">23.92&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mf">0.00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="mf">0.00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Game&lt;/span> &lt;span class="n">Price&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="map-function">Map Function&lt;/h3>
+&lt;p>The &lt;code>map()&lt;/code> method is similar to the &lt;code>apply()&lt;/code> method, but it is used to map values from one set to another.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Genre&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">map&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="s1">&amp;#39;Action RPG&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Battle Royale&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Sandbox&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Survival&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Social Deduction&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Game&lt;/span> &lt;span class="n">Genre&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="sorting">Sorting&lt;/h3>
+&lt;p>We can sort a DataFrame using the &lt;code>sort_values()&lt;/code> method. The &lt;code>by&lt;/code> parameter determines which column to sort by. The &lt;code>ascending&lt;/code> parameter determines whether to sort in ascending or descending order.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sort_values&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">by&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ascending&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameSort.jpg" style="max-width:700px">
+&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b>
+Don't forget to set &lt;code>inplace=True&lt;/code> if you want to replace the original DataFrame.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="drop-entries">Drop Entries&lt;/h3>
+&lt;p>We can drop entries from a DataFrame using the &lt;code>drop()&lt;/code> method. The &lt;code>axis&lt;/code> parameter determines whether to drop rows or columns. The &lt;code>inplace&lt;/code> parameter determines whether to drop the entries in the original DataFrame or not.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">drop&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">axis&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameDrop.jpg" style="max-width:700px">
+&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b>
+Don't forget to set &lt;code>inplace=True&lt;/code> if you want to drop the entries in the original DataFrame.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="drop-columns">Drop Columns&lt;/h3>
+&lt;p>The &lt;code>drop()&lt;/code> method can also be used to drop columns.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">drop&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s1">&amp;#39;Game Genre&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Game Developer&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">axis&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Or df.drop(columns=[&amp;#39;Game Genre&amp;#39;, &amp;#39;Game Developer&amp;#39;])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameDropCol.jpg" style="max-width:500px">
+&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b>
+Don't forget to set &lt;code>inplace=True&lt;/code> if you want to drop the columns in the original DataFrame.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="filtering-1">Filtering (1)&lt;/h3>
+&lt;p>We can use boolean indexing to filter entries.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">20&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">0 False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1 False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2 True
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3 False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">4 False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Name: Game Price, dtype: bool
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">loc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameFilter1.jpg" style="max-width:700px">
+&lt;hr>
+&lt;h3 id="filtering-2">Filtering (2)&lt;/h3>
+&lt;p>We can change the values of retrieved entries.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">loc&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">*=&lt;/span> &lt;span class="mf">0.9&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameFilter2.jpg" style="max-width:700px">
+&lt;hr>
+&lt;h3 id="filtering-3">Filtering (3)&lt;/h3>
+&lt;p>We can also use the &lt;code>isin()&lt;/code> method to check if a value is in a list.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Genre&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isin&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s1">&amp;#39;Survival&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Battle Royale&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="kc">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="kc">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Game&lt;/span> &lt;span class="n">Genre&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">bool&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="filtering-4">Filtering (4)&lt;/h3>
+&lt;p>We can use logical operators to filter based on multiple conditions.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">loc&lt;/span>&lt;span class="p">[(&lt;/span>&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">&amp;amp;&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Release Year&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">2018&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameFilter3.jpg" style="max-width:700px">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">loc&lt;/span>&lt;span class="p">[(&lt;/span>&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Price&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">|&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Game Genre&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;Survival&amp;#39;&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameFilter4.jpg" style="max-width:700px">
+&lt;hr>
+&lt;h3 id="remove-duplicates">Remove Duplicates&lt;/h3>
+&lt;p>We can remove duplicate entries using the &lt;code>drop_duplicates()&lt;/code> method. The &lt;code>keep&lt;/code> parameter determines whether to keep the first or last entry.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">]})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df2&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">drop_duplicates&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">keep&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;first&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">6&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="missing-values-1">Missing Values (1)&lt;/h3>
+&lt;p>We can check for missing values using the &lt;code>isnull()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">nan&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">nan&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">]})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isnull&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="kc">False&lt;/span> &lt;span class="kc">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="kc">False&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="kc">False&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="kc">True&lt;/span> &lt;span class="kc">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="missing-values-2">Missing Values (2)&lt;/h3>
+&lt;p>We can drop missing values using the &lt;code>dropna()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dropna&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b>
+Don't forget to set &lt;code>inplace=True&lt;/code> if you want to drop the missing values in the original DataFrame.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="missing-values-3">Missing Values (3)&lt;/h3>
+&lt;p>We can fill missing values using the &lt;code>fillna()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fillna&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b>
+Don't forget to set &lt;code>inplace=True&lt;/code> if you want to fill the missing values in the original DataFrame.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="missing-values-4">Missing Values (4)&lt;/h3>
+&lt;p>A common way to fill missing values is to use a statistic such as the mean, median, or mode of the column.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df3&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fillna&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">df3&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mean&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mf">1.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mf">2.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mf">3.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mf">2.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">col1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;b style="color:orange">Note:&lt;/b>
+Don't forget to set &lt;code>inplace=True&lt;/code> if you want to fill the missing values in the original DataFrame.
+&lt;/div>
+&lt;hr>
+&lt;h3 id="date-and-time-1">Date and Time (1)&lt;/h3>
+&lt;p>The &lt;code>to_datetime()&lt;/code> method can be used to convert a column to a datetime object.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df4&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;2019-08-02&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;2020-09-25&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;2023-01-03&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;2021-12-01 12:00:00&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;2020-05-21 04:30:00&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;2023-02-04 12:40:00&amp;#39;&lt;/span>&lt;span class="p">]})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_datetime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">df4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col1&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_datetime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">df4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">2019&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">08&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span> &lt;span class="mi">2021&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">12&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">01&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">09&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">25&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">05&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">21&lt;/span> &lt;span class="mi">04&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">30&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">2023&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">01&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">03&lt;/span> &lt;span class="mi">2023&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">04&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">40&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df4&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dtypes&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">col1&lt;/span> &lt;span class="n">datetime64&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">ns&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">col2&lt;/span> &lt;span class="n">datetime64&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">ns&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="date-and-time-2">Date and Time (2)&lt;/h3>
+&lt;p>We can extract the year, month, day, hour, minute, and second from a datetime object.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">year&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">2021&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">2020&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">2023&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">col2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">minute&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">40&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">col2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="date-and-time-3">Date and Time (3)&lt;/h3>
+&lt;p>A datetime object can be converted to a string using the &lt;code>strftime()&lt;/code> method.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strftime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;%Y-%m-&lt;/span>&lt;span class="si">%d&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">2021&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">12&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">01&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">05&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">21&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">2023&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">04&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">col2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">object&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="date-and-time-4">Date and Time (4)&lt;/h3>
+&lt;p>We can use the &lt;code>timedelta()&lt;/code> method to add or subtract a number of days, hours, minutes, or seconds from a datetime object.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col1&lt;/span> &lt;span class="n">col2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">2019&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">08&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span> &lt;span class="mi">2021&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">12&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">01&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">09&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">25&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">05&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">21&lt;/span> &lt;span class="mi">04&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">30&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">2023&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">01&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">03&lt;/span> &lt;span class="mi">2023&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">04&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">40&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col2&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Timedelta&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">days&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">0&lt;/span> &lt;span class="mi">2021&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">12&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mi">2020&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">05&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">22&lt;/span> &lt;span class="mi">04&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">30&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">2023&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">05&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">40&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">col2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">datetime64&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">ns&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="data-file-io-1">Data File I/O (1)&lt;/h3>
+&lt;p>Pandas can read and write data from a variety of file formats. The most common file formats are CSV, Excel, and JSON.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_csv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.csv&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_excel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.xlsx&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_json&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.json&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_csv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.csv&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_excel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.xlsx&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_json&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.json&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="data-file-io-2">Data File I/O (2)&lt;/h3>
+&lt;p>The &lt;code>read_csv()&lt;/code> method has a number of useful parameters. The following table shows some of the most commonly used parameters.&lt;/p>
+&lt;div style="font-size:20px">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>sep&lt;/code>&lt;/td>
+&lt;td>Delimiter to use. Default is comma (,).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>header&lt;/code>&lt;/td>
+&lt;td>Row number to use as the column names. Default is &lt;code>0&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>index_col&lt;/code>&lt;/td>
+&lt;td>Column number to use as the index. Default is &lt;code>None&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>skiprows&lt;/code>&lt;/td>
+&lt;td>List of row numbers or number of rows to skip at the start of the file. Default is &lt;code>None&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>na_values&lt;/code>&lt;/td>
+&lt;td>Sequence of values to replace with &lt;code>NaN&lt;/code>. Default is &lt;code>None&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>parse_dates&lt;/code>&lt;/td>
+&lt;td>Attempt to parse data to datetime. Default is &lt;code>False&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>encoding&lt;/code>&lt;/td>
+&lt;td>Text encoding to use when reading/writing the file. Default is &lt;code>None&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h3 id="read-json-example">Read JSON Example&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;col1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;A&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;B&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;C&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;col2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">9&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_json&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.json&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="ReadJSON.jpg" style="max-width:150px">
+&lt;hr>
+&lt;h3 id="read-csv-example-1">Read CSV Example (1)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">col1,col2,col3,col4
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">A,3,2019-01-01,الف
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">?,6,2019-01-02,ب
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">C,10,2019-01-03,N/A
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_csv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.csv&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">na_values&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;N/A&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;?&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">parse_dates&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;col4&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">encoding&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="ReadCSV.jpg" style="max-width:320px">
+&lt;hr>
+&lt;h3 id="read-csv-example-2">Read CSV Example (2)&lt;/h3>
+&lt;p>imdb = pd.read_csv(&amp;lsquo;imdb.csv&amp;rsquo;)&lt;/p>
+&lt;hr>
+&lt;h3 id="grouping-1">Grouping (1)&lt;/h3></description></item><item><title>Offline Signature Verification with Convolutional Neural Networks (CNNs)</title><link>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</link><pubDate>Wed, 22 Feb 2023 20:15:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</guid><description>&lt;p>Signature verification has practical applications in various fields, particularly for security, legal, and financial purposes. Deep learning (DL) models have been proved to be promising in recognizing handwritten signatures, with high accuracy. In this expriment, we investigate the use of the InceptionV3, a pre-trained convolutional neural network (CNN), for signature classification.&lt;/p>
 &lt;div class="alert alert-note">
 &lt;div>
 This project was done as part of the Pattern Recognition course at the Iran University of Science and Technology in the Fall of 2020.
