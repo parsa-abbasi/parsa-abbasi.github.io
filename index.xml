@@ -1740,7 +1740,7 @@ Don't forget to set &lt;code>inplace=True&lt;/code> if you want to fill the miss
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mi">2023&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">05&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">40&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">00&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">col2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">datetime64&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">ns&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="data-file-io-1">Data File I/O (1)&lt;/h3>
+&lt;h3 id="data-file-io">Data File I/O&lt;/h3>
 &lt;p>Pandas can read and write data from a variety of file formats. The most common file formats are CSV, Excel, and JSON.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_csv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.csv&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_excel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.xlsx&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
@@ -1749,7 +1749,50 @@ Don't forget to set &lt;code>inplace=True&lt;/code> if you want to fill the miss
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_excel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.xlsx&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_json&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.json&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="data-file-io-2">Data File I/O (2)&lt;/h3>
+&lt;h3 id="read-json-example">Read JSON Example&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;col1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;A&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;B&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;C&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;col2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">9&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_json&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.json&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="ReadJSON.jpg" style="max-width:150px">
+&lt;hr>
+&lt;h3 id="write-csv-parameters">Write CSV Parameters&lt;/h3>
+&lt;p>The &lt;code>to_csv()&lt;/code> method has a number of useful parameters. The following table shows some of the most commonly used parameters.&lt;/p>
+&lt;div style="font-size:20px">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>index&lt;/code>&lt;/td>
+&lt;td>Write row names (index). Default is &lt;code>True&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>header&lt;/code>&lt;/td>
+&lt;td>Write column names. Default is &lt;code>True&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>sep&lt;/code>&lt;/td>
+&lt;td>Delimiter to use. Default is comma (,).&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h3 id="read-csv-parameters">Read CSV Parameters&lt;/h3>
 &lt;p>The &lt;code>read_csv()&lt;/code> method has a number of useful parameters. The following table shows some of the most commonly used parameters.&lt;/p>
 &lt;div style="font-size:20px">
 &lt;table>
@@ -1792,22 +1835,6 @@ Don't forget to set &lt;code>inplace=True&lt;/code> if you want to fill the miss
 &lt;/table>
 &lt;/div>
 &lt;hr>
-&lt;h3 id="read-json-example">Read JSON Example&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;col1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;A&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;B&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;C&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;col2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;1&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;2&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">9&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_json&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;data.json&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="ReadJSON.jpg" style="max-width:150px">
-&lt;hr>
 &lt;h3 id="read-csv-example-1">Read CSV Example (1)&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">col1,col2,col3,col4
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">A,3,2019-01-01,الف
@@ -1818,9 +1845,108 @@ Don't forget to set &lt;code>inplace=True&lt;/code> if you want to fill the miss
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="ReadCSV.jpg" style="max-width:320px">
 &lt;hr>
 &lt;h3 id="read-csv-example-2">Read CSV Example (2)&lt;/h3>
-&lt;p>imdb = pd.read_csv(&amp;lsquo;imdb.csv&amp;rsquo;)&lt;/p>
+&lt;p>We can also use the &lt;code>read_csv()&lt;/code> method to read data from a URL.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">imdb&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_csv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;https://parsa-abbasi.github.io/slides/pandas/imdb_top_250_movies.csv&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">index_col&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;rank&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">imdb&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">head&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="DataFrameIMDB.jpg">
 &lt;hr>
-&lt;h3 id="grouping-1">Grouping (1)&lt;/h3></description></item><item><title>Offline Signature Verification with Convolutional Neural Networks (CNNs)</title><link>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</link><pubDate>Wed, 22 Feb 2023 20:15:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</guid><description>&lt;p>Signature verification has practical applications in various fields, particularly for security, legal, and financial purposes. Deep learning (DL) models have been proved to be promising in recognizing handwritten signatures, with high accuracy. In this expriment, we investigate the use of the InceptionV3, a pre-trained convolutional neural network (CNN), for signature classification.&lt;/p>
+&lt;h3 id="grouping-1">Grouping (1)&lt;/h3>
+&lt;p>The &lt;code>groupby()&lt;/code> method can be used to group rows of data based on one or more columns. The result of the &lt;code>groupby()&lt;/code> method is a &lt;code>DataFrameGroupBy&lt;/code> object.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">imdb&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">groupby&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;year&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">pandas&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">core&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">groupby&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">generic&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrameGroupBy&lt;/span> &lt;span class="nb">object&lt;/span> &lt;span class="n">at&lt;/span> &lt;span class="mh">0x0000020B1B5B0A90&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="grouping-2">Grouping (2)&lt;/h3>
+&lt;p>The &lt;code>DataFrameGroupBy&lt;/code> object has a number of useful methods. The following table shows some of the most commonly used methods.&lt;/p>
+&lt;div style="font-size:20px">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Method&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>count()&lt;/code>&lt;/td>
+&lt;td>Number of non-NA values.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>sum()&lt;/code>&lt;/td>
+&lt;td>Sum of values.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>mean()&lt;/code>&lt;/td>
+&lt;td>Mean of values.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>median()&lt;/code>&lt;/td>
+&lt;td>Arithmetic median of values.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>min()&lt;/code>&lt;/td>
+&lt;td>Minimum.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>max()&lt;/code>&lt;/td>
+&lt;td>Maximum.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>size()&lt;/code>&lt;/td>
+&lt;td>Number of elements in the object.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h3 id="grouping-example-1">Grouping Example (1)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">imdb&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">groupby&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;year&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">count&lt;/span>&lt;span class="p">()[&lt;/span>&lt;span class="s1">&amp;#39;name&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">year&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1921&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1924&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1925&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1926&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1927&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">..&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2018&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2019&lt;/span> &lt;span class="mi">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2020&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2021&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2022&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Length&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">86&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="grouping-example-2">Grouping Example (2)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">imdb&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">groupby&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;year&amp;#39;&lt;/span>&lt;span class="p">)[&lt;/span>&lt;span class="s1">&amp;#39;rating&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mean&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">year&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1921&lt;/span> &lt;span class="mf">8.30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1924&lt;/span> &lt;span class="mf">8.20&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1925&lt;/span> &lt;span class="mf">8.10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1926&lt;/span> &lt;span class="mf">8.10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1927&lt;/span> &lt;span class="mf">8.30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2018&lt;/span> &lt;span class="mf">8.35&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2019&lt;/span> &lt;span class="mf">8.30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2020&lt;/span> &lt;span class="mf">8.30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2021&lt;/span> &lt;span class="mf">8.50&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2022&lt;/span> &lt;span class="mf">8.30&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">rating&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Length&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">86&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="transforming">Transforming&lt;/h3>
+&lt;p>The &lt;code>transform()&lt;/code> method can be used to apply a function to each group independently. The result of the &lt;code>transform()&lt;/code> method is a &lt;code>Series&lt;/code> object.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">imdb&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">groupby&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;year&amp;#39;&lt;/span>&lt;span class="p">)[&lt;/span>&lt;span class="s1">&amp;#39;rating&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">transform&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">lambda&lt;/span> &lt;span class="n">x&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">x&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mean&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">rank&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">1&lt;/span> &lt;span class="mf">0.500000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="mf">0.000000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">3&lt;/span> &lt;span class="mf">0.500000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">4&lt;/span> &lt;span class="mf">0.400000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">5&lt;/span> &lt;span class="mf">0.633333&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">246&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mf">0.140000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">247&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mf">0.060000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">248&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mf">0.166667&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">249&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mf">0.100000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">250&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mf">0.350000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">rating&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Length&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">250&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dtype&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">float64&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr></description></item><item><title>Offline Signature Verification with Convolutional Neural Networks (CNNs)</title><link>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</link><pubDate>Wed, 22 Feb 2023 20:15:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/project/signature-verification-with-cnn/</guid><description>&lt;p>Signature verification has practical applications in various fields, particularly for security, legal, and financial purposes. Deep learning (DL) models have been proved to be promising in recognizing handwritten signatures, with high accuracy. In this expriment, we investigate the use of the InceptionV3, a pre-trained convolutional neural network (CNN), for signature classification.&lt;/p>
 &lt;div class="alert alert-note">
 &lt;div>
 This project was done as part of the Pattern Recognition course at the Iran University of Science and Technology in the Fall of 2020.
