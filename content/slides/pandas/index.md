@@ -1653,3 +1653,467 @@ Name: rating, Length: 250, dtype: float64
 ```
 
 ---
+
+### Merge / Join
+The `merge()` method can be used to join two `DataFrame` objects. The following table shows some of the most commonly used parameters.
+
+<div style="font-size:20px">
+<table>
+        <thead>
+                <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                </tr>
+        </thead>
+        <tbody>
+                <tr>
+                        <td><code>left</code></td>
+                        <td>Left `DataFrame` object.</td>
+                </tr>
+                <tr>
+                        <td><code>right</code></td>
+                        <td>Right `DataFrame` object.</td>
+                </tr>
+                <tr>
+                        <td><code>how</code></td>
+                        <td>One of <code>left</code>, <code>right</code>, <code>outer</code>, <code>inner</code>, <code>cross</code>. Default is <code>inner</code>.</td>
+                </tr>
+                <tr>
+                        <td><code>on</code></td>
+                        <td>Column(s) to join on. Must be found in both the left and right `DataFrame` objects.</td>
+                </tr>
+                <tr>
+                        <td><code>left_on</code></td>
+                        <td>Column(s) in the left `DataFrame` to use as the join keys.</td>
+                </tr>
+                <tr>
+                        <td><code>right_on</code></td>
+                        <td>Column(s) in the right `DataFrame` to use as the join keys.</td>
+                </tr>
+                <tr>
+                        <td><code>left_index</code></td>
+                        <td>Use the index from the left `DataFrame` as its join key(s). Default is <code>False</code>.</td>
+                </tr>
+                <tr>
+                        <td><code>right_index</code></td>
+                        <td>Use the index from the right `DataFrame` as its join key(s). Default is <code>False</code>.</td>
+                </tr>
+        </tbody>
+</table>
+</div>
+
+---
+
+### Merge How Parameter (1)
+The following table shows some of the most commonly used values for the `how` parameter.
+
+<div style="font-size:20px">
+<table>
+        <thead>
+                <tr>
+                        <th>Value</th>
+                        <th>Description</th>
+                </tr>
+        </thead>
+        <tbody>
+                <tr>
+                        <td><code>inner</code></td>
+                        <td>Use intersection of keys from both `DataFrame` objects.</td>
+                </tr>
+                <tr>
+                        <td><code>left</code></td>
+                        <td>Use only keys from left `DataFrame` object.</td>
+                </tr>
+                <tr>
+                        <td><code>right</code></td>
+                        <td>Use only keys from right `DataFrame` object.</td>
+                </tr>
+                <tr>
+                        <td><code>outer</code></td>
+                        <td>Use union of keys from both `DataFrame` objects.</td>
+                </tr>
+                <tr>
+                        <td><code>cross</code></td>
+                        <td>Use cartesian product with each row from the left `DataFrame` object being paired with each row from the right `DataFrame` object.</td>
+                </tr>
+        </tbody>
+</table>
+</div>
+
+---
+
+### Merge How Parameter (2)
+
+<img src="Join.png" style="max-width:60%; margin-bottom:0">
+<div style="font-size:16px">
+<b>Source:</b>
+<a href="https://datagy.io/pandas-merge-concat/">datagy</a>
+</div>
+
+---
+
+### Inner Join
+
+
+```python
+df1 = pd.DataFrame({'City': ['Amsterdam', 'Tilburg', 'Rotterdam', 'Utrecht'],
+                    'Population': [821752, 213310, 623652, 340852]})
+df2 = pd.DataFrame({'City': ['Rotterdam', 'Nijmegen', 'Eindhoven', 'Tilburg', 'Utrecht'],
+                    'Area': [41.78, 32.61, 213.31, 37.29, 30.93]})
+```
+
+```python
+pd.merge(df1, df2, how='inner', on='City')
+```
+
+```python
+        City  Population   Area
+0    Tilburg      213310  37.29
+1  Rotterdam      623652  41.78
+2    Utrecht      340852  30.93
+```
+
+<div style="font-size:20px">
+<b style="color:orange">Note:</b>
+As you can see, only the cities that are present in both <code>df1</code> and <code>df2</code> are included in the result.
+</div>
+
+---
+
+### Left Join
+
+```python
+df1 = pd.DataFrame({'City': ['Amsterdam', 'Tilburg', 'Rotterdam', 'Utrecht'],
+                    'Population': [821752, 213310, 623652, 340852]})
+df2 = pd.DataFrame({'City': ['Rotterdam', 'Nijmegen', 'Eindhoven', 'Tilburg', 'Utrecht'],
+                    'Area': [41.78, 32.61, 213.31, 37.29, 30.93]})
+```
+
+```python
+pd.merge(df1, df2, how='left', on='City')
+```
+
+```python
+        City  Population   Area
+0  Amsterdam      821752    NaN
+1    Tilburg      213310  37.29
+2  Rotterdam      623652  41.78
+3    Utrecht      340852  30.93
+```
+
+<div style="font-size:20px">
+<b style="color:orange">Note:</b>
+As you can see, all cities from <code>df1</code> are included in the result, even if they are not present in <code>df2</code>. The missing values are filled with <code>NaN</code>.
+</div>
+
+---
+
+### Right Join
+
+```python
+df1 = pd.DataFrame({'City': ['Amsterdam', 'Tilburg', 'Rotterdam', 'Utrecht'],
+                    'Population': [821752, 213310, 623652, 340852]})
+df2 = pd.DataFrame({'City': ['Rotterdam', 'Nijmegen', 'Eindhoven', 'Tilburg', 'Utrecht'],
+                    'Area': [41.78, 32.61, 213.31, 37.29, 30.93]})
+```
+
+```python
+pd.merge(df1, df2, how='right', on='City')
+```
+
+```python
+        City  Population    Area
+0  Rotterdam    623652.0   41.78
+1   Nijmegen         NaN   32.61
+2  Eindhoven         NaN  213.31
+3    Tilburg    213310.0   37.29
+4    Utrecht    340852.0   30.93
+```
+
+<div style="font-size:20px">
+<b style="color:orange">Note:</b>
+As you can see, all cities from <code>df2</code> are included in the result, even if they are not present in <code>df1</code>. The missing values are filled with <code>NaN</code>.
+</div>
+
+---
+
+### Outer Join
+
+```python
+df1 = pd.DataFrame({'City': ['Amsterdam', 'Tilburg', 'Rotterdam', 'Utrecht'],
+                    'Population': [821752, 213310, 623652, 340852]})
+df2 = pd.DataFrame({'City': ['Rotterdam', 'Nijmegen', 'Eindhoven', 'Tilburg', 'Utrecht'],
+                    'Area': [41.78, 32.61, 213.31, 37.29, 30.93]})
+```
+
+```python
+pd.merge(df1, df2, how='outer', on='City')
+```
+
+```python
+        City  Population    Area
+0  Amsterdam    821752.0     NaN
+1    Tilburg    213310.0   37.29
+2  Rotterdam    623652.0   41.78
+3    Utrecht    340852.0   30.93
+4   Nijmegen         NaN   32.61
+5  Eindhoven         NaN  213.31
+```
+
+<div style="font-size:20px">
+<b style="color:orange">Note:</b>
+As you can see, all cities from both <code>df1</code> and <code>df2</code> are included in the result. The missing values are filled with <code>NaN</code>.
+</div>
+
+---
+
+### Cross Join
+
+```python
+df1 = pd.DataFrame({'City': ['Amsterdam', 'Tilburg', 'Rotterdam', 'Utrecht'],
+                    'Population': [821752, 213310, 623652, 340852]})
+df2 = pd.DataFrame({'City': ['Rotterdam', 'Nijmegen', 'Eindhoven', 'Tilburg', 'Utrecht'],
+                    'Area': [41.78, 32.61, 213.31, 37.29, 30.93]})
+```
+
+```python
+pd.merge(df1, df2, how='cross')
+```
+
+```python
+City_x  Population City_y   Area
+       City_x  Population     City_y    Area
+0   Amsterdam      821752  Rotterdam   41.78
+1   Amsterdam      821752   Nijmegen   32.61
+2   Amsterdam      821752  Eindhoven  213.31
+3   Amsterdam      821752    Tilburg   37.29
+4   Amsterdam      821752    Utrecht   30.93
+5     Tilburg      213310  Rotterdam   41.78
+6     Tilburg      213310   Nijmegen   32.61
+...
+```
+
+<div style="font-size:20px">
+<b style="color:orange">Note:</b>
+As you can see, all possible combinations of cities from both <code>df1</code> and <code>df2</code> are included in the result. The missing values are filled with <code>NaN</code>.
+</div>
+
+---
+
+### Concatenatination (1)
+The <code>concat()</code> function is used to concatenate two or more DataFrames.
+
+```python
+df1 = pd.DataFrame({'City': ['Amsterdam', 'Tilburg', 'Rotterdam', 'Utrecht'],
+                    'Population': [821752, 213310, 623652, 340852]})
+df2 = pd.DataFrame({'City': ['Eindhoven', 'Nijmegen', 'Groningen'],
+                    'Population': [223452, 165432, 248563]})
+```
+
+```python
+pd.concat([df1, df2])
+```
+
+```python
+        City  Population
+0  Amsterdam      821752
+1    Tilburg      213310
+2  Rotterdam      623652
+3    Utrecht      340852
+0  Eindhoven      223452
+1   Nijmegen      165432
+2  Groningen      248563
+```
+
+---
+
+### Concatenatination (2)
+We can also concatenate DataFrames along the columns.
+
+```python
+df1 = pd.DataFrame({'City': ['Amsterdam', 'Tilburg', 'Rotterdam', 'Utrecht'],
+                    'Population': [821752, 213310, 623652, 340852]})
+df2 = pd.DataFrame({'Area': [41.78, 32.61, 213.31, 37.29, 30.93],
+                    'Density': [19857, 6554, 2954, 9123, 10000]})
+```
+
+```python
+pd.concat([df1, df2], axis=1)
+```
+
+```python
+        City  Population    Area  Density
+0  Amsterdam    821752.0   41.78    19857
+1    Tilburg    213310.0   32.61     6554
+2  Rotterdam    623652.0  213.31     2954
+3    Utrecht    340852.0   37.29     9123
+4        NaN         NaN   30.93    10000
+```
+
+---
+
+### Manipulating Text Data (1)
+The <code>str</code> attribute of a Series provides access to a set of string manipulation methods.
+
+```python
+df = pd.DataFrame({'City': ['Amsterdam', 'Tilburg', 'The Hague'],
+                   'Province': ['North Holland', 'North Brabant', 'South Holland']})
+```
+
+```python
+df['City'].str.upper()
+```
+
+```python
+0    AMSTERDAM
+1      TILBURG
+2    THE HAGUE
+Name: City, dtype: object
+```
+
+```python
+df['City'].str.lower()
+```
+
+```python
+0    amsterdam
+1      tilburg
+2    the hague
+Name: City, dtype: object
+```
+
+---
+
+### Manipulating Text Data (2)
+
+```python
+df['City'].str.len()
+```
+
+```python
+0    9
+1    7
+2    9
+Name: City, dtype: int64
+```
+
+
+```python
+df['Province'].str.contains('Holland')
+```
+
+```python
+0     True
+1    False
+2     True
+Name: Province, dtype: bool
+```
+
+---
+
+### Manipulating Text Data (3)
+
+```python
+df['City'].str.replace('The Hague', 'Den Haag')
+```
+
+```python
+0    Amsterdam
+1      Tilburg
+2     Den Haag
+Name: City, dtype: object
+```
+
+```python
+df['Province'].str.split(' ')
+```
+
+```python
+0    [North, Holland]
+1    [North, Brabant]
+2    [South, Holland]
+Name: Province, dtype: object
+```
+
+---
+
+### Correlation
+The <code>corr()</code> function is used to compute pairwise correlation of columns.
+
+```python
+df = pd.DataFrame({'Population': [821752, 213310, 623652, 340852, 223452, 165432, 248563],
+                   'Area': [41.78, 32.61, 213.31, 37.29, 30.93, 32.61, 213.31],
+                   'Density': [19857, 6554, 2954, 9123, 10000, 6554, 2954]})
+```
+
+```python
+df.corr()
+```
+
+```python
+            Population      Area   Density
+Population    1.000000  0.197199  0.564658
+Area          0.197199  1.000000 -0.602733
+Density       0.564658 -0.602733  1.000000
+```
+
+<div style="font-size:20px">
+<b style="color:orange">Note:</b>
+As you can see, the correlation between <code>Density</code> and <code>Population</code> is positive, while the correlation between <code>Density</code> and <code>Area</code> is negative. This is because the density of a city is inversely proportional to the area of the city and directly proportional to the population of the city.
+</div>
+
+---
+
+### Resampling (1)
+Resampling is a data aggregation task that involves grouping data into time intervals and applying a function to each group.
+
+```python
+df = pd.DataFrame({'Date': ['2022-01-01', '2022-01-02', '2022-01-03', '2022-01-04', '2022-01-05', '2022-01-06', '2022-01-07'],
+                   'Temperature': [5.3, 3.8, 2.1, 1.2, 0.5, 1.8, 3.1]})
+```
+
+```python
+```
+
+```python
+df['Date'] = pd.to_datetime(df['Date'])
+```
+
+```python
+df = df.set_index('Date')
+```
+
+---
+
+### Resampling (2)
+The <code>resample()</code> function is used to resample the DataFrame.
+
+```python
+df.resample('2D').mean()
+```
+
+```python
+            Temperature
+Date                   
+2022-01-01         4.55
+2022-01-03         1.65
+2022-01-05         1.15
+2022-01-07         3.10
+```
+
+```python
+df.resample('M').max()
+```
+
+```python
+            Temperature
+Date                   
+2022-01-31          5.3
+```
+
+---
+
+## Finishing Up
+Thank you for keeping up with me until the end!
+
+If you have any questions or suggestions, please send me an email at [parsa.abbasi1996@gmail.com](mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20numpy).
