@@ -103,6 +103,7 @@ Now let's learn everything we need to know about these two libraries!
 * **Slide 1:** [Introduction to NumPy](/slides/numpy/)
 * **Exercise 1:** Analyzing Job Offers ([Initial](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_init.ipynb) | [Solution](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_solution.ipynb))
 * **Slide 2:** [Introduction to Pandas](/slides/pandas/)
+* **Exercise 2:** Analyzing IMDB Top 250 Movies ([Initial](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/pandas_imdb_init.ipynb) | [Solution](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/pandas_imdb_solution.ipynb))
 
 ## Data Visualization
 Data visualization is the process of creating graphical representations of data to communicate information effectively. It is an essential tool for data analysts as it enables them to explore and analyze large datasets quickly and easily, providing insights that may not be immediately apparent from a table of numbers.
@@ -114,20 +115,24 @@ The need for data visualization arises because humans are visual creatures and w
 Now that we understand the importance of data visualization let's dive into the world of Python visualization libraries such as `matplotlib`, `seaborn`, and `plotly`, and explore the unique features of each library.
 {{< figure src="matplotlib_seaborn_plotly.png" id="visualization" >}}
 
-* **Slide 3:** [Introduction to Matplotlib](/slides/matplotlib/)
-* **Slide 4:** [Introduction to Seaborn](/slides/seaborn/)
-* **Slide 5:** [Introduction to Plotly](/slides/plotly/)
+* **Notebook:** [Data Visualization in Python](https://colab.research.google.com/github/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/visualization_tutorial.ipynb)
 
 ## Sources and Useful Links
 #### 📖 Books
 * *"Python Data Science: The Ultimate Guide on What You Need to Know to Work with Data Using Python"*, by Oliver Soranson
 * *"Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython"*, by Wes McKinney
+* *"Storytelling with Data: A Data Visualization Guide for Business Professionals"*, by Cole Nussbaumer Knaflic
 #### 🎞️ Videos
 * [*"Data Analytics With Python"*](https://youtu.be/W1dzfYW4-KQ) by [Simplilearn](https://www.youtube.com/@SimplilearnOfficial)
 * [*"NumPy Tutorial : Numpy Full Course"*](https://youtu.be/8Y0qQEh7dJg) by [Derek Banas](https://www.youtube.com/@derekbanas)
 * [*"Matplotlib Tutorial (Part 1): Creating and Customizing Our First Plots"*](https://youtu.be/UO98lJQ3QGI) by [Corey Schafer](https://www.youtube.com/@coreyms)
 * [*"Matplotlib Tutorial : Matplotlib Full Course"*](https://youtu.be/wB9C0Mz9gSo) by [Derek Banas](https://www.youtube.com/@derekbanas)
 * [*"Exploratory Data Analysis with Pandas Python 2023"*](https://youtu.be/xi0vhXFPegw) by [Rob Mulla](https://www.youtube.com/@robmulla)
-
+#### 📚 Documentation
+* [NumPy Documentation](https://numpy.org/doc/stable/)
+* [Pandas Documentation](https://pandas.pydata.org/docs/)
+* [Matplotlib Documentation](https://matplotlib.org/stable/index.html)
+* [Seaborn Documentation](https://seaborn.pydata.org/)
+* [Plotly Documentation](https://plotly.com/python/)
 #### 🌐 Other
 * [CrowdFlower Data Science Report 2016](https://visit.figure-eight.com/rs/416-ZBE-142/images/CrowdFlower_DataScienceReport_2016.pdf)
