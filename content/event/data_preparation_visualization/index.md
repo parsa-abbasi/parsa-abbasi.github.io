@@ -115,7 +115,7 @@ The need for data visualization arises because humans are visual creatures and w
 Now that we understand the importance of data visualization let's dive into the world of Python visualization libraries such as `matplotlib`, `seaborn`, and `plotly`, and explore the unique features of each library.
 {{< figure src="matplotlib_seaborn_plotly.png" id="visualization" >}}
 
-* **Notebook:** [Data Visualization in Python](https://colab.research.google.com/github/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/visualization_tutorial.ipynb)
+* **Notebook:** [Data Visualization in Python](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/visualization_tutorial.ipynb)
 
 ## Sources and Useful Links
 #### 📖 Books
