@@ -61,6 +61,7 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;li>&lt;strong>Slide 1:&lt;/strong> &lt;a href="https://parsa-abbasi.github.io/slides/numpy/">Introduction to NumPy&lt;/a>&lt;/li>
 &lt;li>&lt;strong>Exercise 1:&lt;/strong> Analyzing Job Offers (&lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_init.ipynb" target="_blank" rel="noopener">Initial&lt;/a> | &lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_solution.ipynb" target="_blank" rel="noopener">Solution&lt;/a>)&lt;/li>
 &lt;li>&lt;strong>Slide 2:&lt;/strong> &lt;a href="https://parsa-abbasi.github.io/slides/pandas/">Introduction to Pandas&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Exercise 2:&lt;/strong> Analyzing IMDB Top 250 Movies (&lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/pandas_imdb_init.ipynb" target="_blank" rel="noopener">Initial&lt;/a> | &lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/pandas_imdb_solution.ipynb" target="_blank" rel="noopener">Solution&lt;/a>)&lt;/li>
 &lt;/ul>
 &lt;h2 id="data-visualization">Data Visualization&lt;/h2>
 &lt;p>Data visualization is the process of creating graphical representations of data to communicate information effectively. It is an essential tool for data analysts as it enables them to explore and analyze large datasets quickly and easily, providing insights that may not be immediately apparent from a table of numbers.&lt;/p>
@@ -79,15 +80,14 @@ height="200"
 loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Slide 3:&lt;/strong> &lt;a href="https://parsa-abbasi.github.io/slides/matplotlib/">Introduction to Matplotlib&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Slide 4:&lt;/strong> &lt;a href="https://parsa-abbasi.github.io/slides/seaborn/">Introduction to Seaborn&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Slide 5:&lt;/strong> &lt;a href="https://parsa-abbasi.github.io/slides/plotly/">Introduction to Plotly&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Notebook:&lt;/strong> &lt;a href="https://colab.research.google.com/github/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/visualization_tutorial.ipynb" target="_blank" rel="noopener">Data Visualization in Python&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="sources-and-useful-links">Sources and Useful Links&lt;/h2>
 &lt;h4 id="-books">📖 Books&lt;/h4>
 &lt;ul>
 &lt;li>&lt;em>&amp;ldquo;Python Data Science: The Ultimate Guide on What You Need to Know to Work with Data Using Python&amp;rdquo;&lt;/em>, by Oliver Soranson&lt;/li>
 &lt;li>&lt;em>&amp;ldquo;Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython&amp;rdquo;&lt;/em>, by Wes McKinney&lt;/li>
+&lt;li>&lt;em>&amp;ldquo;Storytelling with Data: A Data Visualization Guide for Business Professionals&amp;rdquo;&lt;/em>, by Cole Nussbaumer Knaflic&lt;/li>
 &lt;/ul>
 &lt;h4 id="-videos">🎞️ Videos&lt;/h4>
 &lt;ul>
@@ -96,6 +96,14 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;li>&lt;a href="https://youtu.be/UO98lJQ3QGI" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Matplotlib Tutorial (Part 1): Creating and Customizing Our First Plots&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">Corey Schafer&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://youtu.be/wB9C0Mz9gSo" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Matplotlib Tutorial : Matplotlib Full Course&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@derekbanas" target="_blank" rel="noopener">Derek Banas&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://youtu.be/xi0vhXFPegw" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Exploratory Data Analysis with Pandas Python 2023&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@robmulla" target="_blank" rel="noopener">Rob Mulla&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="-documentation">📚 Documentation&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://numpy.org/doc/stable/" target="_blank" rel="noopener">NumPy Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener">Pandas Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://matplotlib.org/stable/index.html" target="_blank" rel="noopener">Matplotlib Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://seaborn.pydata.org/" target="_blank" rel="noopener">Seaborn Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://plotly.com/python/" target="_blank" rel="noopener">Plotly Documentation&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="-other">🌐 Other&lt;/h4>
 &lt;ul>
