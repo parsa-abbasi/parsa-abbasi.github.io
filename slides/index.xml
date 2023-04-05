@@ -916,7 +916,7 @@ If you run the above code again, you will get the same sequence of random number
 &lt;p>If you have any questions or suggestions, please send me an email at &lt;a href="mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20numpy">parsa.abbasi1996@gmail.com&lt;/a>.&lt;/p></description></item><item><title>Introduction to Pandas</title><link>https://parsa-abbasi.github.io/slides/pandas/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/pandas/</guid><description>&lt;h2 id="introduction-to-pandas">Introduction to Pandas&lt;/h2>
 &lt;p>&lt;a href="https://pandas.pydata.org/docs/getting_started/install.html" target="_blank" rel="noopener">Installation&lt;/a> | &lt;a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
 &lt;div style="font-size:18px; margin-top:80px">
-Last updated: March 28, 2023
+Last updated: April 01, 2023
 &lt;/div>
 &lt;hr>
 &lt;h3 id="what-is-pandas">What is Pandas?&lt;/h3>

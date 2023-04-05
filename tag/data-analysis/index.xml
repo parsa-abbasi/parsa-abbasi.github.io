@@ -44,8 +44,7 @@ This step might also include &lt;strong>Normalization&lt;/strong>, which scales 
 &lt;h3 id="data-discretization">Data Discretization&lt;/h3>
 &lt;p>Continuous data may be discretized to create categories or groups for analysis. For example, Soundcloud may group users by age ranges (e.g. &lt;code>18-24&lt;/code>, &lt;code>25-34&lt;/code>, etc.) or create a new variable to indicate the popularity of a song (e.g. &lt;code>unpopular&lt;/code>, &lt;code>popular&lt;/code>, &lt;code>very popular&lt;/code>).&lt;/p>
 &lt;h3 id="numpy-and-pandas">NumPy and Pandas&lt;/h3>
-&lt;p>So now that we have a better understanding of the data preparation process, let&amp;rsquo;s learn how to process data efficiently using the &lt;code>numpy&lt;/code> and &lt;code>pandas&lt;/code> libraries.
-Now let&amp;rsquo;s learn everything we need to know about these two libraries!
+&lt;p>So now that we have a better understanding of the data preparation process, let&amp;rsquo;s learn how to process data efficiently using the &lt;code>numpy&lt;/code> and &lt;code>pandas&lt;/code> libraries.&lt;/p>
 &lt;figure id="figure-preparation">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt="" srcset="
@@ -56,7 +55,32 @@ src="https://parsa-abbasi.github.io/talk/data-preparation-and-visualization-in-p
 width="760"
 height="200"
 loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>&lt;/p>
+&lt;/div>&lt;/figure>
+&lt;p>A survey conducted by &lt;a href="https://survey.stackoverflow.co/2022/#section-most-popular-technologies-other-frameworks-and-libraries" target="_blank" rel="noopener">Stack Overflow&lt;/a> in 2022 shows that &lt;code>numpy&lt;/code> and &lt;code>pandas&lt;/code> are the second and third most popular libraries in different domains.&lt;/p>
+&lt;figure id="figure-stackoverflow">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/talk/data-preparation-and-visualization-in-python/stackoverflow_report_2022_hu11190ab66ee4c2804820cb20accf32e1_29592_317189d8c832d8ca7da9df9097f9cdf1.webp 400w,
+/talk/data-preparation-and-visualization-in-python/stackoverflow_report_2022_hu11190ab66ee4c2804820cb20accf32e1_29592_51344bd6f069e49106163d927c468a16.webp 760w,
+/talk/data-preparation-and-visualization-in-python/stackoverflow_report_2022_hu11190ab66ee4c2804820cb20accf32e1_29592_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://parsa-abbasi.github.io/talk/data-preparation-and-visualization-in-python/stackoverflow_report_2022_hu11190ab66ee4c2804820cb20accf32e1_29592_317189d8c832d8ca7da9df9097f9cdf1.webp"
+width="760"
+height="405"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;p>Also, according to the &lt;a href="https://lp.jetbrains.com/python-developers-survey-2021/" target="_blank" rel="noopener">2021 JetBrains Developer Survey&lt;/a>, &lt;code>numpy&lt;/code> and &lt;code>pandas&lt;/code> are the most popular libraries in data science frameworks.&lt;/p>
+&lt;figure id="figure-jetbrains">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/talk/data-preparation-and-visualization-in-python/jetbrains_report_2021_huf732f7e29a32883e269a0566188825f3_32135_9589b5af1f3dbe5625cdd9e15162dfef.webp 400w,
+/talk/data-preparation-and-visualization-in-python/jetbrains_report_2021_huf732f7e29a32883e269a0566188825f3_32135_4c3edd4abb523a9628969623769e1269.webp 760w,
+/talk/data-preparation-and-visualization-in-python/jetbrains_report_2021_huf732f7e29a32883e269a0566188825f3_32135_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://parsa-abbasi.github.io/talk/data-preparation-and-visualization-in-python/jetbrains_report_2021_huf732f7e29a32883e269a0566188825f3_32135_9589b5af1f3dbe5625cdd9e15162dfef.webp"
+width="461"
+height="459"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;p>Now let&amp;rsquo;s learn everything we need to know about these two libraries!&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Slide 1:&lt;/strong> &lt;a href="https://parsa-abbasi.github.io/slides/numpy/">Introduction to NumPy&lt;/a>&lt;/li>
 &lt;li>&lt;strong>Exercise 1:&lt;/strong> Analyzing Job Offers (&lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_init.ipynb" target="_blank" rel="noopener">Initial&lt;/a> | &lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_solution.ipynb" target="_blank" rel="noopener">Solution&lt;/a>)&lt;/li>
@@ -105,7 +129,9 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;li>&lt;a href="https://seaborn.pydata.org/" target="_blank" rel="noopener">Seaborn Documentation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://plotly.com/python/" target="_blank" rel="noopener">Plotly Documentation&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h4 id="-other">🌐 Other&lt;/h4>
+&lt;h4 id="-survey-and-reports">🌐 Survey and Reports&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://visit.figure-eight.com/rs/416-ZBE-142/images/CrowdFlower_DataScienceReport_2016.pdf" target="_blank" rel="noopener">CrowdFlower Data Science Report 2016&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://survey.stackoverflow.co/2022/" target="_blank" rel="noopener">Stack Overflow Developer Survey 2022&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://lp.jetbrains.com/python-developers-survey-2021/" target="_blank" rel="noopener">JetBrains Developer Survey 2021&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
