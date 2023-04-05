@@ -18,7 +18,7 @@ slides:
 [Installation](https://pandas.pydata.org/docs/getting_started/install.html) | [Documentation](https://pandas.pydata.org/docs/)
 
 <div style="font-size:18px; margin-top:80px">
-Last updated: March 28, 2023
+Last updated: April 01, 2023
 </div>
 
 ---
