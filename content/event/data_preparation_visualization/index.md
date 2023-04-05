@@ -96,9 +96,19 @@ Organizations may choose to focus on a subset of the data for analysis, such as 
 Continuous data may be discretized to create categories or groups for analysis. For example, Soundcloud may group users by age ranges (e.g. `18-24`, `25-34`, etc.) or create a new variable to indicate the popularity of a song (e.g. `unpopular`, `popular`, `very popular`).
 
 ### NumPy and Pandas
-So now that we have a better understanding of the data preparation process, let's learn how to process data efficiently using the `numpy` and `pandas` libraries. 
-Now let's learn everything we need to know about these two libraries!
+So now that we have a better understanding of the data preparation process, let's learn how to process data efficiently using the `numpy` and `pandas` libraries.
+
 {{< figure src="numpy_pandas.png" id="preparation" >}}
+
+A survey conducted by [Stack Overflow](https://survey.stackoverflow.co/2022/#section-most-popular-technologies-other-frameworks-and-libraries) in 2022 shows that `numpy` and `pandas` are the second and third most popular libraries in different domains.
+
+{{< figure src="stackoverflow_report_2022.jpg" id="stackoverflow" >}}
+
+Also, according to the [2021 JetBrains Developer Survey](https://lp.jetbrains.com/python-developers-survey-2021/), `numpy` and `pandas` are the most popular libraries in data science frameworks.
+
+{{< figure src="jetbrains_report_2021.jpg" id="jetbrains" >}}
+
+Now let's learn everything we need to know about these two libraries!
 
 * **Slide 1:** [Introduction to NumPy](/slides/numpy/)
 * **Exercise 1:** Analyzing Job Offers ([Initial](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_init.ipynb) | [Solution](https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/numpy_job_offers_solution.ipynb))
@@ -134,5 +144,7 @@ Now that we understand the importance of data visualization let's dive into the 
 * [Matplotlib Documentation](https://matplotlib.org/stable/index.html)
 * [Seaborn Documentation](https://seaborn.pydata.org/)
 * [Plotly Documentation](https://plotly.com/python/)
-#### 🌐 Other
+#### 🌐 Survey and Reports
 * [CrowdFlower Data Science Report 2016](https://visit.figure-eight.com/rs/416-ZBE-142/images/CrowdFlower_DataScienceReport_2016.pdf)
+* [Stack Overflow Developer Survey 2022](https://survey.stackoverflow.co/2022/)
+* [JetBrains Developer Survey 2021](https://lp.jetbrains.com/python-developers-survey-2021/)
