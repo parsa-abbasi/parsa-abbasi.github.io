@@ -16,7 +16,7 @@ subtitle:
 # - Add/remove as many `feature` blocks below as you like.
 # - For available icons, see: https://wowchemy.com/docs/page-builder/#icons
 feature:
-  - description: python (proficient), java (experienced), matlab and c++ (amatur)
+  - description: python (proficient), java (experienced), matlab and c++ (amateur)
     icon: 👨🏻‍💻
     icon_pack: emoji
     name: Programming Languages
