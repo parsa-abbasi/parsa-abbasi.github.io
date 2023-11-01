@@ -19,7 +19,7 @@ slides:
 ### Introduction to Natural Language Processing
 
 <div style="font-size:18px; margin-top:20px">
-Last updated: March 28, 2023
+Last updated: Nov 1, 2023
 </div>
 
 ---
