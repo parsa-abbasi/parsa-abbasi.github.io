@@ -2484,7 +2484,7 @@ The learning curve of the model
 &lt;p>In conclusion, using a pre-trained model like InceptionV3 for signature classification can yield high accuracy and F1-scores. Preprocessing the data with augmentation techniques can help generate a more robust model and reduce the chance of overfitting.&lt;/p></description></item><item><title>DeepSentiPers: Novel Deep Learning Models Trained Over Proposed Augmented Persian Sentiment Corpus</title><link>https://parsa-abbasi.github.io/publication/deepsentipers/</link><pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/publication/deepsentipers/</guid><description/></item><item><title>Presenting A Sentiment Analysis System Using Deep Learning Models On Persian Texts (In Persian)</title><link>https://parsa-abbasi.github.io/publication/sentiment-fa/</link><pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/publication/sentiment-fa/</guid><description/></item><item><title>Natural Language Processing</title><link>https://parsa-abbasi.github.io/slides/nlp/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/slides/nlp/</guid><description>&lt;img src="images/featured.jpg" style="max-width:450px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"/>
 &lt;h3 id="introduction-to-natural-language-processing">Introduction to Natural Language Processing&lt;/h3>
 &lt;div style="font-size:18px; margin-top:20px">
-Last updated: March 28, 2023
+Last updated: Nov 1, 2023
 &lt;/div>
 &lt;hr>
 &lt;h2 id="natural-langauge">Natural Langauge&lt;/h2>
