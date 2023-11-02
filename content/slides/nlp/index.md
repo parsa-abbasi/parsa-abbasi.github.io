@@ -1527,7 +1527,7 @@ Known which class has more unknown words is not generally helpful, so we simply 
 
 Let's build a Naïve Bayes classifier from scratch!
 
-[Link to the notebook]()
+[Link to the notebook](https://colab.research.google.com/drive/1M1ZpPtAsq1fyTm8JKIdTrqmavnTRQuQQ?usp=sharing)
 
 ---
 
@@ -1563,9 +1563,9 @@ Let's continue the topic based on [this article](https://jalammar.github.io/illu
 
 ## Coding Time (2)
 
-- Let's explore word embeddings a little bit more! [Link to the notebook]()
+- Let's explore word embeddings a little bit more! [Link to the notebook](https://colab.research.google.com/drive/1zanKB_gxuSHPXGttjpiYOfwIvHSkVUvh?usp=sharing)
 
-- What about using word2vec as a recommender system? [Link to the notebook]()
+- What about using word2vec as a recommender system? [Link to the notebook](https://colab.research.google.com/drive/19sbH7ApVVCO2c2qFCjFVwQ6uEgxF1MlW?usp=sharing)
 
 ---
 
