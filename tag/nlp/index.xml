@@ -1027,7 +1027,7 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;hr>
 &lt;h2 id="coding-time-1">Coding Time (1)&lt;/h2>
 &lt;p>Let&amp;rsquo;s build a Naïve Bayes classifier from scratch!&lt;/p>
-&lt;p>&lt;a href="">Link to the notebook&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://colab.research.google.com/drive/1M1ZpPtAsq1fyTm8JKIdTrqmavnTRQuQQ?usp=sharing" target="_blank" rel="noopener">Link to the notebook&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="n-gram">N-gram&lt;/h2>
 &lt;p>An n-gram is a contiguous sequence of n items from a given sample of text. We used just one word as a feature in our Naïve Bayes classifier (Unigram). We can use multiple words as features (Bigram, Trigram, etc.).&lt;/p>
@@ -1047,10 +1047,10 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;h2 id="coding-time-2">Coding Time (2)&lt;/h2>
 &lt;ul>
 &lt;li>
-&lt;p>Let&amp;rsquo;s explore word embeddings a little bit more! &lt;a href="">Link to the notebook&lt;/a>&lt;/p>
+&lt;p>Let&amp;rsquo;s explore word embeddings a little bit more! &lt;a href="https://colab.research.google.com/drive/1zanKB_gxuSHPXGttjpiYOfwIvHSkVUvh?usp=sharing" target="_blank" rel="noopener">Link to the notebook&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>What about using word2vec as a recommender system? &lt;a href="">Link to the notebook&lt;/a>&lt;/p>
+&lt;p>What about using word2vec as a recommender system? &lt;a href="https://colab.research.google.com/drive/19sbH7ApVVCO2c2qFCjFVwQ6uEgxF1MlW?usp=sharing" target="_blank" rel="noopener">Link to the notebook&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;hr>
