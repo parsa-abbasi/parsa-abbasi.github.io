@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Text Summarization | Parsa Abbasi</title><link>https://parsa-abbasi.github.io/tag/text-summarization/</link><atom:link href="https://parsa-abbasi.github.io/tag/text-summarization/index.xml" rel="self" type="application/rss+xml"/><description>Text Summarization</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 02 Nov 2023 10:00:00 +0000</lastBuildDate><image><url>https://parsa-abbasi.github.io/media/icon_hu14e12911534d82dc6e859b10a3857b5a_3074_512x512_fill_lanczos_center_3.png</url><title>Text Summarization</title><link>https://parsa-abbasi.github.io/tag/text-summarization/</link></image><item><title>An Introduction to Natural Language Processing</title><link>https://parsa-abbasi.github.io/talk/an-introduction-to-natural-language-processing/</link><pubDate>Thu, 02 Nov 2023 10:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/talk/an-introduction-to-natural-language-processing/</guid><description>&lt;h2 id="sources-and-useful-links">Sources and Useful Links&lt;/h2>
+&lt;h4 id="-videos">🎞️ Videos&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://youtu.be/zFScws0mb7M?si=NTMgfmQwYBvDfAHu" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Robert Meyer - Analysing user comments with Doc2Vec and Machine Learning classification&amp;rdquo;&lt;/em>&lt;/a> by Robert Meyer&lt;/li>
+&lt;li>&lt;a href="https://youtu.be/jkrNMKz9pWU" target="_blank" rel="noopener">&lt;em>&amp;ldquo;A Hackers&amp;rsquo; Guide to Language Models&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@howardjeremyp" target="_blank" rel="noopener">Jeremy Howard&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://youtu.be/HEikzVL-lZU?si=i70bpd11fzL-z7Pp" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Byte Pair Encoding Tokenization&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://www.youtube.com/@HuggingFace" target="_blank" rel="noopener">HuggingFace&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://youtu.be/tOMjTCO0htA?si=n_NoW7JTQZfRv0jg" target="_blank" rel="noopener">&lt;em>&amp;ldquo;1 5 Byte Pair Encoding&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://twitter.com/jurafsky" target="_blank" rel="noopener">Professor Dan Jurafsky&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="-blog-posts">📚 Blog posts&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://jalammar.github.io/illustrated-word2vec/" target="_blank" rel="noopener">&lt;em>&amp;ldquo;The Illustrated Word2vec&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://jalammar.github.io" target="_blank" rel="noopener">Jay Alammar&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="-notebooks">📄 Notebooks&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://colab.research.google.com/github/jalammar/jalammar.github.io/blob/master/notebooks/nlp/01_Exploring_Word_Embeddings.ipynb" target="_blank" rel="noopener">&lt;em>&amp;ldquo;01 - Trained Word Embeddings with Gensim.ipynb&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://jalammar.github.io" target="_blank" rel="noopener">Jay Alammar&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://colab.research.google.com/github/jalammar/jalammar.github.io/blob/master/notebooks/nlp/02_Song_Embeddings.ipynb" target="_blank" rel="noopener">&lt;em>&amp;ldquo;02 - Embedding Songs to Make Recommendations.ipynb&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://jalammar.github.io" target="_blank" rel="noopener">Jay Alammar&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/sharavsambuu/fin-ml_by_tatsath/blob/master/Chapter%2010%20-%20Natural%20Language%20Processing/NLP-MasterTemplate.ipynb" target="_blank" rel="noopener">&lt;em>&amp;ldquo;NLP-MasterTemplate.ipynb&amp;rdquo;&lt;/em>&lt;/a> by &lt;a href="https://github.com/tatsath" target="_blank" rel="noopener">Hariom Tatsat&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="-books">📖 Books&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://nlp.stanford.edu/IR-book/" target="_blank" rel="noopener">&lt;em>&amp;ldquo;Introduction to Information Retrieval&amp;rdquo;&lt;/em>&lt;/a>, by Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze&lt;/li>
+&lt;/ul></description></item></channel></rss>
