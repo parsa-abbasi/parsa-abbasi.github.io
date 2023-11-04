@@ -13,7 +13,6 @@ address:
   country: 
 
 summary: The basics of Natural Language Processing (NLP) such as text processing, text representation, text classification, embeddings, and more is covered in this presentation.
-
 abstract: "Natural Language Processing (NLP) is a thriving and ever-expanding field of study." We will cover the fundamentals of NLP in this session, including text processing, text representation, text classification, embeddings, and more. We'll also look at some of the most popular NLP libraries, including NLTK, Gensim, SpaCy, and HuggingFace. In addition, we will get our hands dirty by developing several real-world NLP tasks. The purpose of this session is to provide you with a solid foundation of the NLP area before delving deeper into sequential deep learning models like RNNs, LSTMs, and Transformers."
 
 # Talk start and end times.
