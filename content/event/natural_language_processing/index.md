@@ -1,8 +1,8 @@
 ---
 title: Introduction to Natural Language Processing
 
-event: Quera Data Analysis Bootcamp
-event_url: https://quera.org/events/DataAnalysis-Bootcamp
+event: Quera Data Science Bootcamp
+event_url: 
 
 location: Online
 address:
@@ -38,7 +38,7 @@ image:
 links: []
 url_code: 'https://github.com/parsa-abbasi/intro-to-nlp'
 url_pdf: ''
-url_slides: 'https://parsa-abbasi.github.io/slides/nlp/'
+url_slides: ''
 url_video: ''
 
 # Markdown Slides (optional).
