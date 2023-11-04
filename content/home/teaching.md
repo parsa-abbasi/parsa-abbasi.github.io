@@ -96,8 +96,6 @@ experience:
     description: |2-
         * Collaborated with a team of teaching assistants to provide guidance and assessment for student projects.
         * Instructor: [*Dr. Seyed Abolghasem Mirroshandel*](https://scholar.google.com/citations?user=WGH3eIsAAAAJ&hl=en)
-
-
 design:
   columns: '2'
 ---
