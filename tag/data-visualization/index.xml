@@ -19,7 +19,8 @@ src="https://parsa-abbasi.github.io/talk/data-preparation-and-visualization-in-p
 width="760"
 height="281"
 loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>&lt;/p>
+&lt;/div>&lt;/figure>
+&lt;/p>
 &lt;p>Let&amp;rsquo;s take the example of music streaming platform, &lt;a href="https://soundcloud.com/" target="_blank" rel="noopener">SoundCloud&lt;/a>, and explore how each of these steps could be applied to their data.&lt;/p>
 &lt;h3 id="data-cleaning">Data Cleaning&lt;/h3>
 &lt;p>SoundCloud has access to vast amounts of data from its users, but this data can contain duplicate, corrupt, inaccurate, or irrelevant information. The platform must handle such data to ensure accuracy and avoid analytical errors. Some challenges that SoundCloud might face during data cleaning are:&lt;/p>
@@ -102,7 +103,8 @@ src="https://parsa-abbasi.github.io/talk/data-preparation-and-visualization-in-p
 width="760"
 height="200"
 loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>&lt;/p>
+&lt;/div>&lt;/figure>
+&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Notebook:&lt;/strong> &lt;a href="https://github.com/parsa-abbasi/Data-Preparation-and-Visualization-in-Python/blob/main/visualization_tutorial.ipynb" target="_blank" rel="noopener">Data Visualization in Python&lt;/a>&lt;/li>
 &lt;/ul>
