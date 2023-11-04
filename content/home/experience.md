@@ -22,6 +22,17 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
+  - title: Bootcamp Educational Manager
+    company: Quera
+    company_url: 'http://quera.org/'
+    company_logo: Quera
+    location: Tehran, Iran
+    date_start: '2023-07-23'
+    date_end: ''
+    description: |2-
+        * Designed a comprehensive syllabus covering data science fundamentals for a 60-student bootcamp
+        * Managed a team of 6 mentors to develop coding assignments, projects, and provide student mentoring.
+        * Oversaw all educational aspects of the bootcamp, including curriculum planning, instructor management, and the evaluation process.
   - title: Data Scientist and Instructor (Part-time)
     company: Quera
     company_url: 'http://quera.org/'
@@ -30,9 +41,8 @@ experience:
     date_start: '2022-02-01'
     date_end: ''
     description: |2-
-        * Conducting an online Machine Learning course, which included lectures, coding assignments, quizzes, and a beta-testing process consisting of guiding and monitoring a team of more than 10 beta-testers.
+        * Conducting an online Machine Learning course, which included lectures, coding assignments, and a beta-testing process consisting of guiding and monitoring a team of more than 10 beta-testers.
         * Led the update and debug procedures for the Data Analysis course, working with a team of three debuggers to enhance the course material and fix bugs.
-        * Improved the automatic grading system for the Data Analysis course to provide more detailed feedback to students.
         * Guided students in both the Data Analysis and Machine Learning courses, answering more than 450 clarifying questions and receiving excellent feedback from students (4.9/5.0 average rating).
         * Gained expertise in designing educational materials, developing course content and objectives, mentoring learners, and optimizing course feedback mechanisms, all while working with diverse teams.
 

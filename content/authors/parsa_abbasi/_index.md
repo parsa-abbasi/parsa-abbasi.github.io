@@ -75,7 +75,7 @@ highlight_name: true
 # {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
 ---
 
-Parsa Abbasi is a graduate student in Artificial Intelligence at Iran University of Science and Technology, where he conducts research focused on enhancing graph attention networks for relational graphs. His research aims to advance existing architectures like RAGAT by proposing and developing a model with fewer training parameters to prevent overparameterization. Additionally, he explores dynamic attention mechanisms to effectively capture the relational information within the graph.
+Parsa Abbasi recently completed his MSc in Artificial Intelligence at Iran University of Science and Technology. His thesis focused on enhancing graph attention networks for relational graphs. Specifically, he proposed and developed an improved model called RAGATv2 that adopts a dynamic attention mechanism to better capture relational information while reducing training parameters to prevent overparameterization. Evaluation on standard benchmarks demonstrated superior performance over prior methods.
 
 Parsa received his BSc in Computer Engineering from the University of Guilan, where he explored areas such as natural language processing and deep learning. During his undergraduate studies, Parsa co-authored a research paper on designing sentiment analysis models using deep learning architectures for low-resource Persian language.
 
