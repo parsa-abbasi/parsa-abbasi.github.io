@@ -22,7 +22,7 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-    - title: NLP Instructor
+  - title: NLP Instructor
     company: Quera Data Science Bootcamp
     company_url: 'http://quera.org/'
     company_logo: Quera
