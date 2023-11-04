@@ -1,8 +1,8 @@
 ---
-title: Introduction to Natural Language Processing
+title: An Introduction to Natural Language Processing
 
 event: Quera Data Science Bootcamp
-event_url: 
+event_url: https://quera.org/bootcamp/data-science
 
 location: Online
 address:
@@ -13,7 +13,7 @@ address:
   country: 
 
 summary: The basics of Natural Language Processing (NLP) such as text processing, text representation, text classification, embeddings, and more is covered in this presentation.
-abstract: "Natural Language Processing (NLP) is a thriving and ever-expanding field of study." We will cover the fundamentals of NLP in this session, including text processing, text representation, text classification, embeddings, and more. We'll also look at some of the most popular NLP libraries, including NLTK, Gensim, SpaCy, and HuggingFace. In addition, we will get our hands dirty by developing several real-world NLP tasks. The purpose of this session is to provide you with a solid foundation of the NLP area before delving deeper into sequential deep learning models like RNNs, LSTMs, and Transformers."
+abstract: 'Natural Language Processing (NLP) is a thriving and ever-expanding field of study." We will cover the fundamentals of NLP in this session, including text processing, text representation, text classification, embeddings, and more. We'll also look at some of the most popular NLP libraries, including NLTK, Gensim, SpaCy, and HuggingFace. In addition, we will get our hands dirty by developing several real-world NLP tasks. The purpose of this session is to provide you with a solid foundation of the NLP area before delving deeper into sequential deep learning models like RNNs, LSTMs, and Transformers.'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -22,7 +22,7 @@ date_end: '2023-11-02T15:30:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: '2023-10-20T00:00:00Z'
+publishDate: '2023-03-01T00:00:00Z'
 
 authors: []
 tags: ['Natural Language Processing', 'NLP', 'Word Embeddings', 'Word2Vec', 'Gensim', 'SpaCy', 'Text Classification', 'Text Similarity', 'Text Summarization', 'Text Generation', 'Sentiment Analysis', 'NLTK', 'HuggingFace', 'tiktoken']
