@@ -27,10 +27,18 @@ content:
   # Contact details (edit or remove options as required)
   email: parsa.abbasi1996@gmail.com
   address:
-    city: Rasht
-    region: Guilan
-    country: Iran
-    country_code: IR
+    street: Fürstenallee 11
+    city: Paderborn
+    region: Detmold
+    postcode: '33102'
+    country: Deutschland
+    country_code: DE
+  coordinates:
+    latitude: '51.73179'
+    longitude: '8.73465'
+  directions: Room FU.201.1
+  office_hours:
+    - '09:30 to 17:30'
   contact_links:
     - icon: twitter
       icon_pack: fab
