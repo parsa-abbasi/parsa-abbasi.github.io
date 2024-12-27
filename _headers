@@ -1,8 +1,8 @@
 # Netlify headers
 # Automatically generated
-# Documentation: https://wowchemy.com/docs/hugo-tutorials/security/
+# Documentation: https://docs.hugoblox.com/hugo-tutorials/security/
 /*
-  
+  X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=31536000; includeSubDomains
