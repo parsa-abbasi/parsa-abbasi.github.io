@@ -41,7 +41,7 @@ profiles:
     url: https://www.linkedin.com/in/parsa-abbasi/
   - icon: academicons/google-scholar
     url: https://scholar.google.co.uk/citations?user=tKCPWs4AAAAJ
-  - icon: ai/stackoverflow
+  - icon: academicons/stackoverflow
     url: https://stackoverflow.com/users/9346942/parsa-abbasi
 
 interests:
@@ -67,6 +67,10 @@ education:
       Thesis: “Improving the Overparameterization and Static Attention Problems in Relational Graph Attention Networks”
       
       Supervisor: Dr. Morteza Analoui
+
+      - Developed an enhanced graph neural network model (RAGATv2) for multi‑relational graph link prediction
+      - Demonstrated superior performance for knowledge base completion on common open datasets, outperforming baselines
+      - The source code and results are publicly available and reproducible at https://github.com/parsa‑abbasi/RAGATv2
   - area: BSc Computer Engineering
     institution: University of Guilan
     date_start: 2015-09-22
@@ -75,8 +79,12 @@ education:
       GPA: 16.55 / 20.00
       
       Bachelor Project: “Presenting A Sentiment Analysis System Using Deep Learning Models On Persian Texts”
-      
+
       Supervisor: Dr. Seyed Abolghasem Mirroshandel
+
+      - Developed a highly accurate deep‑learning‑based system to detect the sentiment of Persian texts
+      - Proposed novel data augmentation techniques to generate new texts and enrich the dataset
+      - The source code and results are publicly available and reproducible at https://github.com/parsa‑abbasi/Sentiment‑Analysis
 work:
   - position: Data Scientist
     company_name: Quera
@@ -93,36 +101,36 @@ work:
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
-  - name: Technical Skills
+  - name: Programming
     items:
       - name: Python
         description: ''
-        percent: 80
-        icon: code-bracket
-      - name: Data Science
-        description: ''
         percent: 100
-        icon: chart-bar
-      - name: SQL
+        icon: devicon/python
+      - name: Java
         description: ''
-        percent: 40
-        icon: circle-stack
-  - name: Hobbies
+        percent: 70
+        icon: devicon/java
+      - name: C++
+        description: ''
+        percent: 30
+        icon: devicon/cpp
+  - name: Machine Learning
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking
-        description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
+      - name: NumPy
         description: ''
         percent: 100
-        icon: cat
-      - name: Photography
+        icon: devicon/numpy
+      - name: pandas
         description: ''
-        percent: 80
-        icon: camera
+        percent: 100
+        icon: devicon/pandas
+      - name: scikit-learn
+        description: ''
+        percent: 100
+        icon: devicon/scikitlearn
 
 languages:
   - name: English
