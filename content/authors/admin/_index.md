@@ -75,6 +75,7 @@ education:
       GPA: 16.55 / 20.00
       
       Bachelor Project: “Presenting A Sentiment Analysis System Using Deep Learning Models On Persian Texts”
+      
       Supervisor: Dr. Seyed Abolghasem Mirroshandel
 work:
   - position: Data Scientist
