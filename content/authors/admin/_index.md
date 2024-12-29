@@ -126,6 +126,14 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
+      - name: NumPy
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+      - name: pandas
+        description: ''
+        percent: 100
+        icon: devicon/pandas
       - name: scikit-learn
         description: ''
         percent: 100
@@ -142,22 +150,6 @@ skills:
         description: ''
         percent: 100
         icon: devicon/tensorflow
-      - name: h2o
-        description: ''
-        percent: 100
-        icon: 
-      - name: imbalanced-learn
-        description: ''
-        percent: 100
-        icon:
-      - name: NumPy
-        description: ''
-        percent: 100
-        icon: devicon/numpy
-      - name: pandas
-        description: ''
-        percent: 100
-        icon: devicon/pandas
       - name: plotly
         description: ''
         percent: 100
@@ -170,6 +162,14 @@ skills:
         description: ''
         percent: 100
         icon: 
+      - name: h2o
+        description: ''
+        percent: 100
+        icon: 
+      - name: imbalanced-learn
+        description: ''
+        percent: 100
+        icon:
       - name: NLTK
         description: ''
         percent: 100
