@@ -57,6 +57,8 @@ education:
     date_end: ''
     summary: |
       Research Associate in the Data Science Junior Research Group
+
+      Supervisor: [Dr. Stefan Heindorf](https://www.uni-paderborn.de/person/11871)
   - area: Msc Artificial Intelligence
     institution: Iran University of Science and Technology Institute of Technology
     date_start: 2020-09-22
@@ -65,12 +67,13 @@ education:
       GPA: 19.03 / 20.00
 
       Thesis: “Improving the Overparameterization and Static Attention Problems in Relational Graph Attention Networks”
-      
-      Supervisor: Dr. Morteza Analoui
 
       - Developed an enhanced graph neural network model (RAGATv2) for multi‑relational graph link prediction
       - Demonstrated superior performance for knowledge base completion on common open datasets, outperforming baselines
-      - The source code and results are publicly available and reproducible at https://github.com/parsa‑abbasi/RAGATv2
+      - The source code and results are publicly available and reproducible at [https://github.com/parsa‑abbasi/RAGATv2](https://github.com/parsa‑abbasi/RAGATv2)
+
+      Supervisor: [Dr. Morteza Analoui](https://scholar.google.com/citations?user=WN82kZoAAAAJ&hl=en)
+
   - area: BSc Computer Engineering
     institution: University of Guilan
     date_start: 2015-09-22
@@ -80,11 +83,11 @@ education:
       
       Bachelor Project: “Presenting A Sentiment Analysis System Using Deep Learning Models On Persian Texts”
 
-      Supervisor: Dr. Seyed Abolghasem Mirroshandel
-
       - Developed a highly accurate deep‑learning‑based system to detect the sentiment of Persian texts
       - Proposed novel data augmentation techniques to generate new texts and enrich the dataset
-      - The source code and results are publicly available and reproducible at https://github.com/parsa‑abbasi/Sentiment‑Analysis
+      - The source code and results are publicly available and reproducible at [https://github.com/parsa‑abbasi/Sentiment‑Analysis](https://github.com/parsa‑abbasi/Sentiment‑Analysis)
+      
+      Supervisor: [Dr. Seyed Abolghasem Mirroshandel](https://scholar.google.de/citations?user=WGH3eIsAAAAJ&hl=en)
 work:
   - position: Data Scientist
     company_name: Quera
@@ -114,7 +117,7 @@ skills:
       - name: C++
         description: ''
         percent: 30
-        icon: devicon/cpp
+        icon: devicon/cplusplus
   - name: Machine Learning
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -131,6 +134,55 @@ skills:
         description: ''
         percent: 100
         icon: devicon/scikitlearn
+      - name: h2o
+        description: ''
+        percent: 100
+        icon: 
+      - name: imbalanced-learn
+        description: ''
+        percent: 100
+        icon:
+  - name: Machine Learning
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: NumPy
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+  - name: Deep Learning
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: NumPy
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+  - name: NLP Libraries
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: NumPy
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+  - name: Visualization
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: NumPy
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+  - name: Miscellaneous
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: NumPy
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+
 
 languages:
   - name: English
