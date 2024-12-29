@@ -59,7 +59,7 @@ education:
       Research Associate in the Data Science Junior Research Group
 
       Supervisor: [Dr. Stefan Heindorf](https://www.uni-paderborn.de/person/11871)
-  - area: Msc Artificial Intelligence
+  - area: MSc Artificial Intelligence
     institution: Iran University of Science and Technology Institute of Technology
     date_start: 2020-09-22
     date_end: 2023-10-02
