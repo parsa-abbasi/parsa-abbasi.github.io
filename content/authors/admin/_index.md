@@ -161,11 +161,11 @@ skills:
       - name: seaborn
         description: ''
         percent: 100
-        icon: seaborn
+        icon: custom/seaborn
       - name: h2o
         description: ''
         percent: 100
-        icon: h2o
+        icon: custom/h2o
       - name: imbalanced-learn
         description: ''
         percent: 100
@@ -173,31 +173,31 @@ skills:
       - name: NLTK
         description: ''
         percent: 100
-        icon: nltk
+        icon: custom/nltk
       - name: spaCy
         description: ''
         percent: 100
-        icon: spacy
+        icon: custom/spacy
       - name: HuggingFace
         description: ''
         percent: 100
-        icon: huggingface
+        icon: custom/huggingface
       - name: gensim
         description: ''
         percent: 100
-        icon: gensim
+        icon: custom/gensim
       - name: Flair
         description: ''
         percent: 100
-        icon: flair
+        icon: custom/flair
       - name: CoreNLP
         description: ''
         percent: 100
-        icon: corenlp
+        icon: custom/corenlp
       - name: LangChain
         description: ''
         percent: 100
-        icon: langchain
+        icon: custom/langchain
   - name: Miscellaneous
     color: '#eeac02'
     color_border: '#f0bf23'
