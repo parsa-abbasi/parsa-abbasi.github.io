@@ -181,23 +181,23 @@ skills:
       - name: HuggingFace
         description: ''
         percent: 100
-        icon: custom/huggingface
+        icon: 
       - name: gensim
         description: ''
         percent: 100
-        icon: custom/gensim
+        icon: 
       - name: Flair
         description: ''
         percent: 100
-        icon: custom/flair
+        icon: 
       - name: CoreNLP
         description: ''
         percent: 100
-        icon: custom/corenlp
+        icon: 
       - name: LangChain
         description: ''
         percent: 100
-        icon: "custom/langchain"
+        icon: 
   - name: Miscellaneous
     color: '#eeac02'
     color_border: '#f0bf23'
