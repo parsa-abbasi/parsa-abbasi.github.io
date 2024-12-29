@@ -118,6 +118,10 @@ skills:
         description: ''
         percent: 30
         icon: devicon/cplusplus
+      - name: JavaScript
+        description: ''
+        percent: 30
+        icon: devicon/javascript
   - name: Machine Learning
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -178,7 +182,35 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: NumPy
+      - name: Linux
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+      - name: git
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+      - name: SQL
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+      - name: neo4j
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+      - name: Latex
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+      - name: django
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+      - name: HTML
+        description: ''
+        percent: 100
+        icon: devicon/numpy
+      - name: CSS
         description: ''
         percent: 100
         icon: devicon/numpy
