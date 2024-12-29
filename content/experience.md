@@ -24,7 +24,7 @@ sections:
       username: admin
     design:
       show_skill_percentage: false
-      columns: '5'
+      columns: '3'
   - block: resume-awards
     content:
       title: Awards
