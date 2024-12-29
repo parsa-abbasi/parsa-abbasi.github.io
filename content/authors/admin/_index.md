@@ -165,11 +165,11 @@ skills:
       - name: h2o
         description: ''
         percent: 100
-        icon: custom/h2o
+        icon: 
       - name: imbalanced-learn
         description: ''
         percent: 100
-        icon: imbalanced-learn
+        icon: 
       - name: NLTK
         description: ''
         percent: 100
@@ -225,7 +225,7 @@ skills:
       - name: django
         description: ''
         percent: 100
-        icon: devicon/django
+        icon: 
       - name: HTML
         description: ''
         percent: 100
