@@ -170,6 +170,10 @@ skills:
         description: ''
         percent: 100
         icon: 
+  - name: NLP
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
       - name: NLTK
         description: ''
         percent: 100
@@ -234,8 +238,6 @@ skills:
         description: ''
         percent: 100
         icon: devicon/css3
-
-
 languages:
   - name: English
     percent: 100
