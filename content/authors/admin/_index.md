@@ -197,7 +197,7 @@ skills:
       - name: LangChain
         description: ''
         percent: 100
-        icon: custom/langchain
+        icon: "custom/langchain"
   - name: Miscellaneous
     color: '#eeac02'
     color_border: '#f0bf23'
