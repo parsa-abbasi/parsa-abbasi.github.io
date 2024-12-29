@@ -122,7 +122,7 @@ skills:
         description: ''
         percent: 30
         icon: devicon/javascript
-  - name: ML/DL
+  - name: Data Science
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
@@ -150,10 +150,6 @@ skills:
         description: ''
         percent: 100
         icon:
-  - name: Data Analysis
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
       - name: NumPy
         description: ''
         percent: 100
@@ -174,10 +170,6 @@ skills:
         description: ''
         percent: 100
         icon: 
-  - name: NLP Libraries
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
       - name: NLTK
         description: ''
         percent: 100
