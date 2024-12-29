@@ -122,7 +122,35 @@ skills:
         description: ''
         percent: 30
         icon: devicon/javascript
-  - name: Machine Learning
+  - name: ML/DL
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: scikit-learn
+        description: ''
+        percent: 100
+        icon: devicon/scikitlearn
+      - name: PyTorch
+        description: ''
+        percent: 100
+        icon: devicon/pytorch
+      - name: Keras
+        description: ''
+        percent: 100
+        icon: devicon/keras
+      - name: TensorFlow
+        description: ''
+        percent: 100
+        icon: devicon/tensorflow
+      - name: h2o
+        description: ''
+        percent: 100
+        icon: 
+      - name: imbalanced-learn
+        description: ''
+        percent: 100
+        icon:
+  - name: Data Analysis
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
@@ -134,50 +162,50 @@ skills:
         description: ''
         percent: 100
         icon: devicon/pandas
-      - name: scikit-learn
+      - name: plotly
         description: ''
         percent: 100
-        icon: devicon/scikitlearn
-      - name: h2o
+        icon: devicon/plotly
+      - name: matplotlib
+        description: ''
+        percent: 100
+        icon: devicon/matplotlib
+      - name: seaborn
         description: ''
         percent: 100
         icon: 
-      - name: imbalanced-learn
-        description: ''
-        percent: 100
-        icon:
-  - name: Machine Learning
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: NumPy
-        description: ''
-        percent: 100
-        icon: devicon/numpy
-  - name: Deep Learning
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: NumPy
-        description: ''
-        percent: 100
-        icon: devicon/numpy
   - name: NLP Libraries
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: NumPy
+      - name: NLTK
         description: ''
         percent: 100
-        icon: devicon/numpy
-  - name: Visualization
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: NumPy
+        icon: 
+      - name: spaCy
         description: ''
         percent: 100
-        icon: devicon/numpy
+        icon: 
+      - name: HuggingFace
+        description: ''
+        percent: 100
+        icon: 
+      - name: gensim
+        description: ''
+        percent: 100
+        icon: 
+      - name: Flair
+        description: ''
+        percent: 100
+        icon: 
+      - name: CoreNLP
+        description: ''
+        percent: 100
+        icon: 
+      - name: LangChain
+        description: ''
+        percent: 100
+        icon: 
   - name: Miscellaneous
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -185,35 +213,35 @@ skills:
       - name: Linux
         description: ''
         percent: 100
-        icon: devicon/numpy
+        icon: devicon/linux
       - name: git
         description: ''
         percent: 100
-        icon: devicon/numpy
+        icon: devicon/git
       - name: SQL
         description: ''
         percent: 100
-        icon: devicon/numpy
+        icon: devicon/sql
       - name: neo4j
         description: ''
         percent: 100
-        icon: devicon/numpy
-      - name: Latex
+        icon: devicon/ne04j
+      - name: LaTeX
         description: ''
         percent: 100
-        icon: devicon/numpy
+        icon: devicon/latex
       - name: django
         description: ''
         percent: 100
-        icon: devicon/numpy
+        icon: devicon/django
       - name: HTML
         description: ''
         percent: 100
-        icon: devicon/numpy
+        icon: devicon/html
       - name: CSS
         description: ''
         percent: 100
-        icon: devicon/numpy
+        icon: devicon/css
 
 
 languages:
