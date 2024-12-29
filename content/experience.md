@@ -25,7 +25,6 @@ sections:
     design:
       show_skill_percentage: false
       columns: '3'
-      css_style: 'align-items: normal'
   - block: resume-awards
     content:
       title: Awards
@@ -34,4 +33,6 @@ sections:
     content:
       title: Languages
       username: admin
+    design:
+      show_skill_percentage: false
 ---

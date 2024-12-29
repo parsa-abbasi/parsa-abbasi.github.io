@@ -161,43 +161,43 @@ skills:
       - name: seaborn
         description: ''
         percent: 100
-        icon: 
+        icon: seaborn
       - name: h2o
         description: ''
         percent: 100
-        icon: 
+        icon: h2o
       - name: imbalanced-learn
         description: ''
         percent: 100
-        icon:
+        icon: imbalanced-learn
       - name: NLTK
         description: ''
         percent: 100
-        icon: 
+        icon: nltk
       - name: spaCy
         description: ''
         percent: 100
-        icon: 
+        icon: spacy
       - name: HuggingFace
         description: ''
         percent: 100
-        icon: 
+        icon: huggingface
       - name: gensim
         description: ''
         percent: 100
-        icon: 
+        icon: gensim
       - name: Flair
         description: ''
         percent: 100
-        icon: 
+        icon: flair
       - name: CoreNLP
         description: ''
         percent: 100
-        icon: 
+        icon: corenlp
       - name: LangChain
         description: ''
         percent: 100
-        icon: 
+        icon: langchain
   - name: Miscellaneous
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -213,11 +213,11 @@ skills:
       - name: SQL
         description: ''
         percent: 100
-        icon: devicon/sql
+        icon: devicon/mysql
       - name: neo4j
         description: ''
         percent: 100
-        icon: devicon/ne04j
+        icon: devicon/neo4j
       - name: LaTeX
         description: ''
         percent: 100
@@ -229,11 +229,11 @@ skills:
       - name: HTML
         description: ''
         percent: 100
-        icon: devicon/html
+        icon: devicon/html5
       - name: CSS
         description: ''
         percent: 100
-        icon: devicon/css
+        icon: devicon/css3
 
 
 languages:
