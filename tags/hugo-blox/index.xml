@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo Blox | Hugo Academic CV Theme</title><link>https://example.com/tags/hugo-blox/</link><atom:link href="https://example.com/tags/hugo-blox/index.xml" rel="self" type="application/rss+xml"/><description>Hugo Blox</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate><image><url>https://example.com/media/icon_hu7729264130191091259.png</url><title>Hugo Blox</title><link>https://example.com/tags/hugo-blox/</link></image><item><title>🎉 Easily create your own simple yet highly customizable blog</title><link>https://example.com/post/get-started/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/get-started/</guid><description>&lt;p>Welcome 👋&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo Blox | Hugo Academic CV Theme</title><link>https://example.com/tags/hugo-blox/</link><atom:link href="https://example.com/tags/hugo-blox/index.xml" rel="self" type="application/rss+xml"/><description>Hugo Blox</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate><image><url>https://example.com/media/icon_hu12411768742163648625.png</url><title>Hugo Blox</title><link>https://example.com/tags/hugo-blox/</link></image><item><title>🎉 Easily create your own simple yet highly customizable blog</title><link>https://example.com/post/get-started/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/get-started/</guid><description>&lt;p>Welcome 👋&lt;/p>
 &lt;details class="print:hidden xl:hidden" open>
 &lt;summary>Table of Contents&lt;/summary>
 &lt;div class="text-sm">
@@ -77,7 +77,7 @@
 &lt;p>Hugo Blox supports the popular &lt;a href="https://plot.ly/" target="_blank" rel="noopener">Plotly&lt;/a> format for interactive data visualizations. With Plotly, you can design almost any kind of visualization you can imagine!&lt;/p>
 &lt;p>Save your Plotly JSON in your page folder, for example &lt;code>line-chart.json&lt;/code>, and then add the &lt;code>{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code> shortcode where you would like the chart to appear.&lt;/p>
 &lt;p>Demo:&lt;/p>
-&lt;div id="chart-145238976" class="chart">&lt;/div>
+&lt;div id="chart-263849157" class="chart">&lt;/div>
 &lt;script>
 async function fetchChartJSON() {
 console.debug('Hugo Blox fetching chart JSON...')
@@ -93,7 +93,7 @@ return;
 clearInterval( a );
 fetchChartJSON().then(chart => {
 console.debug('Plotting chart...')
-window.Plotly.newPlot('chart-145238976', chart.data, chart.layout, {responsive: true});
+window.Plotly.newPlot('chart-263849157', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
