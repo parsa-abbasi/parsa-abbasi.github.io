@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 吳健雄
+title: Parsa Abbasi
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: /ˈpɑːr.sə ɑːˈbɑː.si/
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Parsa
+last_name: Abbasi
 
 # Status emoji
 status:
@@ -20,93 +20,75 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Research Associate
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: Paderborn University
+    url: https://en.cs.uni-paderborn.de/ds-jrg
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:parsa.abbasi@uni-paderborn.de'
     label: E-mail Me
   - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
+    url: https://twitter.com/ParsaAbbasi1996
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/parsa-abbasi
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
+    url: https://www.linkedin.com/in/parsa-abbasi/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
-  - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://scholar.google.co.uk/citations?user=tKCPWs4AAAAJ
+  - icon: ai/stackoverflow
+    url: https://stackoverflow.com/users/9346942/parsa-abbasi
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Graph Neural Networks
+  - Knowledge Graphs
+  - Multi-Relational Graphs
+  - Natural Language Processing
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.8/4.0
-
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
-    company_url: ''
-    company_logo: ''
-    date_start: 2021-01-01
+  - area: Doctoral Degree
+    institution: Paderborn University
+    date_start: 2024-11-18
     date_end: ''
-    summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
-    company_url: ''
-    company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
     summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      Research Associate in the Data Science Junior Research Group
+  - area: Msc Artificial Intelligence
+    institution: Iran University of Science and Technology Institute of Technology
+    date_start: 2020-09-22
+    date_end: 2023-10-02
+    summary: |
+      GPA: 19.03 / 20.00
 
+      Thesis: “Improving the Overparameterization and Static Attention Problems in Relational Graph Attention Networks”
+      
+      Supervisor: Dr. Morteza Analoui
+  - area: BSc Computer Engineering
+    institution: University of Guilan
+    date_start: 2015-09-22
+    date_end: 2019-07-28
+    summary: |
+      GPA: 16.55 / 20.00
+      
+      Bachelor Project: “Presenting A Sentiment Analysis System Using Deep Learning Models On Persian Texts”
+      Supervisor: Dr. Seyed Abolghasem Mirroshandel
+work:
+  - position: Data Scientist
+    company_name: Quera
+    company_url: 'https://quera.org/'
+    company_logo: ''
+    date_start: 2022-02-27
+    date_end: 2024-10-20
+    summary: |2-
+      - Conducted Deep Learning, Machine Learning, and Data Analysis online courses, including writing lectures and designing coding assignments
+      - Guided students in online courses, answering over 800 clarifying questions and receiving excellent feedback (4.9/5.0 average rating)
+      - Developed an educational support bot powered by Large Language Models (LLMs) to assist students in comprehending course materials
+      - Managed the educational operations and mentorship program of a 60‑student data science bootcamp as an educational manager
+      - Gained expertise in designing educational materials, course content, and objectives, while working with diverse teams
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
@@ -144,10 +126,8 @@ skills:
 languages:
   - name: English
     percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+  - name: Persian
+    percent: 100
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -183,4 +163,6 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+*Parsa* is currently pursuing a doctoral degree at [*Paderborn University*](https://www.uni-paderborn.de/en/) as a research associate in the [*Data Science Junior Research Group*](https://en.cs.uni-paderborn.de/ds-jrg).  He is conducting research under the supervision of [*Dr. Stefan Heindorf*](https://www.uni-paderborn.de/person/11871), focusing on explainable machine learning for knowledge graphs. He holds a Master's degree in Artificial Intelligence from [*Iran University of Science and Technology*](https://www.iust.ac.ir/en), where he conducted research aimed at improving graph neural networks for multi-relational graphs. His work sought to enhance existing architectures like *RAGAT* by proposing and developing a model with fewer training parameters that addresses static attention issues.
+
+*Parsa* also earned his BSc in Computer Engineering from the [*University of Guilan*](https://english.guilan.ac.ir/), where he explored areas such as natural language processing and deep learning. During his undergraduate studies, as a member of the [*Guilan NLP Group*](https://nlp.guilan.ac.ir/), he co-authored a research paper on designing sentiment analysis models using deep learning architectures for low-resource Persian language.
