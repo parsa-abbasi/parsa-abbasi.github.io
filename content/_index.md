@@ -35,24 +35,9 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
-
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
-        
-        Please reach out to collaborate 😃
+        Right now, I'm in the process of litreture review to understand the current open problems in the intersection of knowledge graph reasoning and explainable AI. We are interested in more complex reasoning tasks and how to do them in a way that is interpretable/explainable and scalable. Feel free to reach out if you have any ideas or want to collaborate!
     design:
       columns: '1'
-  - block: collection
-    id: papers
-    content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 2
   - block: collection
     content:
       title: Recent Publications
@@ -76,7 +61,7 @@ sections:
   - block: collection
     id: news
     content:
-      title: Recent News
+      title: Recent Posts
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...
