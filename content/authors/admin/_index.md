@@ -170,6 +170,10 @@ skills:
         description: ''
         percent: 100
         icon: magnifying-glass
+  - name: NLP
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
       - name: NLTK
         description: ''
         percent: 100
