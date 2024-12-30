@@ -246,13 +246,13 @@ awards:
     url: https://graphacademy.neo4j.com/courses/cypher-fundamentals/
     date: '2023-07-31'
     awarder: neo4j GraphAcademy
-    icon: devicon/neo4j
+    icon: neo4j
   - title: Neo4j Fundamentals
     certificate_url: https://graphacademy.neo4j.com/c/647677f3-0677-450b-bec9-558a344837c1/
     url: https://graphacademy.neo4j.com/courses/neo4j-fundamentals/
     date: '2023-06-14'
     awarder: neo4j GraphAcademy
-    icon: devicon/neo4j
+    icon: neo4j
   - title: Building Chatbots in Python
     url: https://www.datacamp.com/courses/building-chatbots-in-python
     certificate_url: https://www.datacamp.com/statement-of-accomplishment/course/beb4b8d1d06f3ad446c82b3201789c9ff5ce0045
