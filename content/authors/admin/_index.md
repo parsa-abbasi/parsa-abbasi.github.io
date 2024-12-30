@@ -246,22 +246,26 @@ languages:
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
   - title: Cypher Fundamentals
-    url: https://graphacademy.neo4j.com/c/885ff287-8a7a-4133-adf6-8d1663106890/
+    certificate_url: https://graphacademy.neo4j.com/c/885ff287-8a7a-4133-adf6-8d1663106890/
+    url: https://graphacademy.neo4j.com/courses/cypher-fundamentals/
     date: '2023-07-31'
     awarder: neo4j GraphAcademy
     icon: devicon/neo4j
   - title: Neo4j Fundamentals
-    url: https://graphacademy.neo4j.com/c/647677f3-0677-450b-bec9-558a344837c1/
+    certificate_url: https://graphacademy.neo4j.com/c/647677f3-0677-450b-bec9-558a344837c1/
+    url: https://graphacademy.neo4j.com/courses/neo4j-fundamentals/
     date: '2023-06-14'
     awarder: neo4j GraphAcademy
     icon: devicon/neo4j
   - title: Building Chatbots in Python
     url: https://www.datacamp.com/courses/building-chatbots-in-python
+    certificate_url: https://www.datacamp.com/statement-of-accomplishment/course/beb4b8d1d06f3ad446c82b3201789c9ff5ce0045
     date: '2020-05-22'
     awarder: Datacamp
     icon: datacamp
   - title: Unsupervised Learning in Python
     url: https://www.datacamp.com/courses/unsupervised-learning-in-python
+    certificate_url: https://www.datacamp.com/statement-of-accomplishment/course/f3b03b3f62d486a5697b54e4c244d3733f3904c0
     date: '2020-05-22'
     awarder: Datacamp
     icon: datacamp
@@ -273,31 +277,37 @@ awards:
     icon: datacamp
   - title: Advanced NLP with spaCy
     url: https://www.datacamp.com/courses/advanced-nlp-with-spacy
+    certificate_url: https://www.datacamp.com/statement-of-accomplishment/course/12db179235e0a2e5bb56c15ba688c6bfe76bfd1a
     date: '2020-05-19'
     awarder: Datacamp
     icon: datacamp
   - title: Intermediate SQL Queries
     url: https://www.datacamp.com/courses/intermediate-sql-queries
+    certificate_url: https://www.datacamp.com/statement-of-accomplishment/course/2571ec005fe02237d768bae659c6a18be11e94a5
     date: '2020-05-19'
     awarder: Datacamp
     icon: datacamp
   - title: Neural Networks and Deep Learning
     url: https://www.coursera.org/learn/neural-networks-deep-learning
+    certificate_url: https://coursera.org/share/476c9612c86c7a95ea2c66407bf27727
     date: '2020-01-26'
     awarder: Coursera
     icon: coursera
   - title: Machine Learning Specialization
     url: https://www.coursera.org/learn/machine-learning-course
+    certificate_url: https://coursera.org/share/4fbac8c58f1d619220a587b34af80d16
     date: '2019-10-04'
     awarder: Coursera
     icon: coursera
   - title: Natural Language Processing in TensorFlow
     url: https://www.coursera.org/learn/natural-language-processing-tensorflow
+    certificate_url: https://coursera.org/share/6646b31a95d67e58693a7b51f6477a03
     date: '2018-08-19'
     awarder: Coursera
     icon: coursera
   - title: Deep Learning Summer School 2018
     url: https://www.linkedin.com/company/ut_acm/about/
+    certificate_url: /certificates/TehranACM-DL2018.jpg
     date: '2018-08-02'
     awarder: University of Tehran ACM Student Chapter
     icon: 
