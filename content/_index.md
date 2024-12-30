@@ -35,7 +35,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Right now, I'm in the process of litreture review to understand the current open problems in the intersection of knowledge graph reasoning and explainable AI. We are interested in more complex reasoning tasks and how to do them in a way that is interpretable/explainable and scalable. Feel free to reach out if you have any ideas or want to collaborate!
+        Right now, I'm in the process of literature review to understand the current open problems in the intersection of knowledge graph reasoning and explainable AI. We are interested in more complex reasoning tasks and how to do them in a way that is interpretable/explainable and scalable. Feel free to reach out if you have any ideas or want to collaborate!
     design:
       columns: '1'
   - block: collection
