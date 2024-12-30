@@ -173,11 +173,11 @@ skills:
       - name: NLTK
         description: ''
         percent: 100
-        icon: custom/nltk
+        icon: magnifying-glass
       - name: spaCy
         description: ''
         percent: 100
-        icon: custom/spacy
+        icon: magnifying-glass
       - name: HuggingFace
         description: ''
         percent: 100
