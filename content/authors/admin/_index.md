@@ -162,14 +162,6 @@ skills:
         description: ''
         percent: 100
         icon: custom/seaborn
-      - name: h2o
-        description: ''
-        percent: 100
-        icon: magnifying-glass
-      - name: imbalanced-learn
-        description: ''
-        percent: 100
-        icon: magnifying-glass
   - name: NLP
     color: '#eeac02'
     color_border: '#f0bf23'
