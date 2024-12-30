@@ -60,7 +60,7 @@ education:
 
       Supervisor: [Dr. Stefan Heindorf](https://www.uni-paderborn.de/person/11871)
   - area: MSc Artificial Intelligence
-    institution: Iran University of Science and Technology Institute of Technology
+    institution: Iran University of Science and Technology
     date_start: 2020-09-22
     date_end: 2023-10-02
     summary: |
@@ -165,15 +165,11 @@ skills:
       - name: h2o
         description: ''
         percent: 100
-        icon: 
+        icon: magnifying-glass
       - name: imbalanced-learn
         description: ''
         percent: 100
-        icon: 
-  - name: NLP
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
+        icon: magnifying-glass
       - name: NLTK
         description: ''
         percent: 100
@@ -185,23 +181,23 @@ skills:
       - name: HuggingFace
         description: ''
         percent: 100
-        icon: 
+        icon: magnifying-glass
       - name: gensim
         description: ''
         percent: 100
-        icon: 
+        icon: magnifying-glass
       - name: Flair
         description: ''
         percent: 100
-        icon: 
+        icon: magnifying-glass
       - name: CoreNLP
         description: ''
         percent: 100
-        icon: 
+        icon: magnifying-glass
       - name: LangChain
         description: ''
         percent: 100
-        icon: 
+        icon: magnifying-glass
   - name: Miscellaneous
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -229,7 +225,7 @@ skills:
       - name: django
         description: ''
         percent: 100
-        icon: 
+        icon: magnifying-glass
       - name: HTML
         description: ''
         percent: 100
@@ -249,31 +245,62 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
+  - title: Cypher Fundamentals
+    url: https://graphacademy.neo4j.com/c/885ff287-8a7a-4133-adf6-8d1663106890/
+    date: '2023-07-31'
+    awarder: neo4j GraphAcademy
+    icon: devicon/neo4j
+  - title: Neo4j Fundamentals
+    url: https://graphacademy.neo4j.com/c/647677f3-0677-450b-bec9-558a344837c1/
+    date: '2023-06-14'
+    awarder: neo4j GraphAcademy
+    icon: devicon/neo4j
+  - title: Building Chatbots in Python
+    url: https://www.datacamp.com/courses/building-chatbots-in-python
+    date: '2020-05-22'
+    awarder: Datacamp
+    icon: datacamp
+  - title: Unsupervised Learning in Python
+    url: https://www.datacamp.com/courses/unsupervised-learning-in-python
+    date: '2020-05-22'
+    awarder: Datacamp
+    icon: datacamp
+  - title: Advanced Deep Learning with Keras
+    certificate_url: https://www.datacamp.com/statement-of-accomplishment/course/4389bdc774ab59ade0def7da9f609cfceb881109
+    url: https://www.datacamp.com/courses/advanced-deep-learning-with-keras
+    date: '2020-05-20'
+    awarder: Datacamp
+    icon: datacamp
+  - title: Advanced NLP with spaCy
+    url: https://www.datacamp.com/courses/advanced-nlp-with-spacy
+    date: '2020-05-19'
+    awarder: Datacamp
+    icon: datacamp
+  - title: Intermediate SQL Queries
+    url: https://www.datacamp.com/courses/intermediate-sql-queries
+    date: '2020-05-19'
+    awarder: Datacamp
+    icon: datacamp
   - title: Neural Networks and Deep Learning
     url: https://www.coursera.org/learn/neural-networks-deep-learning
-    date: '2023-11-25'
+    date: '2020-01-26'
     awarder: Coursera
     icon: coursera
-    summary: |
-      I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
-  - title: Blockchain Fundamentals
-    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-    date: '2023-07-01'
-    awarder: edX
-    icon: edx
-    summary: |
-      Learned:
-      - Synthesize your own blockchain solutions
-      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-  - title: 'Object-Oriented Programming in R'
-    url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
-    certificate_url: https://www.datacamp.com
-    date: '2023-01-21'
-    awarder: datacamp
-    icon: datacamp
-    summary: |
-      Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
+  - title: Machine Learning Specialization
+    url: https://www.coursera.org/learn/machine-learning-course
+    date: '2019-10-04'
+    awarder: Coursera
+    icon: coursera
+  - title: Natural Language Processing in TensorFlow
+    url: https://www.coursera.org/learn/natural-language-processing-tensorflow
+    date: '2018-08-19'
+    awarder: Coursera
+    icon: coursera
+  - title: Deep Learning Summer School 2018
+    url: https://www.linkedin.com/company/ut_acm/about/
+    date: '2018-08-02'
+    awarder: University of Tehran ACM Student Chapter
+    icon: 
 ---
 
 ## About Me
