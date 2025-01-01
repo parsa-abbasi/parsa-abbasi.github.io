@@ -151,7 +151,7 @@ On each substring, it performs two checks:
 2) Can a prefix, suffix or infix be split off? (such as punctuations)
 
 
-<img src="images/tokenization.svg" style="max-width:720px"/>
+<img src="images/tokenization.svg"/>
 
 <div style="font-size:14px">
 <b>Image source:</b>
@@ -296,7 +296,7 @@ It consists of two parts:
 
 #### BPE learner
 
-<img src="images/byte_pair_encoding.png" style="min-width:720px"/>
+<img src="images/byte_pair_encoding.png"/>
 
 
 #### BPE Example
@@ -834,7 +834,7 @@ One usecase of part-of-speech tagging is to disambiguate words that have multipl
 - The **wind** is blowing.
 - I need to **wind** my watch.
 
-<img src="images/wind_verb_noun.webp" style="max-width:550px; margin-bottom:0px"/>
+<img src="images/wind_verb_noun.webp"/>
 <div style="font-size:14px">
 <b>Image source:</b>
 <i><a href="https://grammarist.com/heteronyms/wind-vs-wind/" target="_blank">https://grammarist.com/heteronyms/wind-vs-wind/</a></i>
@@ -891,7 +891,7 @@ Named entities: [('Apple', 'ORG'), ('U.K.', 'GPE'), ('$1 billion', 'MONEY')]
 
 When you call `nlp` on a text, spaCy will run the text through the pipeline in order:
 
-<img src="images/pipeline.png" style="max-width:850px; margin-bottom:0px"/>
+<img src="images/pipeline.png"/>
 
 
 ```python
@@ -1000,19 +1000,21 @@ What are the problems with one-hot encoding?
 - The vectors are not informative (they don't capture the meaning of the words)
 - The vectors are not comparable (the distance between two vectors is not meaningful)
 
-<img src="images/meme_word_representation.png" style="max-width:500px"/>
+<center>
+<img src="images/meme_word_representation.png"/>
+</center>
 
 ### Bag-of-Words
 
 Bag-of-Words (BoW) is a representation method that represents each document as a vector of numbers. The length of the vector is equal to the size of the vocabulary. Each document is represented by a vector that has the count of each word in the vocabulary.
 
 It is called a “bag” of words, because any information about the order or structure of words in the document is discarded.
-
-<img src="images/bag_of_words.jpg" style="max-width:900px; margin-bottom:0px"/>
-
+<center>
+<img src="images/bag_of_words.jpg"/>
 <div style="font-size:14px">
 <b>Image source:</b>
 <i><a href="http://stanford.edu/~jurafsky/slp3/slides/7_NB.pdf" target="_blank">http://stanford.edu/~jurafsky/slp3/slides/7_NB.pdf</a></i>
+</center>
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -1157,19 +1159,19 @@ print(tf_idf.toarray())
 
 Consider in the collection of Shakespeare’s 37 plays the two words `Romeo` and `action`. The words have identical collection frequencies but very different document frequencies, since `Romeo` only occurs in a single play. If our goal is to find documents about the romantic tribulations of `Romeo`, the word `Romeo` should be highly weighted, but not `action`.
 
-<img src="images/shakespeare_tf.png" style="max-width:720px; margin-bottom:0px"/>
+<img src="images/shakespeare_tf.png"/>
 
 
 Here are some idf values for some words in the Shakespeare corpus:
 
-<img src="images/shakespeare_df_idf.png" style="max-width:300px; margin-bottom:0px"/>
+<img src="images/shakespeare_df_idf.png"/>
 
 
 Here's the raw counts in the Shakespeare term-document matrix, and the tf-idf weighted version of the same matrix.
 
-<img src="images/shakespeare_raw_count.png" style="max-width:720px; margin-bottom:0px"/>
+<img src="images/shakespeare_raw_count.png"/>
 
-<img src="images/shakespeare_tf_idf.png" style="max-width:720px; margin-bottom:0px"/>
+<img src="images/shakespeare_tf_idf.png"/>
 
 ## Naïve Bayes
 
@@ -1332,7 +1334,7 @@ Doc2Vec is an extension of Word2Vec that also learns a vector representation for
 
 The algorithm is very similar to Word2Vec. The only difference is that we add a document vector to the input of the neural network.
 
-<img src="images/doc2vec.jpeg" style="max-width:720px; margin-bottom:0px"/>
+<img src="images/doc2vec.jpeg"/>
 
 ## Finishing Up
 Thank you for keeping up with me until the end!
