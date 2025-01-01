@@ -936,7 +936,7 @@ $$ \small{P(\text{"HuggingFace"}|c)= \frac{count(\text{"HuggingFace"}, c) + 1}{\
 &lt;/center>
 &lt;h2 id="finishing-up">Finishing Up&lt;/h2>
 &lt;p>Thank you for keeping up with me until the end!&lt;/p>
-&lt;p>If you have any questions or suggestions, please send me an email at &lt;a href="mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20nlp">parsa.abbasi1996@gmail.com&lt;/a>.&lt;/p></description></item><item><title>🎉 Easily create your own simple yet highly customizable blog</title><link>https://parsa-abbasi.github.io/post/get-started/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/post/get-started/</guid><description>&lt;p>Welcome 👋&lt;/p>
+&lt;p>If you have any questions or suggestions, feel free to reach out to me!&lt;/p></description></item><item><title>🎉 Easily create your own simple yet highly customizable blog</title><link>https://parsa-abbasi.github.io/post/get-started/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/post/get-started/</guid><description>&lt;p>Welcome 👋&lt;/p>
 &lt;details class="print:hidden xl:hidden" open>
 &lt;summary>Table of Contents&lt;/summary>
 &lt;div class="text-sm">
@@ -1114,7 +1114,7 @@ console.log('code block');
 &lt;p>Hugo Blox supports the popular &lt;a href="https://plot.ly/" target="_blank" rel="noopener">Plotly&lt;/a> format for interactive data visualizations. With Plotly, you can design almost any kind of visualization you can imagine!&lt;/p>
 &lt;p>Save your Plotly JSON in your page folder, for example &lt;code>line-chart.json&lt;/code>, and then add the &lt;code>{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code> shortcode where you would like the chart to appear.&lt;/p>
 &lt;p>Demo:&lt;/p>
-&lt;div id="chart-531498267" class="chart">&lt;/div>
+&lt;div id="chart-648593271" class="chart">&lt;/div>
 &lt;script>
 async function fetchChartJSON() {
 console.debug('Hugo Blox fetching chart JSON...')
@@ -1130,7 +1130,7 @@ return;
 clearInterval( a );
 fetchChartJSON().then(chart => {
 console.debug('Plotting chart...')
-window.Plotly.newPlot('chart-531498267', chart.data, chart.layout, {responsive: true});
+window.Plotly.newPlot('chart-648593271', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
