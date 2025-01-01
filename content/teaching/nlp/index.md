@@ -1346,4 +1346,4 @@ The algorithm is very similar to Word2Vec. The only difference is that we add a 
 ## Finishing Up
 Thank you for keeping up with me until the end!
 
-If you have any questions or suggestions, please send me an email at [parsa.abbasi1996@gmail.com](mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20nlp).
+If you have any questions or suggestions, feel free to reach out to me!
