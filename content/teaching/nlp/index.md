@@ -150,13 +150,14 @@ On each substring, it performs two checks:
 
 2) Can a prefix, suffix or infix be split off? (such as punctuations)
 
-
+<center>
 <img src="images/tokenization.svg"/>
 
 <div style="font-size:14px">
 <b>Image source:</b>
 <i><a href="https://spacy.io/usage/linguistic-features#how-tokenizer-works" target="_blank">https://spacy.io/usage/linguistic-features#how-tokenizer-works</a></i>
 </div>
+</center>
 
 ```python
 import spacy
@@ -296,8 +297,9 @@ It consists of two parts:
 
 #### BPE learner
 
+<center>
 <img src="images/byte_pair_encoding.png"/>
-
+</center>
 
 #### BPE Example
 
@@ -774,13 +776,10 @@ Consider an information retrieval system where queries are matched against docum
 
 Stemming usually decreases precision and increases recall.
 
-<div style="font-size:22px">
-
 - Stemming increases recall by mapping variants of words to their common root form, which allows the system to retrieve more relevant documents that contain different inflectional forms of a word
 
 - On the other hand, stemming can harm precision by introducing ambiguity and merging words with different meanings into the same root form. This can lead to a <u>higher number of false positives</u>, where the system retrieves irrelevant documents that share the same stemmed root with the query.
 
-</div>
 
 
 ```python
@@ -833,13 +832,13 @@ One usecase of part-of-speech tagging is to disambiguate words that have multipl
 
 - The **wind** is blowing.
 - I need to **wind** my watch.
-
+<center>
 <img src="images/wind_verb_noun.webp"/>
 <div style="font-size:14px">
 <b>Image source:</b>
 <i><a href="https://grammarist.com/heteronyms/wind-vs-wind/" target="_blank">https://grammarist.com/heteronyms/wind-vs-wind/</a></i>
 </div>
-
+</center>
 
 ```python
 import spacy
@@ -890,9 +889,9 @@ Named entities: [('Apple', 'ORG'), ('U.K.', 'GPE'), ('$1 billion', 'MONEY')]
 ## spaCy Pipeline
 
 When you call `nlp` on a text, spaCy will run the text through the pipeline in order:
-
+<center>
 <img src="images/pipeline.png"/>
-
+</center>
 
 ```python
 import spacy
@@ -1159,19 +1158,25 @@ print(tf_idf.toarray())
 
 Consider in the collection of Shakespeare’s 37 plays the two words `Romeo` and `action`. The words have identical collection frequencies but very different document frequencies, since `Romeo` only occurs in a single play. If our goal is to find documents about the romantic tribulations of `Romeo`, the word `Romeo` should be highly weighted, but not `action`.
 
+<center>
 <img src="images/shakespeare_tf.png"/>
-
+</center>
 
 Here are some idf values for some words in the Shakespeare corpus:
 
+<center>
 <img src="images/shakespeare_df_idf.png"/>
-
+</center>
 
 Here's the raw counts in the Shakespeare term-document matrix, and the tf-idf weighted version of the same matrix.
 
+<center>
 <img src="images/shakespeare_raw_count.png"/>
+</center>
 
+<center>
 <img src="images/shakespeare_tf_idf.png"/>
+</center>
 
 ## Naïve Bayes
 
@@ -1334,7 +1339,9 @@ Doc2Vec is an extension of Word2Vec that also learns a vector representation for
 
 The algorithm is very similar to Word2Vec. The only difference is that we add a document vector to the input of the neural network.
 
+<center>
 <img src="images/doc2vec.jpeg"/>
+</center>
 
 ## Finishing Up
 Thank you for keeping up with me until the end!
