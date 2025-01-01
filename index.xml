@@ -80,7 +80,7 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;p>Can a prefix, suffix or infix be split off? (such as punctuations)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;img src="images/tokenization.svg" style="max-width:720px"/>
+&lt;img src="images/tokenization.svg"/>
 &lt;div style="font-size:14px">
 &lt;b>Image source:&lt;/b>
 &lt;i>&lt;a href="https://spacy.io/usage/linguistic-features#how-tokenizer-works" target="_blank">https://spacy.io/usage/linguistic-features#how-tokenizer-works&lt;/a>&lt;/i>
@@ -179,7 +179,7 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;li>A token &lt;strong>segmenter&lt;/strong>: takes a raw test sentence and tokenizes it according to the vocabulary.&lt;/li>
 &lt;/ul>
 &lt;h4 id="bpe-learner">BPE learner&lt;/h4>
-&lt;img src="images/byte_pair_encoding.png" style="min-width:720px"/>
+&lt;img src="images/byte_pair_encoding.png"/>
 &lt;h4 id="bpe-example">BPE Example&lt;/h4>
 &lt;p>Corpus:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;low low low low low lowest lowest newer newer newer newer newer newer wider wider wider new new &amp;#34;&lt;/span>
@@ -600,7 +600,7 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;li>The &lt;strong>wind&lt;/strong> is blowing.&lt;/li>
 &lt;li>I need to &lt;strong>wind&lt;/strong> my watch.&lt;/li>
 &lt;/ul>
-&lt;img src="images/wind_verb_noun.webp" style="max-width:550px; margin-bottom:0px"/>
+&lt;img src="images/wind_verb_noun.webp"/>
 &lt;div style="font-size:14px">
 &lt;b>Image source:&lt;/b>
 &lt;i>&lt;a href="https://grammarist.com/heteronyms/wind-vs-wind/" target="_blank">https://grammarist.com/heteronyms/wind-vs-wind/&lt;/a>&lt;/i>
@@ -639,7 +639,7 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Named&lt;/span> &lt;span class="n">entities&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[(&lt;/span>&lt;span class="s1">&amp;#39;Apple&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ORG&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;U.K.&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;GPE&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;$1 billion&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;MONEY&amp;#39;&lt;/span>&lt;span class="p">)]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="spacy-pipeline">spaCy Pipeline&lt;/h2>
 &lt;p>When you call &lt;code>nlp&lt;/code> on a text, spaCy will run the text through the pipeline in order:&lt;/p>
-&lt;img src="images/pipeline.png" style="max-width:850px; margin-bottom:0px"/>
+&lt;img src="images/pipeline.png"/>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">spacy&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">pandas&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">pd&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
@@ -731,14 +731,18 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;li>The vectors are not informative (they don&amp;rsquo;t capture the meaning of the words)&lt;/li>
 &lt;li>The vectors are not comparable (the distance between two vectors is not meaningful)&lt;/li>
 &lt;/ul>
-&lt;img src="images/meme_word_representation.png" style="max-width:500px"/>
+&lt;center>
+&lt;img src="images/meme_word_representation.png"/>
+&lt;/center>
 &lt;h3 id="bag-of-words">Bag-of-Words&lt;/h3>
 &lt;p>Bag-of-Words (BoW) is a representation method that represents each document as a vector of numbers. The length of the vector is equal to the size of the vocabulary. Each document is represented by a vector that has the count of each word in the vocabulary.&lt;/p>
 &lt;p>It is called a “bag” of words, because any information about the order or structure of words in the document is discarded.&lt;/p>
-&lt;img src="images/bag_of_words.jpg" style="max-width:900px; margin-bottom:0px"/>
+&lt;center>
+&lt;img src="images/bag_of_words.jpg"/>
 &lt;div style="font-size:14px">
 &lt;b>Image source:&lt;/b>
 &lt;i>&lt;a href="http://stanford.edu/~jurafsky/slp3/slides/7_NB.pdf" target="_blank">http://stanford.edu/~jurafsky/slp3/slides/7_NB.pdf&lt;/a>&lt;/i>
+&lt;/center>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">sklearn.feature_extraction.text&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">CountVectorizer&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.tokenize&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">word_tokenize&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
@@ -830,12 +834,12 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="p">]]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="shakespeare-example">Shakespeare Example&lt;/h5>
 &lt;p>Consider in the collection of Shakespeare’s 37 plays the two words &lt;code>Romeo&lt;/code> and &lt;code>action&lt;/code>. The words have identical collection frequencies but very different document frequencies, since &lt;code>Romeo&lt;/code> only occurs in a single play. If our goal is to find documents about the romantic tribulations of &lt;code>Romeo&lt;/code>, the word &lt;code>Romeo&lt;/code> should be highly weighted, but not &lt;code>action&lt;/code>.&lt;/p>
-&lt;img src="images/shakespeare_tf.png" style="max-width:720px; margin-bottom:0px"/>
+&lt;img src="images/shakespeare_tf.png"/>
 &lt;p>Here are some idf values for some words in the Shakespeare corpus:&lt;/p>
-&lt;img src="images/shakespeare_df_idf.png" style="max-width:300px; margin-bottom:0px"/>
+&lt;img src="images/shakespeare_df_idf.png"/>
 &lt;p>Here&amp;rsquo;s the raw counts in the Shakespeare term-document matrix, and the tf-idf weighted version of the same matrix.&lt;/p>
-&lt;img src="images/shakespeare_raw_count.png" style="max-width:720px; margin-bottom:0px"/>
-&lt;img src="images/shakespeare_tf_idf.png" style="max-width:720px; margin-bottom:0px"/>
+&lt;img src="images/shakespeare_raw_count.png"/>
+&lt;img src="images/shakespeare_tf_idf.png"/>
 &lt;h2 id="naïve-bayes">Naïve Bayes&lt;/h2>
 &lt;p>Naïve Bayes is a simple (naïve) probabilistic classifier based on Bayes&amp;rsquo; theorem. It relies on very simple representation of documents: bag-of-words.&lt;/p>
 &lt;p>Text classification is the task of assigning a predefined category to a document. For example, we might want to classify a document as &lt;code>positive&lt;/code> or &lt;code>negative&lt;/code> or &lt;code>spam&lt;/code> or &lt;code>not spam&lt;/code>.&lt;/p>
@@ -913,7 +917,7 @@ $$ \small{P(\text{"HuggingFace"}|c)= \frac{count(\text{"HuggingFace"}, c) + 1}{\
 &lt;h4 id="doc2vec">Doc2Vec&lt;/h4>
 &lt;p>Doc2Vec is an extension of Word2Vec that also learns a vector representation for the document.&lt;/p>
 &lt;p>The algorithm is very similar to Word2Vec. The only difference is that we add a document vector to the input of the neural network.&lt;/p>
-&lt;img src="images/doc2vec.jpeg" style="max-width:720px; margin-bottom:0px"/>
+&lt;img src="images/doc2vec.jpeg"/>
 &lt;h2 id="finishing-up">Finishing Up&lt;/h2>
 &lt;p>Thank you for keeping up with me until the end!&lt;/p>
 &lt;p>If you have any questions or suggestions, please send me an email at &lt;a href="mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20nlp">parsa.abbasi1996@gmail.com&lt;/a>.&lt;/p></description></item><item><title>🎉 Easily create your own simple yet highly customizable blog</title><link>https://parsa-abbasi.github.io/post/get-started/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/post/get-started/</guid><description>&lt;p>Welcome 👋&lt;/p>
@@ -1094,7 +1098,7 @@ console.log('code block');
 &lt;p>Hugo Blox supports the popular &lt;a href="https://plot.ly/" target="_blank" rel="noopener">Plotly&lt;/a> format for interactive data visualizations. With Plotly, you can design almost any kind of visualization you can imagine!&lt;/p>
 &lt;p>Save your Plotly JSON in your page folder, for example &lt;code>line-chart.json&lt;/code>, and then add the &lt;code>{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code> shortcode where you would like the chart to appear.&lt;/p>
 &lt;p>Demo:&lt;/p>
-&lt;div id="chart-786142539" class="chart">&lt;/div>
+&lt;div id="chart-627183549" class="chart">&lt;/div>
 &lt;script>
 async function fetchChartJSON() {
 console.debug('Hugo Blox fetching chart JSON...')
@@ -1110,7 +1114,7 @@ return;
 clearInterval( a );
 fetchChartJSON().then(chart => {
 console.debug('Plotting chart...')
-window.Plotly.newPlot('chart-786142539', chart.data, chart.layout, {responsive: true});
+window.Plotly.newPlot('chart-627183549', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
