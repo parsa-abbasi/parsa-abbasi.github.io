@@ -1289,7 +1289,7 @@ Let's build a Naïve Bayes classifier from scratch!
 [Link to the notebook](https://colab.research.google.com/drive/1M1ZpPtAsq1fyTm8JKIdTrqmavnTRQuQQ?usp=sharing)
 
 
-##### N-gram
+### N-gram
 
 An n-gram is a contiguous sequence of n items from a given sample of text. We used just one word as a feature in our Naïve Bayes classifier (Unigram). We can use multiple words as features (Bigram, Trigram, etc.).
 
