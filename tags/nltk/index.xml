@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NLTK | Parsa Abbasi Personal Website</title><link>https://parsa-abbasi.github.io/tags/nltk/</link><atom:link href="https://parsa-abbasi.github.io/tags/nltk/index.xml" rel="self" type="application/rss+xml"/><description>NLTK</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Nov 2023 00:00:00 +0000</lastBuildDate><image><url>https://parsa-abbasi.github.io/media/icon_hu12411768742163648625.png</url><title>NLTK</title><link>https://parsa-abbasi.github.io/tags/nltk/</link></image><item><title>Natural Language Processing</title><link>https://parsa-abbasi.github.io/teaching/nlp/</link><pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/teaching/nlp/</guid><description>&lt;h1 id="definition">Definition&lt;/h1>
+&lt;h2 id="natural-langauge">Natural Langauge&lt;/h2>
+&lt;p>Natural language refers to the language that humans use for communication (to express thoughts, feelings, and ideas), such as English, Dutch, or Persian, as opposed to a &lt;em>formal&lt;/em> language, such as a computer programming language.&lt;/p>
+&lt;h2 id="formal-language-1">Formal Language (1)&lt;/h2>
+&lt;p>A formal language is a language that is defined by a set of rules that describe how to write, read, and interpret the language.
+These languages are defined in such a strict way that is always possible to determine whether a given string of characters is a valid sentence in the language or not.&lt;/p>
+&lt;h2 id="formal-language-2">Formal Language (2)&lt;/h2>
+&lt;p>When you run a compiler or an interpreter on the code you write in a programming language, you either get a syntax error or not. The compiler won&amp;rsquo;t say something like &amp;ldquo;Hmm, this code is maybe 50% grammatically correct&amp;rdquo;.&lt;/p>
+&lt;h2 id="natural-language-ambiguity">Natural Language Ambiguity&lt;/h2>
+&lt;p>Human languages are ambiguous. The same sentence can have multiple meanings depending on the context.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">He saw a girl with a telescope.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">I saw a bat.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">She told her brother she would call him today.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">I will meet you at the bank tomorrow.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="natural-language-processing">Natural Language Processing&lt;/h2>
+&lt;p>Natural Language Processing (&lt;strong>NLP&lt;/strong>) is a field of computer science, artificial intelligence, and computational linguistics concerned with the interactions between computers and human (natural) languages.&lt;/p>
+&lt;h2 id="natural-language-understanding">Natural Language Understanding&lt;/h2>
+&lt;p>Natural Language Understanding (&lt;strong>NLU&lt;/strong>) is a subtopic of NLP that focuses on the tasks of understanding and interpreting the meaning of language. These systems use a combination of NLP and machine learning algorithms to derive meaning from an input sentence.&lt;/p>
+&lt;h2 id="nautral-language-generation">Nautral Language Generation&lt;/h2>
+&lt;p>Natural Language Generation (&lt;strong>NLG&lt;/strong>) is a subtopic of NLP that focuses on the tasks of generating natural language from structured data. These systems use a combination of NLP and machine learning algorithms to generate text that is as close as possible to human-written text.&lt;/p>
+&lt;h2 id="differences">Differences&lt;/h2>
+&lt;ul>
+&lt;li>NLP is focused on &lt;u>processing&lt;/u> and &lt;u>analyzing&lt;/u> natural language data.&lt;/li>
+&lt;li>NLU is focused on &lt;u>understanding&lt;/u> and &lt;u>interpreting&lt;/u> the meaning of natural language data.&lt;/li>
+&lt;li>NLG is focused on &lt;u>generating&lt;/u> natural language output.&lt;/li>
+&lt;/ul>
+&lt;h2 id="common-terms">Common Terms&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Corpus ($C$)&lt;/strong>: A collection of text documents.&lt;/li>
+&lt;li>&lt;strong>Document ($D$)&lt;/strong>: A single text record of the corpus.&lt;/li>
+&lt;li>&lt;strong>Word ($w$)&lt;/strong>: A single word in a document.&lt;/li>
+&lt;li>&lt;strong>Token ($t$)&lt;/strong>: An instance of a sequence of characters in a document that are grouped together as a useful semantic unit for processing.&lt;/li>
+&lt;li>&lt;strong>Vocabulary ($V$)&lt;/strong>: The set of all unique words/tokens present in the corpus.&lt;/li>
+&lt;/ul>
+&lt;h1 id="tokenization">Tokenization&lt;/h1>
+&lt;p>The main tool for preprocessing textual data is a tokenizer. A tokenizer is a function that takes a string as input and splits text into tokens according to a set of rules.&lt;/p>
+&lt;h2 id="word-based-tokenizers">Word-based Tokenizers&lt;/h2>
+&lt;p>Splitting a text into smaller chunks is harder than it seems. For example, how would you split the following text into tokens?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Don&amp;#39;t you love 🤗 Transformers? We sure do.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A simple approach would be to split the text by whitespace characters.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;Don&amp;#39;t&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;you&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;love&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;🤗&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;Transformers?&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;We&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;sure&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;do.&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="tokenization-challanges">Tokenization Challanges&lt;/h2>
+&lt;ul>
+&lt;li>Can&amp;rsquo;t just blindly remove punctuation: Ph.D., AT&amp;amp;T&lt;/li>
+&lt;li>Clitics: a part of a word that can&amp;rsquo;t stand on its own: we&amp;rsquo;re -&amp;gt; we are&lt;/li>
+&lt;li>Multiword Expressions (MWE): New York, rock ’n’ roll&lt;/li>
+&lt;/ul>
+&lt;h2 id="punctuation">Punctuation&lt;/h2>
+&lt;p>We should take the punctuation into account so that a model does not have to learn a different representation of a word and every possible punctuation symbol that could follow it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;Don&amp;#39;t&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;you&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;love&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;🤗&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;Transformers?&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;We&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;sure&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;do.&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;Don&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;t&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;you&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;love&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;🤗&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;Transformers&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;?&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;We&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;sure&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;do&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;.&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;Don&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;t&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;you&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;love&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;🤗&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;Transformers&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;?&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;We&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;sure&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;do&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;.&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look how the tokenization dealt with the word &lt;u>&lt;code>Don't&lt;/code>&lt;/u>. It split the word into three tokens! &lt;u>&lt;code>Don't&lt;/code>&lt;/u> stands for &lt;u>&lt;code>Do not&lt;/code>&lt;/u>, but the tokenizer doesn&amp;rsquo;t know that. It would be better if the tokenizer could split the word into two tokens: &lt;u>&lt;code>Do&lt;/code>&lt;/u> and &lt;u>&lt;code>n't&lt;/code>&lt;/u>.&lt;/p>
+&lt;h2 id="nltk-tokenizer">NLTK Tokenizer&lt;/h2>
+&lt;p>To handle this kind of challanges, each library has its own procedure of how to tokenize a text.
+NLTK is a popular Python library for NLP. It has a advanced word tokenizer that can handle the above example.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.tokenize&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">word_tokenize&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Don&amp;#39;t you love 🤗 Transformers? We sure do.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">word_tokenize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Do&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;n&amp;#39;t&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;you&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;love&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;🤗&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Transformers&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;?&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;We&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;sure&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;do&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="spacy-tokenizer">spaCy Tokenizer&lt;/h2>
+&lt;p>spaCy is another popular and powerful Python library for NLP. We will use the &lt;code>tokenizer()&lt;/code> function to tokenize the text. It will split the raw text on whitespace character (similar to &lt;code>text.split(' ')&lt;/code>) and then the tokenizer processes the text from left to right.&lt;/p>
+&lt;p>On each substring, it performs two checks:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Does the substring match a tokenizer exception rule? (&lt;u>&lt;code>don't&lt;/code>&lt;/u> and &lt;u>&lt;code>U.K.&lt;/code>&lt;/u>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Can a prefix, suffix or infix be split off? (such as punctuations)&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;img src="images/tokenization.svg" style="max-width:720px"/>
+&lt;div style="font-size:14px">
+&lt;b>Image source:&lt;/b>
+&lt;i>&lt;a href="https://spacy.io/usage/linguistic-features#how-tokenizer-works" target="_blank">https://spacy.io/usage/linguistic-features#how-tokenizer-works&lt;/a>&lt;/i>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">spacy&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nlp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">spacy&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;en_core_web_sm&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Don&amp;#39;t you love 🤗 Transformers? We sure do.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nlp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">doc&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">doc&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">doc&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tokens&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Don&amp;#39;t you love 🤗 Transformers? We sure do.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;class &amp;#39;spacy.tokens.doc.Doc&amp;#39;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[&amp;#39;Do&amp;#39;, &amp;#34;n&amp;#39;t&amp;#34;, &amp;#39;you&amp;#39;, &amp;#39;love&amp;#39;, &amp;#39;🤗&amp;#39;, &amp;#39;Transformers&amp;#39;, &amp;#39;?&amp;#39;, &amp;#39;We&amp;#39;, &amp;#39;sure&amp;#39;, &amp;#39;do&amp;#39;, &amp;#39;.&amp;#39;]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="how-many-words">How many words?&lt;/h2>
+&lt;p>Herdan&amp;rsquo;s law states that the number of words/types in a language (vocabular size) is proportional to the square root of the number of different word tokens.&lt;/p>
+&lt;p>$ |V| = kN^\beta $&lt;/p>
+&lt;p>$ 0.67 &lt; \beta &lt; 0.75 $&lt;/p>
+&lt;p>Word-based tokenizer generates a very big vocabulary (the set of all unique words and tokens used).&lt;/p>
+&lt;div style="font-size:20px">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Corpus&lt;/th>
+&lt;th>Tokens = $N$&lt;/th>
+&lt;th>Types = $|V|$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://catalog.ldc.upenn.edu/LDC97S62" target="_blank">Switchboard phone conversations&lt;/a>&lt;/td>
+&lt;td>2.4 million&lt;/td>
+&lt;td>20 thousand&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://lexically.net/wordsmith/support/shakespeare.html" target="_blank">Shakespeare&lt;/a>&lt;/td>
+&lt;td>884,000&lt;/td>
+&lt;td>31 thousand&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://www.english-corpora.org/coca/" target="_blank">COCA&lt;/a>&lt;/td>
+&lt;td>440 million&lt;/td>
+&lt;td>2 million&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://commondatastorage.googleapis.com/books/syntactic-ngrams/index.html" target="_blank">Google N-grams&lt;/a>&lt;/td>
+&lt;td>1 trillion&lt;/td>
+&lt;td>13+ million&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;h2 id="character-based-tokenizers">Character-based Tokenizers&lt;/h2>
+&lt;p>Why not simply tokenize on characters? It&amp;rsquo;s a simple approach and it greatly reduces the vocabulary size. But, it is much harder for a model to learn meaningful representations of input text.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Don&amp;#39;t you love 🤗 Transformers? We sure do.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tokens&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;D&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;y&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;u&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;v&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;🤗&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;T&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;f&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;m&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;?&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;W&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;u&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Why not get the best of both worlds (word-based and character-based tokenization)? Many modern models (specifically, Transformer-based models) use subword tokenization.&lt;/p>
+&lt;p>Subword tokenization rely on the following principles:&lt;/p>
+&lt;ul>
+&lt;li>Frequent words should not be split into smaller subwords.&lt;/li>
+&lt;li>Rare words should be decomposed into meaningful subwords.&lt;/li>
+&lt;/ul>
+&lt;p>For instance, &amp;ldquo;absurdly&amp;rdquo; is a rare word and could be decomposed into &amp;ldquo;absurd&amp;rdquo; and &amp;ldquo;ly&amp;rdquo;. But, &amp;ldquo;absurd&amp;rdquo; and &amp;ldquo;ly&amp;rdquo; are more frequent while at the same time the meaning of &amp;ldquo;absurdly&amp;rdquo; is kept by combining the two subwords.&lt;/p>
+&lt;p>Many languages have a large number of words that are composed of multiple meaningful subwords. &amp;ldquo;Lebensversicherungsgesellschaftsangestellter&amp;rdquo; means &amp;ldquo;life insurance company employee&amp;rdquo; in German.&lt;/p>
+&lt;p>Subword tokenization allows the model to:&lt;/p>
+&lt;ul>
+&lt;li>have a reasonably sized vocabulary&lt;/li>
+&lt;li>being able to learn meaningful context-independent representations of words&lt;/li>
+&lt;li>being able to process words that are not in the vocabulary, by decomposing them into known subwords&lt;/li>
+&lt;/ul>
+&lt;h2 id="-tokenizers">🤗 Tokenizers&lt;/h2>
+&lt;p>Hugging Face is a platform that provides state-of-the-art NLP technologies. Each model in the &lt;a href="https://huggingface.co/models" target="_blank" rel="noopener">Hugging Face Model Hub&lt;/a> is accompanied by a tokenizer. The tokenizer is responsible for preprocessing the text, splitting it into tokens and mapping tokens to token IDs. To mark some special tokens, the tokenizer also adds special tokens to the sequence.&lt;/p>
+&lt;h3 id="berttokenizer---uncased">BertTokenizer - Uncased&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">transformers&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">BertTokenizer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokenizer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">BertTokenizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">from_pretrained&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;bert-base-uncased&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;US orders immediate halt to some AI chip exports to China, Nvidia says&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tokenizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tokenize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tokens&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;us&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;orders&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;immediate&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;halt&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;to&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;some&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ai&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;chip&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;exports&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;to&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;china&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;##vid&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;##ia&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;says&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="berttokenizer---cased">BertTokenizer - Cased&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">transformers&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">BertTokenizer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokenizer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">BertTokenizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">from_pretrained&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;bert-base-cased&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;US orders immediate halt to some AI chip exports to China, Nvidia says&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tokenizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tokenize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tokens&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;US&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;orders&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;immediate&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;halt&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;to&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;some&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;AI&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;chip&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;exports&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;to&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;China&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;N&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;##vid&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;##ia&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;says&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="byte-pair-encoding-bpe">Byte-Pair Encoding (BPE)&lt;/h2>
+&lt;p>BPE uses the data to tell us how to tokenize.&lt;/p>
+&lt;p>It consists of two parts:&lt;/p>
+&lt;ul>
+&lt;li>A token &lt;strong>learner&lt;/strong>: takes a raw training corpus and outputs a vocabulary of subword units (tokens).&lt;/li>
+&lt;li>A token &lt;strong>segmenter&lt;/strong>: takes a raw test sentence and tokenizes it according to the vocabulary.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="bpe-learner">BPE learner&lt;/h3>
+&lt;img src="images/byte_pair_encoding.png" style="min-width:720px"/>
+&lt;hr>
+&lt;h3 id="bpe-example">BPE Example&lt;/h3>
+&lt;p>Corpus:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;low low low low low lowest lowest newer newer newer newer newer newer wider wider wider new new &amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Corpus representation:&lt;/p>
+&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>n e w e r _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d e r _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>n e w _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;h3 id="bpe-example-1">BPE Example&lt;/h3>
+&lt;h4 id="iteration-1">Iteration 1&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>n e w e r _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d e r _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>n e w _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>n e w &lt;span style="color:red">er&lt;/span> _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d &lt;span style="color:red">er&lt;/span> _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>n e w _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h4 id="iteration-2">Iteration 2&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>n e w er _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d er _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>n e w _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>n e w &lt;span style="color:red">er_&lt;/span>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d &lt;span style="color:red">er_&lt;/span>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>n e w _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h4 id="iteration-3">Iteration 3&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>n e w er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>n e w _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ne&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>&lt;span style="color:red">ne&lt;/span> w er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>&lt;span style="color:red">ne&lt;/span> w _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h4 id="iteration-4">Iteration 4&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ne&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>ne w er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>ne w _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ne&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;new&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>l o w _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>l o w e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>&lt;span style="color:red">new&lt;/span> er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>&lt;span style="color:red">new&lt;/span> _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h4 id="after-iteration-8">After Iteration 8&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ne&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;new&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;lo&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;low&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;newer_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;low_&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;tbody>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>low_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>low e s t _&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>newer_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>w i d er_&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>new _&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;h3 id="bpe-segmenter">BPE Segmenter&lt;/h3>
+&lt;p>On the test sentence, run each learned merge operation &lt;u>greedily&lt;/u>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ne&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;new&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;lo&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;low&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;newer_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;low_&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&amp;ldquo;n e w e r _&amp;rdquo; → &amp;ldquo;newer_&amp;rdquo; (full word)&lt;/li>
+&lt;li>&amp;ldquo;l o w e r _&amp;rdquo; → &amp;ldquo;low er_&amp;rdquo; (two tokens)&lt;/li>
+&lt;/ul>
+&lt;h3 id="properties-of-bpe-tokens">Properties of BPE tokens&lt;/h3>
+&lt;p>The resulting tokens have the following properties:&lt;/p>
+&lt;ul>
+&lt;li>Usually include frequent words&lt;/li>
+&lt;li>And frequent subwords which are often morphemes like &lt;em>-est&lt;/em> or &lt;em>-er&lt;/em> or &lt;em>-ing&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;div style="font-size:22px; margin-top:30px">
+A &lt;b>morpheme&lt;/b> is the smallest meaning-bearing unit of a language
+&lt;br>
+For example, &lt;i>unlikeliest&lt;/i> has 3 morphemes: &lt;i>un-&lt;/i>, &lt;i>likely&lt;/i> and &lt;i>-est&lt;/i>
+&lt;/div>
+&lt;hr>
+&lt;h2 id="tiktoken">tiktoken&lt;/h2>
+&lt;p>&lt;a href="https://github.com/openai/tiktoken" target="_blank" rel="noopener">tiktoken&lt;/a> is a tokenizer that uses BPE to tokenize text. It is a fast and memory-efficient tokenizer which is used with OpenAI&amp;rsquo;s models.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">tiktoken&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">encoding_for_model&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">enc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">encoding_for_model&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;gpt-4&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Models don&amp;#39;t see text like you and I, instead they see a sequence of numbers (known as tokens).&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">encodings&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">enc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">encodings&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">decode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">enc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode_single_token_bytes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">encodings&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">assert&lt;/span> &lt;span class="n">enc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">enc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">text&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="mi">17399&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1541&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">956&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1518&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1495&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1093&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">499&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">323&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">358&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">11&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4619&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">814&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1518&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">264&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8668&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">315&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5219&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">320&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5391&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">439&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">11460&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">570&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Models&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; don&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;t&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; see&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; text&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; like&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; you&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; and&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; I&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; instead&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; they&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; see&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; sequence&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; numbers&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; (&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;known&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; as&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; tokens&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;).&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h1 id="stop-words">Stop words&lt;/h1>
+&lt;p>Stop words are a set of commonly used words in a language, but they carry very little useful information. They are &lt;u>usually&lt;/u> removed from the text before further processing.&lt;/p>
+&lt;p>&lt;strong>🤔 Can we &lt;u>always&lt;/u> remove stop words? Why not?&lt;/strong>&lt;/p>
+&lt;p>What if we are trying to predict the sentiment of a text and the text contains the word ‍&lt;code>not‍&lt;/code>?
+For example, &lt;code>I am not happy&lt;/code> and &lt;code>I am happy&lt;/code> have opposite meanings. If we remove the word &lt;code>not&lt;/code>, we will lose this information.
+So, we need to be careful when removing stop words.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.corpus&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">stopwords&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.tokenize&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">word_tokenize&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">stop_words&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">stopwords&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">words&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;english&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;There is no single universal list of stop words used by all natural language processing tools, nor any agreed upon rules for identifying stop words, and indeed not all tools even use such a list.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">word_tokenize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Stop words:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">word&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">word&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">word&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">stop_words&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Remaining tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">word&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">word&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">word&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">stop_words&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;There&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;no&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;single&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;universal&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;list&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stop&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;words&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;used&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;by&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;all&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;natural&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;language&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;processing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;tools&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;nor&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;any&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;agreed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;upon&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;rules&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;for&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;identifying&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stop&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;words&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;and&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;indeed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;not&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;all&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;tools&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;use&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;such&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;list&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Stop&lt;/span> &lt;span class="n">words&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;no&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;by&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;all&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;nor&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;any&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;for&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;and&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;not&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;all&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;such&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Remaining&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;There&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;single&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;universal&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;list&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stop&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;words&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;used&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;natural&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;language&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;processing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;tools&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;agreed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;upon&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;rules&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;identifying&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stop&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;words&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;indeed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;tools&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;use&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;list&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">spacy&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nlp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">spacy&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;en_core_web_sm&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;There is no single universal list of stop words used by all natural language processing tools, nor any agreed upon rules for identifying stop words, and indeed not all tools even use such a list.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nlp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Stop words:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">is_stop&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Remaining tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">is_stop&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;There&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;no&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;single&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;universal&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;list&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stop&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;words&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;used&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;by&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;all&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;natural&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;language&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;processing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;tools&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;nor&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;any&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;agreed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;upon&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;rules&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;for&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;identifying&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stop&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;words&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;and&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;indeed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;not&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;all&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;tools&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;use&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;such&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;list&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Stop&lt;/span> &lt;span class="n">words&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;There&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;no&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;used&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;by&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;all&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;nor&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;any&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;upon&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;for&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;and&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;indeed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;not&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;all&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;such&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Remaining&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;single&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;universal&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;list&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stop&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;words&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;natural&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;language&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;processing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;tools&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;agreed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;rules&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;identifying&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stop&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;words&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;tools&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;use&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;list&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="number-normalization">Number Normalization&lt;/h1>
+&lt;p>Should we treat each number as a separate token? If so, we will have a very big vocabulary. On the other hand, if remove or replace the numbers, we will lose some information.
+We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp;gt;&lt;/code>. But in a task like question answering, we need to keep the number as it is.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">What is the price for iPhone 12?
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">What is the price for iPhone &amp;lt;NUM&amp;gt;?
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h1 id="stemming--lemmatization">Stemming &amp;amp; Lemmatization&lt;/h1>
+&lt;p>For grammatical reasons, documents are going to use different forms of a word, such as &lt;code>organize&lt;/code>, &lt;code>organizes&lt;/code>, and &lt;code>organizing&lt;/code>.&lt;/p>
+&lt;p>Additionally, there are families of derivationally related words with similar meanings, such as &lt;code>democracy&lt;/code>, &lt;code>democratic&lt;/code>, and &lt;code>democratization&lt;/code>.&lt;/p>
+&lt;p>The goal of both stemming and lemmatization is to reduce inflectional forms and sometimes derivationally related forms of a word to a common base form. For instance:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>am&lt;/code>, &lt;code>are&lt;/code>, &lt;code>is&lt;/code> $\Rightarrow$ &lt;code>be&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>car&lt;/code>, &lt;code>cars&lt;/code>, &lt;code>car's&lt;/code>, &lt;code>cars'&lt;/code> $\Rightarrow$ &lt;code>car&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Stemming&lt;/strong> usually refers to a crude heuristic process that chops off the ends of words in the hope of achieving this goal correctly most of the time, and often includes the removal of derivational affixes.&lt;/p>
+&lt;p>&lt;strong>Lemmatization&lt;/strong> usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma&lt;/p>
+&lt;p>If confronted with the token &lt;code>saw&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Stemming&lt;/strong> might return just &lt;code>s&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Lemmatization&lt;/strong> would attempt to return either &lt;code>see&lt;/code> or &lt;code>saw&lt;/code> depending on whether the use of the token was as a verb or a noun.&lt;/li>
+&lt;/ul>
+&lt;p>Consider an information retrieval system where queries are matched against documents. One of the steps is to normalize the words in both the query and the document. For example, the words &lt;code>organize&lt;/code>, &lt;code>organizes&lt;/code>, and &lt;code>organizing&lt;/code> might all be stemmed to the same root word &lt;code>organiz&lt;/code>.&lt;/p>
+&lt;p>🤔 What is the influence of stemming on precision and recall?&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Precision&lt;/strong>: The fraction of retrieved documents that are relevant to the query ($TP / (TP + FP)$).&lt;/li>
+&lt;li>&lt;strong>Recall&lt;/strong>: The fraction of relevant documents that are successfully retrieved ($TP / (TP + FN)$).&lt;/li>
+&lt;/ul>
+&lt;p>Stemming usually decreases precision and increases recall.&lt;/p>
+&lt;div style="font-size:22px">
+&lt;ul>
+&lt;li>
+&lt;p>Stemming increases recall by mapping variants of words to their common root form, which allows the system to retrieve more relevant documents that contain different inflectional forms of a word&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the other hand, stemming can harm precision by introducing ambiguity and merging words with different meanings into the same root form. This can lead to a &lt;u>higher number of false positives&lt;/u>, where the system retrieves irrelevant documents that share the same stemmed root with the query.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.tokenize&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">word_tokenize&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.stem&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">PorterStemmer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.stem&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">WordNetLemmatizer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ps&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">PorterStemmer&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">wn&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">WordNetLemmatizer&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;But in the end it&amp;#39;s only a passing thing, this shadow; even darkness must pass.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">word_tokenize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Stemmed tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">ps&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">stem&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Lemmatized tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">wn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">lemmatize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;But&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;end&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;it&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;only&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;passing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;this&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;shadow&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;darkness&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;must&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Stemmed&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;but&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;end&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;it&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;onli&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thi&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;shadow&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;dark&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;must&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Lemmatized&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;But&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;end&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;it&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;only&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;passing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;this&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;shadow&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;darkness&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;must&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pas&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">spacy&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nlp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">spacy&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;en_core_web_sm&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;But in the end it&amp;#39;s only a passing thing, this shadow; even darkness must pass.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nlp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Lemmatized tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">lemma_&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;But&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;end&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;it&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;only&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;passing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;this&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;shadow&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;darkness&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;must&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Lemmatized&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;but&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;end&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;it&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;be&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;only&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;this&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;shadow&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;darkness&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;must&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h1 id="part-of-speech-tagging">Part-of-Speech Tagging&lt;/h1>
+&lt;p>Part-of-speech tagging is the process of assigning a part-of-speech tag to each word in a text. A part-of-speech tag is a special label assigned to each token (word) in a text corpus to indicate the part of speech and often also other grammatical categories such as tense, number (plural/singular), case etc.&lt;/p>
+&lt;p>One usecase of part-of-speech tagging is to disambiguate words that have multiple meanings.&lt;/p>
+&lt;ul>
+&lt;li>The &lt;strong>wind&lt;/strong> is blowing.&lt;/li>
+&lt;li>I need to &lt;strong>wind&lt;/strong> my watch.&lt;/li>
+&lt;/ul>
+&lt;img src="images/wind_verb_noun.webp" style="max-width:550px; margin-bottom:0px"/>
+&lt;div style="font-size:14px">
+&lt;b>Image source:&lt;/b>
+&lt;i>&lt;a href="https://grammarist.com/heteronyms/wind-vs-wind/" target="_blank">https://grammarist.com/heteronyms/wind-vs-wind/&lt;/a>&lt;/i>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">spacy&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nlp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">spacy&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;en_core_web_sm&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The wind is blowing.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;I need to wind my watch.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nlp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nlp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens1&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Part-of-speech tags:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pos_&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens1&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens2&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Part-of-speech tags:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pos_&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens2&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;The&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;wind&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;blowing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Part&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">of&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">speech&lt;/span> &lt;span class="n">tags&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;DET&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;NOUN&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;AUX&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;VERB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;PUNCT&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;I&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;need&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;to&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;wind&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;my&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;watch&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Part&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">of&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">speech&lt;/span> &lt;span class="n">tags&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;PRON&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;VERB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;PART&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;VERB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;PRON&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;NOUN&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;PUNCT&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="named-entity-recognition">Named Entity Recognition&lt;/h1>
+&lt;p>Named Entity Recognition (NER) is the process of identifying named entities in text and classifying them into pre-defined categories (names of persons, organizations, locations, etc.).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">spacy&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nlp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">spacy&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;en_core_web_sm&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Apple is looking at buying U.K. startup for $1 billion&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nlp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Named entities:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[(&lt;/span>&lt;span class="n">ent&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ent&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">label_&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">ent&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ents&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Apple&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;looking&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;at&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;buying&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;U.K.&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;startup&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;for&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;$&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;billion&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Named&lt;/span> &lt;span class="n">entities&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[(&lt;/span>&lt;span class="s1">&amp;#39;Apple&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ORG&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;U.K.&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;GPE&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;$1 billion&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;MONEY&amp;#39;&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="spacy-pipeline">spaCy Pipeline&lt;/h1>
+&lt;p>When you call &lt;code>nlp&lt;/code> on a text, spaCy will run the text through the pipeline in order:&lt;/p>
+&lt;img src="images/pipeline.png" style="max-width:850px; margin-bottom:0px"/>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">spacy&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">pandas&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">pd&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nlp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">spacy&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;en_core_web_sm&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Apple is looking at buying U.K. startup for $1 billion&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nlp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">([[&lt;/span>&lt;span class="n">t&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">t&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">is_stop&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">t&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">lemma_&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">t&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pos_&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">t&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">columns&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Token&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is_stop_word&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;lemma&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;POS&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>Token&lt;/th>
+&lt;th>is_stop_word&lt;/th>
+&lt;th>lemma&lt;/th>
+&lt;th>POS&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>0&lt;/td>
+&lt;td>Apple&lt;/td>
+&lt;td>False&lt;/td>
+&lt;td>Apple&lt;/td>
+&lt;td>PROPN&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>is&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>be&lt;/td>
+&lt;td>AUX&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>looking&lt;/td>
+&lt;td>False&lt;/td>
+&lt;td>look&lt;/td>
+&lt;td>VERB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>...&lt;/td>
+&lt;td>...&lt;/td>
+&lt;td>...&lt;/td>
+&lt;td>...&lt;/td>
+&lt;td>...&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>billion&lt;/td>
+&lt;td>False&lt;/td>
+&lt;td>billion&lt;/td>
+&lt;td>NUM&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;hr>
+&lt;h1 id="text-representation">Text Representation&lt;/h1>
+&lt;p>Can we pass the plain text to the computer and expect it to understand the meaning of the text?&lt;/p>
+&lt;p>We need to represent the text in a way that the computer can understand: &lt;strong>Numbers&lt;/strong>!&lt;/p>
+&lt;p>Words are complex and have multiple meanings. Effective text representation helps capture the nauances of language.&lt;/p>
+&lt;h2 id="one-hot-encoding">One-Hot Encoding&lt;/h2>
+&lt;p>One-hot encoding is a representation method that represents each word as a vector of 0s and 1s. The length of the vector is equal to the size of the vocabulary. Each word is represented by a vector that has a 1 in the position that corresponds to the index of the word in the vocabulary and 0s in all other positions.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">sklearn.preprocessing&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">OneHotEncoder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.tokenize&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">word_tokenize&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;He who thinks great thoughts often makes great errors&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tokens&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">word_tokenize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">one_hot_encoder&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">OneHotEncoder&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sparse_output&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">one_hot_encoded&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">one_hot_encoder&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit_transform&lt;/span>&lt;span class="p">([[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tokens&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">one_hot_encoded&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;He&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;who&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thinks&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;great&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thoughts&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;often&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;makes&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;great&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;errors&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="mf">1.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">1.&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">1.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">1.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">1.&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">1.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">1.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">1.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">1.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>What are the problems with one-hot encoding?&lt;/p>
+&lt;ul>
+&lt;li>The vectors are very sparse and high-dimensional&lt;/li>
+&lt;li>The vectors are not informative (they don&amp;rsquo;t capture the meaning of the words)&lt;/li>
+&lt;li>The vectors are not comparable (the distance between two vectors is not meaningful)&lt;/li>
+&lt;/ul>
+&lt;img src="images/meme_word_representation.png" style="max-width:500px"/>
+&lt;h2 id="bag-of-words">Bag-of-Words&lt;/h2>
+&lt;p>Bag-of-Words (BoW) is a representation method that represents each document as a vector of numbers. The length of the vector is equal to the size of the vocabulary. Each document is represented by a vector that has the count of each word in the vocabulary.&lt;/p>
+&lt;p>It is called a “bag” of words, because any information about the order or structure of words in the document is discarded.&lt;/p>
+&lt;img src="images/bag_of_words.jpg" style="max-width:900px; margin-bottom:0px"/>
+&lt;div style="font-size:14px">
+&lt;b>Image source:&lt;/b>
+&lt;i>&lt;a href="http://stanford.edu/~jurafsky/slp3/slides/7_NB.pdf" target="_blank">http://stanford.edu/~jurafsky/slp3/slides/7_NB.pdf&lt;/a>&lt;/i>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">sklearn.feature_extraction.text&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">CountVectorizer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">nltk.tokenize&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">word_tokenize&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">docs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;He who thinks great thoughts often makes great errors&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;The most thought-provoking thing in our thought-provoking time is that we are still not thinking&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">vectorizer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">CountVectorizer&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">lowercase&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tokenizer&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">word_tokenize&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">stop_words&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">bow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">vectorizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit_transform&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">docs&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vectorizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_feature_names_out&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bow&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">toarray&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;are&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;errors&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;great&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;he&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;makes&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;most&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;not&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;often&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;our&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;still&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;that&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thinking&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thinks&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thought-provoking&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thoughts&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;time&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;we&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;who&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>What are the limitations of bag-of-words?&lt;/p>
+&lt;ul>
+&lt;li>The vocabulary requires careful design.&lt;/li>
+&lt;li>Sparse representations are inefficient. The challenge is for the models to harness so little information in such a large representational space.&lt;/li>
+&lt;li>Discarding word order ignores the context, and in turn meaning of words in the document (“this is interesting” vs “is this interesting”)&lt;/li>
+&lt;/ul>
+&lt;h2 id="tf-idf">TF-IDF&lt;/h2>
+&lt;p>Consider a word like &amp;ldquo;the&amp;rdquo;. It appears in almost all documents, so it is not a good indicator of the topic of a document. We need to find a way to give more weight to words that are more informative. This is where TF-IDF comes in.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Term Frequency (tf):&lt;/strong> This summarizes how often a given word appears within a document.&lt;/li>
+&lt;li>&lt;strong>Inverse Document Frequency (idf):&lt;/strong> This downscales words that appear a lot across documents.&lt;/li>
+&lt;/ul>
+&lt;p>$ w_{t,d} = tf_{t,d} \times idf_t $&lt;/p>
+&lt;h3 id="term-frequency">Term Frequency&lt;/h3>
+&lt;p>$ tf_{t,d} = count(t, d) $&lt;/p>
+&lt;p>$ tf_{t,d} = log_{10}(1 + count(t, d)) $&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The quick brown fox jumps over the lazy dog&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The lazy dog likes to sleep all day&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown fox prefers to eat cheese&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc4&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The red fox jumps over the brown fox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc5&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown dog chases the fox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">tf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc3&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc4&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc5&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="document-frequency">Document Frequency&lt;/h3>
+&lt;p>Terms that are limited to a few documents are useful for discriminating those documents from the rest of the collection; terms that occur frequently across the entire collection aren’t as helpful. The document frequency ($df_t$) of a term $t$ is the number of documents that contain term $t$.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The quick brown fox jumps over the lazy dog&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The lazy dog likes to sleep all day&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown fox prefers to eat cheese&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc4&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The red fox jumps over the brown fox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc5&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown dog chases the fox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="inverse-document-frequency">Inverse Document Frequency&lt;/h3>
+&lt;p>$ idf_t = log_{10}(\frac{N}{df_t}) $&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The quick brown fox jumps over the lazy dog&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The lazy dog likes to sleep all day&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown fox prefers to eat cheese&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc4&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The red fox jumps over the brown fox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc5&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown dog chases the fox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">idf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">log10&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="tf-idf-1">TF-IDF&lt;/h3>
+&lt;p>$ w_{t,d} = tf_{t,d} \times idf_t $&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The quick brown fox jumps over the lazy dog&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The lazy dog likes to sleep all day&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown fox prefers to eat cheese&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc4&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The red fox jumps over the brown fox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc5&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown dog chases the fox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">tfidf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tfidf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tfidf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc3&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tfidf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc4&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.19382002601611284&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tfidf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">doc5&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that in other sources, the term frequency is normalized by the total number of words in the document. This is called &lt;strong>relative term frequency&lt;/strong>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">sklearn.feature_extraction.text&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">TfidfVectorizer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">docs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;He who thinks great thoughts often makes great errors&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;The most thought-provoking thing in our thought-provoking time is that we are still not thinking&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">vectorizer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">TfidfVectorizer&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">lowercase&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tokenizer&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">word_tokenize&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">tf_idf&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">vectorizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit_transform&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">docs&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vectorizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_feature_names_out&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tf_idf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">shape&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tf_idf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">toarray&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;are&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;errors&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;great&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;he&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;makes&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;most&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;not&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;often&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;our&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;still&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;that&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thinking&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thinks&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thought-provoking&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;thoughts&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;time&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;we&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;who&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">22&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.30151134&lt;/span> &lt;span class="mf">0.60302269&lt;/span> &lt;span class="mf">0.30151134&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.30151134&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.30151134&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.30151134&lt;/span> &lt;span class="mf">0.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.30151134&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.30151134&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.48507125&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h4 id="shakespeare-example">Shakespeare Example&lt;/h4>
+&lt;p>Consider in the collection of Shakespeare’s 37 plays the two words &lt;code>Romeo&lt;/code> and &lt;code>action&lt;/code>. The words have identical collection frequencies but very different document frequencies, since &lt;code>Romeo&lt;/code> only occurs in a single play. If our goal is to find documents about the romantic tribulations of &lt;code>Romeo&lt;/code>, the word &lt;code>Romeo&lt;/code> should be highly weighted, but not &lt;code>action&lt;/code>.&lt;/p>
+&lt;img src="images/shakespeare_tf.png" style="max-width:720px; margin-bottom:0px"/>
+&lt;p>Here are some idf values for some words in the Shakespeare corpus:&lt;/p>
+&lt;img src="images/shakespeare_df_idf.png" style="max-width:300px; margin-bottom:0px"/>
+&lt;p>Here&amp;rsquo;s the raw counts in the Shakespeare term-document matrix, and the tf-idf weighted version of the same matrix.&lt;/p>
+&lt;img src="images/shakespeare_raw_count.png" style="max-width:720px; margin-bottom:0px"/>
+&lt;img src="images/shakespeare_tf_idf.png" style="max-width:720px; margin-bottom:0px"/>
+&lt;h1 id="naïve-bayes">Naïve Bayes&lt;/h1>
+&lt;p>Naïve Bayes is a simple (naïve) probabilistic classifier based on Bayes&amp;rsquo; theorem. It relies on very simple representation of documents: bag-of-words.&lt;/p>
+&lt;p>Text classification is the task of assigning a predefined category to a document. For example, we might want to classify a document as &lt;code>positive&lt;/code> or &lt;code>negative&lt;/code> or &lt;code>spam&lt;/code> or &lt;code>not spam&lt;/code>.&lt;/p>
+&lt;h2 id="bayes-rule">Bayes Rule&lt;/h2>
+&lt;p>For a document $d$ and a class $c$:&lt;/p>
+&lt;p>$ P(c|d) = \frac{P(d|c)P(c)}{P(d)} $&lt;/p>
+&lt;p>$ P(c|d) $: Probability of class $c$ given document $d$&lt;/p>
+&lt;p>$ P(d|c) $: Probability of document $d$ given class $c$&lt;/p>
+&lt;p>$ P(c) $: Probability of class $c$&lt;/p>
+&lt;h2 id="classifier">Classifier&lt;/h2>
+&lt;p>We can use Bayes rule to compute the probability of a document belonging to a class. We can then assign the document to the class with the highest probability.&lt;/p>
+$$ C_\text{MAP} = \underset{c \in \text{C}}{\operatorname{argmax}} P(c|d) $$&lt;p>Using Bayes rule:&lt;/p>
+$$ C_\text{MAP} = \underset{c \in \text{C}}{\operatorname{argmax}} \frac{P(d|c)P(c)}{P(d)} $$&lt;p>We can drop the denominator since it is the same for all classes:&lt;/p>
+$$ C_\text{MAP} = \underset{c \in \text{C}}{\operatorname{argmax}} P(d|c)P(c) $$&lt;p>The $P(c)$ is called the &lt;strong>prior&lt;/strong> probability of class $c$ and $P(d|c)$ is called the &lt;strong>likelihood&lt;/strong> of document $d$ given class $c$.&lt;/p>
+$$ C_\text{MAP} = \underset{c \in \text{C}}{\operatorname{argmax}} P(d|c)P(c) $$$$ C_\text{MAP} = \underset{c \in \text{C}}{\operatorname{argmax}} P(t_1, t_2, ..., t_n|c)P(c) $$&lt;h2 id="naïve-bayes-1">Naïve Bayes&lt;/h2>
+&lt;p>The Naïve Bayes classifier assumes that position doesn&amp;rsquo;t matter and the features are independent. This is a very &lt;strong>naïve&lt;/strong> assumption, but it works surprisingly well in practice.&lt;/p>
+$$ C_\text{MAP} = \underset{c \in \text{C}}{\operatorname{argmax}} P(t_1, t_2, ..., t_n|c)P(c) $$$$ C_\text{NB} = \underset{c \in \text{C}}{\operatorname{argmax}} P(t_1|c)P(t_2|c)...P(t_n|c)P(c) $$&lt;p>So, at test time, we can use the following formula and compute the probability of each class for a document and assign the document to the class with the highest probability.&lt;/p>
+$$ C_\text{NB} = \underset{c \in \text{C}}{\operatorname{argmax}} \prod_{i=1}^{n} P(t_i|c)P(c) $$&lt;h3 id="logarithm-trick">Logarithm Trick&lt;/h3>
+&lt;p>The product of probabilities can be very small and lead to underflow. We can use the logarithm trick to avoid this problem.&lt;/p>
+$$ C_\text{NB} = \underset{c \in \text{C}}{\operatorname{argmax}} \prod_{i=1}^{n} P(t_i|c)P(c) $$$$ C_\text{NB} = \underset{c \in \text{C}}{\operatorname{argmax}} \sum_{i=1}^{n} [\log(P(t_i|c)) + \log(P(c))] $$&lt;h3 id="likelihood">Likelihood&lt;/h3>
+&lt;p>We can simply use the frequency of each word in each class as the likelihood of that word given the class.&lt;/p>
+$$ P(t_i|c) = \frac{count(t_i, c)}{\sum_{t \in V} count(t, c)} $$&lt;p>We can create mega-document for each class by concatenating all documents in that class. Then, we can compute the frequency of each word in each class.&lt;/p>
+$$ P(t_i|c) = \frac{count(t_i, c)}{\sum_{t \in V} count(t, c)} $$&lt;h3 id="laplace-smoothing">Laplace Smoothing&lt;/h3>
+&lt;p>What if we have seen no training documents with the word &lt;code>HuggingFace&lt;/code> in a class $c$?&lt;/p>
+$$ \small{P(\text{"HuggingFace"}|c)= \frac{count(\text{"HuggingFace"}, c)}{\sum_{t \in V} count(t, c)}} = 0$$$$ C_\text{NB} = \underset{c \in \text{C}}{\operatorname{argmax}} \prod_{i=1}^{n} P(t_i|c)P(c) = 0$$&lt;p>We can use Laplace smoothing to avoid this problem. The trick is to add 1 to the numerator and add the size of the vocabulary to the denominator (to keep the sum of probabilities equal to 1).&lt;/p>
+$$ \small{P(\text{"HuggingFace"}|c)= \frac{count(\text{"HuggingFace"}, c) + 1}{\sum_{t \in V} count(t, c) + |V|}} $$&lt;h3 id="unknown-words">Unknown Words&lt;/h3>
+&lt;p>🤔 What if we encounter a word that we have not seen in the training set?&lt;/p>
+&lt;ul>
+&lt;li>Should we build an unknown word model?&lt;/li>
+&lt;li>Should we ignore the word?&lt;/li>
+&lt;/ul>
+&lt;p>Known which class has more unknown words is not generally helpful, so we simply &lt;strong>ignore&lt;/strong> unknown words.&lt;/p>
+&lt;ul>
+&lt;li>Remove them from the test document!&lt;/li>
+&lt;li>Pretend they weren&amp;rsquo;t there!&lt;/li>
+&lt;li>Don&amp;rsquo;t include any probability for them at all!!&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Naïve Bayes&lt;/strong> is not so &lt;strong>naïve&lt;/strong> after all!&lt;/p>
+&lt;ul>
+&lt;li>Very fast, low storage requirements&lt;/li>
+&lt;li>Work well with very small amounts of training data&lt;/li>
+&lt;li>Robust to irrelevant features&lt;/li>
+&lt;li>A good dependable baseline for text classification&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h4 id="coding-time">Coding Time&lt;/h4>
+&lt;p>Let&amp;rsquo;s build a Naïve Bayes classifier from scratch!&lt;/p>
+&lt;p>&lt;a href="https://colab.research.google.com/drive/1M1ZpPtAsq1fyTm8JKIdTrqmavnTRQuQQ?usp=sharing" target="_blank" rel="noopener">Link to the notebook&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h4 id="n-gram">N-gram&lt;/h4>
+&lt;p>An n-gram is a contiguous sequence of n items from a given sample of text. We used just one word as a feature in our Naïve Bayes classifier (Unigram). We can use multiple words as features (Bigram, Trigram, etc.).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">sentence&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Snooker is a cue sport that originated among British Army officers stationed in India in the second half of the 19th century.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Unigram&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Snooker&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;cue&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;sport&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;that&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;originated&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;among&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;British&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Army&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;officers&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stationed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;India&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;second&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;half&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;19th&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;century&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Bigram&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Snooker is&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a cue&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;cue sport&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;sport that&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;that originated&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;originated among&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;among British&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;British Army&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Army officers&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;officers stationed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stationed in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in India&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;India in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the second&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;second half&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;half of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;of the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the 19th&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;19th century&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;century .&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Trigram&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Snooker is a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;is a cue&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a cue sport&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;cue sport that&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;sport that originated&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;that originated among&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;originated among British&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;among British Army&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;British Army officers&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Army officers stationed&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;officers stationed in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;stationed in India&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in India in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;India in the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in the second&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the second half&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;second half of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;half of the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;of the 19th&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the 19th century&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;19th century .&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="embeddings">Embeddings&lt;/h1>
+&lt;p>Embeddings are a representation of text where words that have the same meaning have a similar representation. They are a distributed representation where a word is represented by a vector of numbers (its features).&lt;/p>
+&lt;h2 id="word2vec">Word2Vec&lt;/h2>
+&lt;p>Let&amp;rsquo;s continue the topic based on &lt;a href="https://jalammar.github.io/illustrated-word2vec/" target="_blank" rel="noopener">this article&lt;/a>, because I think it&amp;rsquo;s the best explanation of word embeddings and word2vec algorithm.&lt;/p>
+&lt;h3 id="coding-time-1">Coding Time&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Let&amp;rsquo;s explore word embeddings a little bit more! &lt;a href="https://colab.research.google.com/drive/1zanKB_gxuSHPXGttjpiYOfwIvHSkVUvh?usp=sharing" target="_blank" rel="noopener">Link to the notebook&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What about using word2vec as a recommender system? &lt;a href="https://colab.research.google.com/drive/19sbH7ApVVCO2c2qFCjFVwQ6uEgxF1MlW?usp=sharing" target="_blank" rel="noopener">Link to the notebook&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="document-embeddings">Document Embeddings&lt;/h2>
+&lt;p>🤔 How we can represent a document as a vector?&lt;/p>
+&lt;h3 id="average-trick">Average Trick&lt;/h3>
+&lt;p>One simple way is to average the word embeddings of the words in the document!&lt;/p>
+&lt;p>😎 Although this is a very simple approach, it works surprisingly well in practice.&lt;/p>
+&lt;p>🙁 But the problem is that it ignores the order of words in the document.&lt;/p>
+&lt;h3 id="doc2vec">Doc2Vec&lt;/h3>
+&lt;p>Doc2Vec is an extension of Word2Vec that also learns a vector representation for the document.&lt;/p>
+&lt;p>The algorithm is very similar to Word2Vec. The only difference is that we add a document vector to the input of the neural network.&lt;/p>
+&lt;img src="images/doc2vec.jpeg" style="max-width:720px; margin-bottom:0px"/>
+&lt;h1 id="finishing-up">Finishing Up&lt;/h1>
+&lt;p>Thank you for keeping up with me until the end!&lt;/p>
+&lt;p>If you have any questions or suggestions, please send me an email at &lt;a href="mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20nlp">parsa.abbasi1996@gmail.com&lt;/a>.&lt;/p></description></item></channel></rss>
