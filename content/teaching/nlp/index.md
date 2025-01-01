@@ -3,7 +3,7 @@ title: Natural Language Processing
 summary: An introduction to Natural Language Processing
 date: 2023-11-01
 type: docs
-math: false
+math: true
 tags:
   - NLP
   - Natural Language Processing
@@ -22,12 +22,11 @@ image:
 
 Natural language refers to the language that humans use for communication (to express thoughts, feelings, and ideas), such as English, Dutch, or Persian, as opposed to a *formal* language, such as a computer programming language.
 
-## Formal Language (1)
+## Formal Language
 
 A formal language is a language that is defined by a set of rules that describe how to write, read, and interpret the language. 
 These languages are defined in such a strict way that is always possible to determine whether a given string of characters is a valid sentence in the language or not.
 
-## Formal Language (2)
 
 When you run a compiler or an interpreter on the code you write in a programming language, you either get a syntax error or not. The compiler won't say something like "Hmm, this code is maybe 50% grammatically correct".
 
@@ -141,8 +140,6 @@ word_tokenize(text)
 ['Do', "n't", 'you', 'love', '🤗', 'Transformers', '?', 'We', 'sure', 'do', '.']
 ```
 
----
-
 ## spaCy Tokenizer
 
 spaCy is another popular and powerful Python library for NLP. We will use the `tokenizer()` function to tokenize the text. It will split the raw text on whitespace character (similar to `text.split(' ')`) and then the tokenizer processes the text from left to right. 
@@ -153,7 +150,6 @@ On each substring, it performs two checks:
 
 2) Can a prefix, suffix or infix be split off? (such as punctuations)
 
----
 
 <img src="images/tokenization.svg" style="max-width:720px"/>
 
@@ -180,7 +176,6 @@ Don't you love 🤗 Transformers? We sure do.
 ['Do', "n't", 'you', 'love', '🤗', 'Transformers', '?', 'We', 'sure', 'do', '.']
 ```
 
----
 
 ## How many words?
 
@@ -297,13 +292,12 @@ It consists of two parts:
 - A token **learner**: takes a raw training corpus and outputs a vocabulary of subword units (tokens).
 - A token **segmenter**: takes a raw test sentence and tokenizes it according to the vocabulary.
 
----
+
 
 ### BPE learner
 
 <img src="images/byte_pair_encoding.png" style="min-width:720px"/>
 
----
 
 ### BPE Example
 
@@ -408,7 +402,6 @@ Corpus representation:
 </table>
 </div>
 
----
 
 #### Iteration 2
 
@@ -475,7 +468,6 @@ Corpus representation:
 </table>
 </div>
 
----
 
 #### Iteration 3
 
@@ -542,7 +534,6 @@ Corpus representation:
 </table>
 </div>
 
----
 
 #### Iteration 4
 
@@ -609,7 +600,6 @@ Corpus representation:
 </table>
 </div>
 
----
 
 #### After Iteration 8
 
@@ -669,7 +659,6 @@ A <b>morpheme</b> is the smallest meaning-bearing unit of a language
 For example, <i>unlikeliest</i> has 3 morphemes: <i>un-</i>, <i>likely</i> and <i>-est</i>
 </div>
 
----
 
 ## tiktoken
 
@@ -691,7 +680,6 @@ assert enc.decode(enc.encode(text)) == text
 ['Models', ' don', "'t", ' see', ' text', ' like', ' you', ' and', ' I', ',', ' instead', ' they', ' see', ' a', ' sequence', ' of', ' numbers', ' (', 'known', ' as', ' tokens', ').']
 ```
 
----
 
 # Stop words
 
@@ -756,8 +744,6 @@ What is the price for iPhone 12?
 ```
 What is the price for iPhone <NUM>?
 ```
-
----
 
 # Stemming & Lemmatization
 
@@ -840,7 +826,6 @@ Tokens: ['But', 'in', 'the', 'end', 'it', "'s", 'only', 'a', 'passing', 'thing',
 Lemmatized tokens: ['but', 'in', 'the', 'end', 'it', 'be', 'only', 'a', 'pass', 'thing', ',', 'this', 'shadow', ';', 'even', 'darkness', 'must', 'pass', '.']
 ```
 
----
 
 # Part-of-Speech Tagging
 
@@ -975,7 +960,6 @@ df
 </table>
 </div>
 
----
 
 # Text Representation
 Can we pass the plain text to the computer and expect it to understand the meaning of the text?
@@ -1122,8 +1106,6 @@ doc5 = "The brown dog chases the fox"
 idf('fox') = log10(5/4) = 0.09691001300805642
 ```
 
----
-
 ### TF-IDF
 
 $ w_{t,d} = tf_{t,d} \times idf_t $
@@ -1172,7 +1154,6 @@ print(tf_idf.toarray())
   0.         0.24253563 0.24253563 0.        ]]
 ```
 
----
 
 #### Shakespeare Example
 
@@ -1295,7 +1276,6 @@ Known which class has more unknown words is not generally helpful, so we simply 
 - Robust to irrelevant features
 - A good dependable baseline for text classification
 
----
 
 #### Coding Time
 
@@ -1303,7 +1283,6 @@ Let's build a Naïve Bayes classifier from scratch!
 
 [Link to the notebook](https://colab.research.google.com/drive/1M1ZpPtAsq1fyTm8JKIdTrqmavnTRQuQQ?usp=sharing)
 
----
 
 #### N-gram
 
