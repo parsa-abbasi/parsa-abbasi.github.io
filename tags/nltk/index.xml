@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NLTK | Parsa Abbasi Personal Website</title><link>https://parsa-abbasi.github.io/tags/nltk/</link><atom:link href="https://parsa-abbasi.github.io/tags/nltk/index.xml" rel="self" type="application/rss+xml"/><description>NLTK</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Nov 2023 00:00:00 +0000</lastBuildDate><image><url>https://parsa-abbasi.github.io/media/icon_hu12411768742163648625.png</url><title>NLTK</title><link>https://parsa-abbasi.github.io/tags/nltk/</link></image><item><title>Natural Language Processing</title><link>https://parsa-abbasi.github.io/teaching/nlp/</link><pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/teaching/nlp/</guid><description>&lt;h1 id="definition">Definition&lt;/h1>
 &lt;h2 id="natural-langauge">Natural Langauge&lt;/h2>
 &lt;p>Natural language refers to the language that humans use for communication (to express thoughts, feelings, and ideas), such as English, Dutch, or Persian, as opposed to a &lt;em>formal&lt;/em> language, such as a computer programming language.&lt;/p>
-&lt;h2 id="formal-language-1">Formal Language (1)&lt;/h2>
+&lt;h2 id="formal-language">Formal Language&lt;/h2>
 &lt;p>A formal language is a language that is defined by a set of rules that describe how to write, read, and interpret the language.
 These languages are defined in such a strict way that is always possible to determine whether a given string of characters is a valid sentence in the language or not.&lt;/p>
-&lt;h2 id="formal-language-2">Formal Language (2)&lt;/h2>
 &lt;p>When you run a compiler or an interpreter on the code you write in a programming language, you either get a syntax error or not. The compiler won&amp;rsquo;t say something like &amp;ldquo;Hmm, this code is maybe 50% grammatically correct&amp;rdquo;.&lt;/p>
 &lt;h2 id="natural-language-ambiguity">Natural Language Ambiguity&lt;/h2>
 &lt;p>Human languages are ambiguous. The same sentence can have multiple meanings depending on the context.&lt;/p>
@@ -58,8 +57,7 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Don&amp;#39;t you love 🤗 Transformers? We sure do.&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">word_tokenize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Do&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;n&amp;#39;t&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;you&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;love&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;🤗&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Transformers&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;?&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;We&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;sure&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;do&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="spacy-tokenizer">spaCy Tokenizer&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="spacy-tokenizer">spaCy Tokenizer&lt;/h2>
 &lt;p>spaCy is another popular and powerful Python library for NLP. We will use the &lt;code>tokenizer()&lt;/code> function to tokenize the text. It will split the raw text on whitespace character (similar to &lt;code>text.split(' ')&lt;/code>) and then the tokenizer processes the text from left to right.&lt;/p>
 &lt;p>On each substring, it performs two checks:&lt;/p>
 &lt;ol>
@@ -70,7 +68,6 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;p>Can a prefix, suffix or infix be split off? (such as punctuations)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;hr>
 &lt;img src="images/tokenization.svg" style="max-width:720px"/>
 &lt;div style="font-size:14px">
 &lt;b>Image source:&lt;/b>
@@ -88,8 +85,7 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Don&amp;#39;t you love 🤗 Transformers? We sure do.
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;class &amp;#39;spacy.tokens.doc.Doc&amp;#39;&amp;gt;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[&amp;#39;Do&amp;#39;, &amp;#34;n&amp;#39;t&amp;#34;, &amp;#39;you&amp;#39;, &amp;#39;love&amp;#39;, &amp;#39;🤗&amp;#39;, &amp;#39;Transformers&amp;#39;, &amp;#39;?&amp;#39;, &amp;#39;We&amp;#39;, &amp;#39;sure&amp;#39;, &amp;#39;do&amp;#39;, &amp;#39;.&amp;#39;]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="how-many-words">How many words?&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="how-many-words">How many words?&lt;/h2>
 &lt;p>Herdan&amp;rsquo;s law states that the number of words/types in a language (vocabular size) is proportional to the square root of the number of different word tokens.&lt;/p>
 &lt;p>$ |V| = kN^\beta $&lt;/p>
 &lt;p>$ 0.67 &lt; \beta &lt; 0.75 $&lt;/p>
@@ -170,10 +166,8 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;li>A token &lt;strong>learner&lt;/strong>: takes a raw training corpus and outputs a vocabulary of subword units (tokens).&lt;/li>
 &lt;li>A token &lt;strong>segmenter&lt;/strong>: takes a raw test sentence and tokenizes it according to the vocabulary.&lt;/li>
 &lt;/ul>
-&lt;hr>
 &lt;h3 id="bpe-learner">BPE learner&lt;/h3>
 &lt;img src="images/byte_pair_encoding.png" style="min-width:720px"/>
-&lt;hr>
 &lt;h3 id="bpe-example">BPE Example&lt;/h3>
 &lt;p>Corpus:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;low low low low low lowest lowest newer newer newer newer newer newer wider wider wider new new &amp;#34;&lt;/span>
@@ -260,7 +254,6 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;/tbody>
 &lt;/table>
 &lt;/div>
-&lt;hr>
 &lt;h4 id="iteration-2">Iteration 2&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
@@ -316,7 +309,6 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;/tbody>
 &lt;/table>
 &lt;/div>
-&lt;hr>
 &lt;h4 id="iteration-3">Iteration 3&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
@@ -372,7 +364,6 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;/tbody>
 &lt;/table>
 &lt;/div>
-&lt;hr>
 &lt;h4 id="iteration-4">Iteration 4&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ne&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
@@ -428,7 +419,6 @@ NLTK is a popular Python library for NLP. It has a advanced word tokenizer that 
 &lt;/tbody>
 &lt;/table>
 &lt;/div>
-&lt;hr>
 &lt;h4 id="after-iteration-8">After Iteration 8&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;d&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;e&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;l&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;n&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;o&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;s&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;t&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;er_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ne&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;new&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;lo&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;low&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;newer_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;low_&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div style="font-size:20px">
@@ -475,7 +465,6 @@ A &lt;b>morpheme&lt;/b> is the smallest meaning-bearing unit of a language
 &lt;br>
 For example, &lt;i>unlikeliest&lt;/i> has 3 morphemes: &lt;i>un-&lt;/i>, &lt;i>likely&lt;/i> and &lt;i>-est&lt;/i>
 &lt;/div>
-&lt;hr>
 &lt;h2 id="tiktoken">tiktoken&lt;/h2>
 &lt;p>&lt;a href="https://github.com/openai/tiktoken" target="_blank" rel="noopener">tiktoken&lt;/a> is a tokenizer that uses BPE to tokenize text. It is a fast and memory-efficient tokenizer which is used with OpenAI&amp;rsquo;s models.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">tiktoken&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">encoding_for_model&lt;/span>
@@ -488,8 +477,7 @@ For example, &lt;i>unlikeliest&lt;/i> has 3 morphemes: &lt;i>un-&lt;/i>, &lt;i>l
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">assert&lt;/span> &lt;span class="n">enc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">enc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">text&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="mi">17399&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1541&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">956&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1518&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1495&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1093&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">499&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">323&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">358&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">11&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4619&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">814&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1518&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">264&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8668&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">315&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5219&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">320&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5391&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">439&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">11460&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">570&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Models&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; don&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;t&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; see&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; text&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; like&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; you&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; and&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; I&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; instead&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; they&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; see&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; sequence&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; of&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; numbers&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; (&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;known&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; as&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39; tokens&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;).&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h1 id="stop-words">Stop words&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="stop-words">Stop words&lt;/h1>
 &lt;p>Stop words are a set of commonly used words in a language, but they carry very little useful information. They are &lt;u>usually&lt;/u> removed from the text before further processing.&lt;/p>
 &lt;p>&lt;strong>🤔 Can we &lt;u>always&lt;/u> remove stop words? Why not?&lt;/strong>&lt;/p>
 &lt;p>What if we are trying to predict the sentiment of a text and the text contains the word ‍&lt;code>not‍&lt;/code>?
@@ -529,8 +517,7 @@ So, we need to be careful when removing stop words.&lt;/p>
 We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp;gt;&lt;/code>. But in a task like question answering, we need to keep the number as it is.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">What is the price for iPhone 12?
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">What is the price for iPhone &amp;lt;NUM&amp;gt;?
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h1 id="stemming--lemmatization">Stemming &amp;amp; Lemmatization&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="stemming--lemmatization">Stemming &amp;amp; Lemmatization&lt;/h1>
 &lt;p>For grammatical reasons, documents are going to use different forms of a word, such as &lt;code>organize&lt;/code>, &lt;code>organizes&lt;/code>, and &lt;code>organizing&lt;/code>.&lt;/p>
 &lt;p>Additionally, there are families of derivationally related words with similar meanings, such as &lt;code>democracy&lt;/code>, &lt;code>democratic&lt;/code>, and &lt;code>democratization&lt;/code>.&lt;/p>
 &lt;p>The goal of both stemming and lemmatization is to reduce inflectional forms and sometimes derivationally related forms of a word to a common base form. For instance:&lt;/p>
@@ -595,8 +582,7 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Lemmatized tokens:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">lemma_&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">])&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;But&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;end&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;it&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#39;s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;only&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;passing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;this&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;shadow&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;darkness&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;must&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Lemmatized&lt;/span> &lt;span class="n">tokens&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;but&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;in&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;the&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;end&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;it&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;be&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;only&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;thing&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;this&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;shadow&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;even&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;darkness&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;must&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;pass&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h1 id="part-of-speech-tagging">Part-of-Speech Tagging&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="part-of-speech-tagging">Part-of-Speech Tagging&lt;/h1>
 &lt;p>Part-of-speech tagging is the process of assigning a part-of-speech tag to each word in a text. A part-of-speech tag is a special label assigned to each token (word) in a text corpus to indicate the part of speech and often also other grammatical categories such as tense, number (plural/singular), case etc.&lt;/p>
 &lt;p>One usecase of part-of-speech tagging is to disambiguate words that have multiple meanings.&lt;/p>
 &lt;ul>
@@ -703,7 +689,6 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;/tbody>
 &lt;/table>
 &lt;/div>
-&lt;hr>
 &lt;h1 id="text-representation">Text Representation&lt;/h1>
 &lt;p>Can we pass the plain text to the computer and expect it to understand the meaning of the text?&lt;/p>
 &lt;p>We need to represent the text in a way that the computer can understand: &lt;strong>Numbers&lt;/strong>!&lt;/p>
@@ -800,8 +785,7 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc4&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The red fox jumps over the brown fox&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc5&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The brown dog chases the fox&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">idf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;fox&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">log10&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.09691001300805642&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="tf-idf-1">TF-IDF&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="tf-idf-1">TF-IDF&lt;/h3>
 &lt;p>$ w_{t,d} = tf_{t,d} \times idf_t $&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The quick brown fox jumps over the lazy dog&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">doc2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;The lazy dog likes to sleep all day&amp;#34;&lt;/span>
@@ -833,8 +817,7 @@ We can replace the number with a special token, such as &lt;code>&amp;lt;NUM&amp
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.48507125&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mf">0.&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.24253563&lt;/span> &lt;span class="mf">0.&lt;/span> &lt;span class="p">]]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="shakespeare-example">Shakespeare Example&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="shakespeare-example">Shakespeare Example&lt;/h4>
 &lt;p>Consider in the collection of Shakespeare’s 37 plays the two words &lt;code>Romeo&lt;/code> and &lt;code>action&lt;/code>. The words have identical collection frequencies but very different document frequencies, since &lt;code>Romeo&lt;/code> only occurs in a single play. If our goal is to find documents about the romantic tribulations of &lt;code>Romeo&lt;/code>, the word &lt;code>Romeo&lt;/code> should be highly weighted, but not &lt;code>action&lt;/code>.&lt;/p>
 &lt;img src="images/shakespeare_tf.png" style="max-width:720px; margin-bottom:0px"/>
 &lt;p>Here are some idf values for some words in the Shakespeare corpus:&lt;/p>
@@ -886,11 +869,9 @@ $$ \small{P(\text{"HuggingFace"}|c)= \frac{count(\text{"HuggingFace"}, c) + 1}{\
 &lt;li>Robust to irrelevant features&lt;/li>
 &lt;li>A good dependable baseline for text classification&lt;/li>
 &lt;/ul>
-&lt;hr>
 &lt;h4 id="coding-time">Coding Time&lt;/h4>
 &lt;p>Let&amp;rsquo;s build a Naïve Bayes classifier from scratch!&lt;/p>
 &lt;p>&lt;a href="https://colab.research.google.com/drive/1M1ZpPtAsq1fyTm8JKIdTrqmavnTRQuQQ?usp=sharing" target="_blank" rel="noopener">Link to the notebook&lt;/a>&lt;/p>
-&lt;hr>
 &lt;h4 id="n-gram">N-gram&lt;/h4>
 &lt;p>An n-gram is a contiguous sequence of n items from a given sample of text. We used just one word as a feature in our Naïve Bayes classifier (Unigram). We can use multiple words as features (Bigram, Trigram, etc.).&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">sentence&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Snooker is a cue sport that originated among British Army officers stationed in India in the second half of the 19th century.&amp;#34;&lt;/span>
