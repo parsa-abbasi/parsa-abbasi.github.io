@@ -16,13 +16,13 @@ image:
   caption: ''
 ---
 
-# Definition
+## Definition
 
-## Natural Langauge
+### Natural Langauge
 
 Natural language refers to the language that humans use for communication (to express thoughts, feelings, and ideas), such as English, Dutch, or Persian, as opposed to a *formal* language, such as a computer programming language.
 
-## Formal Language
+### Formal Language
 
 A formal language is a language that is defined by a set of rules that describe how to write, read, and interpret the language. 
 These languages are defined in such a strict way that is always possible to determine whether a given string of characters is a valid sentence in the language or not.
@@ -31,7 +31,7 @@ These languages are defined in such a strict way that is always possible to dete
 When you run a compiler or an interpreter on the code you write in a programming language, you either get a syntax error or not. The compiler won't say something like "Hmm, this code is maybe 50% grammatically correct".
 
 
-## Natural Language Ambiguity
+### Natural Language Ambiguity
 
 Human languages are ambiguous. The same sentence can have multiple meanings depending on the context.
 
@@ -51,28 +51,28 @@ She told her brother she would call him today.
 I will meet you at the bank tomorrow.
 ```
 
-## Natural Language Processing
+### Natural Language Processing
 
 Natural Language Processing (**NLP**) is a field of computer science, artificial intelligence, and computational linguistics concerned with the interactions between computers and human (natural) languages.
 
 
-## Natural Language Understanding
+### Natural Language Understanding
 
 Natural Language Understanding (**NLU**) is a subtopic of NLP that focuses on the tasks of understanding and interpreting the meaning of language. These systems use a combination of NLP and machine learning algorithms to derive meaning from an input sentence.
 
-## Nautral Language Generation
+### Nautral Language Generation
 
 Natural Language Generation (**NLG**) is a subtopic of NLP that focuses on the tasks of generating natural language from structured data. These systems use a combination of NLP and machine learning algorithms to generate text that is as close as possible to human-written text.
 
 
-## Differences
+### Differences
 
 - NLP is focused on <u>processing</u> and <u>analyzing</u> natural language data.
 - NLU is focused on <u>understanding</u> and <u>interpreting</u> the meaning of natural language data.
 - NLG is focused on <u>generating</u> natural language output.
 
 
-## Common Terms
+### Common Terms
 
 - **Corpus ($C$)**: A collection of text documents.
 - **Document ($D$)**: A single text record of the corpus.
@@ -81,12 +81,12 @@ Natural Language Generation (**NLG**) is a subtopic of NLP that focuses on the t
 - **Vocabulary ($V$)**: The set of all unique words/tokens present in the corpus.
 
 
-# Tokenization
+## Tokenization
 
 The main tool for preprocessing textual data is a tokenizer. A tokenizer is a function that takes a string as input and splits text into tokens according to a set of rules.
 
 
-## Word-based Tokenizers
+### Word-based Tokenizers
 
 Splitting a text into smaller chunks is harder than it seems. For example, how would you split the following text into tokens?
 
@@ -100,13 +100,13 @@ A simple approach would be to split the text by whitespace characters.
 ["Don't", "you", "love", "🤗", "Transformers?", "We", "sure", "do."]
 ```
 
-## Tokenization Challanges
+### Tokenization Challanges
 
 - Can't just blindly remove punctuation: Ph.D., AT&T
 - Clitics: a part of a word that can't stand on its own: we're -> we are
 - Multiword Expressions (MWE): New York, rock ’n’ roll 
 
-## Punctuation
+### Punctuation
 
 We should take the punctuation into account so that a model does not have to learn a different representation of a word and every possible punctuation symbol that could follow it.
 
@@ -125,7 +125,7 @@ We should take the punctuation into account so that a model does not have to lea
 Look how the tokenization dealt with the word <u>`Don't`</u>. It split the word into three tokens! <u>`Don't`</u> stands for <u>`Do not`</u>, but the tokenizer doesn't know that. It would be better if the tokenizer could split the word into two tokens: <u>`Do`</u> and <u>`n't`</u>.
 
 
-## NLTK Tokenizer
+### NLTK Tokenizer
 
 To handle this kind of challanges, each library has its own procedure of how to tokenize a text.
 NLTK is a popular Python library for NLP. It has a advanced word tokenizer that can handle the above example.
@@ -140,7 +140,7 @@ word_tokenize(text)
 ['Do', "n't", 'you', 'love', '🤗', 'Transformers', '?', 'We', 'sure', 'do', '.']
 ```
 
-## spaCy Tokenizer
+### spaCy Tokenizer
 
 spaCy is another popular and powerful Python library for NLP. We will use the `tokenizer()` function to tokenize the text. It will split the raw text on whitespace character (similar to `text.split(' ')`) and then the tokenizer processes the text from left to right. 
 
@@ -177,7 +177,7 @@ Don't you love 🤗 Transformers? We sure do.
 ```
 
 
-## How many words?
+### How many words?
 
 Herdan's law states that the number of words/types in a language (vocabular size) is proportional to the square root of the number of different word tokens.
 
@@ -221,7 +221,7 @@ Word-based tokenizer generates a very big vocabulary (the set of all unique word
 </table>
 </div>
 
-## Character-based Tokenizers
+### Character-based Tokenizers
 
 Why not simply tokenize on characters? It's a simple approach and it greatly reduces the vocabulary size. But, it is much harder for a model to learn meaningful representations of input text.
 
@@ -251,11 +251,11 @@ Subword tokenization allows the model to:
 - being able to learn meaningful context-independent representations of words
 - being able to process words that are not in the vocabulary, by decomposing them into known subwords
 
-## 🤗 Tokenizers
+### 🤗 Tokenizers
 
 Hugging Face is a platform that provides state-of-the-art NLP technologies. Each model in the [Hugging Face Model Hub](https://huggingface.co/models) is accompanied by a tokenizer. The tokenizer is responsible for preprocessing the text, splitting it into tokens and mapping tokens to token IDs. To mark some special tokens, the tokenizer also adds special tokens to the sequence.
 
-### BertTokenizer - Uncased
+#### BertTokenizer - Uncased
 
 ```python
 from transformers import BertTokenizer
@@ -269,7 +269,7 @@ print(tokens)
 ['us', 'orders', 'immediate', 'halt', 'to', 'some', 'ai', 'chip', 'exports', 'to', 'china', ',', 'n', '##vid', '##ia', 'says']
 ```
 
-### BertTokenizer - Cased
+#### BertTokenizer - Cased
 
 ```python
 from transformers import BertTokenizer
@@ -283,7 +283,7 @@ print(tokens)
 ['US', 'orders', 'immediate', 'halt', 'to', 'some', 'AI', 'chip', 'exports', 'to', 'China', ',', 'N', '##vid', '##ia', 'says']
 ```
 
-## Byte-Pair Encoding (BPE)
+### Byte-Pair Encoding (BPE)
 
 BPE uses the data to tell us how to tokenize.
 
@@ -294,12 +294,12 @@ It consists of two parts:
 
 
 
-### BPE learner
+#### BPE learner
 
 <img src="images/byte_pair_encoding.png" style="min-width:720px"/>
 
 
-### BPE Example
+#### BPE Example
 
 Corpus:
 
@@ -336,9 +336,7 @@ Corpus representation:
 </table>
 </div>
 
-### BPE Example
-
-#### Iteration 1
+##### Iteration 1
 
 ```python
 ['_', 'd', 'e', 'i', 'l', 'n', 'o', 'r', 's', 't', 'w']
@@ -403,7 +401,7 @@ Corpus representation:
 </div>
 
 
-#### Iteration 2
+##### Iteration 2
 
 ```python
 ['_', 'd', 'e', 'i', 'l', 'n', 'o', 'r', 's', 't', 'w', 'er']
@@ -469,7 +467,7 @@ Corpus representation:
 </div>
 
 
-#### Iteration 3
+##### Iteration 3
 
 ```python
 ['_', 'd', 'e', 'i', 'l', 'n', 'o', 'r', 's', 't', 'w', 'er', 'er_']
@@ -535,7 +533,7 @@ Corpus representation:
 </div>
 
 
-#### Iteration 4
+##### Iteration 4
 
 ```python
 ['_', 'd', 'e', 'i', 'l', 'n', 'o', 'r', 's', 't', 'w', 'er', 'er_', 'ne']
@@ -601,7 +599,7 @@ Corpus representation:
 </div>
 
 
-#### After Iteration 8
+##### After Iteration 8
 
 ```python
 ['_', 'd', 'e', 'i', 'l', 'n', 'o', 'r', 's', 't', 'w', 'er', 'er_', 'ne', 'new', 'lo', 'low', 'newer_', 'low_']
@@ -635,7 +633,7 @@ Corpus representation:
 </div>
 
 
-### BPE Segmenter
+#### BPE Segmenter
 
 On the test sentence, run each learned merge operation <u>greedily</u>.
 
@@ -646,7 +644,7 @@ On the test sentence, run each learned merge operation <u>greedily</u>.
 - "n e w e r _" → "newer\_" (full word)
 - "l o w e r _" → "low er\_" (two tokens)
 
-### Properties of BPE tokens
+#### Properties of BPE tokens
 
 The resulting tokens have the following properties:
 
@@ -660,7 +658,7 @@ For example, <i>unlikeliest</i> has 3 morphemes: <i>un-</i>, <i>likely</i> and <
 </div>
 
 
-## tiktoken
+### tiktoken
 
 [tiktoken](https://github.com/openai/tiktoken) is a tokenizer that uses BPE to tokenize text. It is a fast and memory-efficient tokenizer which is used with OpenAI's models.
 
@@ -681,7 +679,7 @@ assert enc.decode(enc.encode(text)) == text
 ```
 
 
-# Stop words
+## Stop words
 
 Stop words are a set of commonly used words in a language, but they carry very little useful information. They are <u>usually</u> removed from the text before further processing.
 
@@ -732,7 +730,7 @@ Stop words: ['There', 'is', 'no', 'of', 'used', 'by', 'all', 'nor', 'any', 'upon
 Remaining tokens: ['single', 'universal', 'list', 'stop', 'words', 'natural', 'language', 'processing', 'tools', ',', 'agreed', 'rules', 'identifying', 'stop', 'words', ',', 'tools', 'use', 'list', '.']
 ```
 
-# Number Normalization
+## Number Normalization
 
 Should we treat each number as a separate token? If so, we will have a very big vocabulary. On the other hand, if remove or replace the numbers, we will lose some information.
 We can replace the number with a special token, such as `<NUM>`. But in a task like question answering, we need to keep the number as it is. 
@@ -745,7 +743,7 @@ What is the price for iPhone 12?
 What is the price for iPhone <NUM>?
 ```
 
-# Stemming & Lemmatization
+## Stemming & Lemmatization
 
 For grammatical reasons, documents are going to use different forms of a word, such as `organize`, `organizes`, and `organizing`.
 
@@ -827,7 +825,7 @@ Lemmatized tokens: ['but', 'in', 'the', 'end', 'it', 'be', 'only', 'a', 'pass', 
 ```
 
 
-# Part-of-Speech Tagging
+## Part-of-Speech Tagging
 
 Part-of-speech tagging is the process of assigning a part-of-speech tag to each word in a text. A part-of-speech tag is a special label assigned to each token (word) in a text corpus to indicate the part of speech and often also other grammatical categories such as tense, number (plural/singular), case etc.
 
@@ -867,7 +865,7 @@ Tokens: ['I', 'need', 'to', 'wind', 'my', 'watch', '.']
 Part-of-speech tags: ['PRON', 'VERB', 'PART', 'VERB', 'PRON', 'NOUN', 'PUNCT']
 ```
 
-# Named Entity Recognition
+## Named Entity Recognition
 
 Named Entity Recognition (NER) is the process of identifying named entities in text and classifying them into pre-defined categories (names of persons, organizations, locations, etc.).
 
@@ -889,7 +887,7 @@ Tokens: ['Apple', 'is', 'looking', 'at', 'buying', 'U.K.', 'startup', 'for', '$'
 Named entities: [('Apple', 'ORG'), ('U.K.', 'GPE'), ('$1 billion', 'MONEY')]
 ```
 
-# spaCy Pipeline
+## spaCy Pipeline
 
 When you call `nlp` on a text, spaCy will run the text through the pipeline in order:
 
@@ -961,14 +959,14 @@ df
 </div>
 
 
-# Text Representation
+## Text Representation
 Can we pass the plain text to the computer and expect it to understand the meaning of the text?
 
 We need to represent the text in a way that the computer can understand: **Numbers**!
 
 Words are complex and have multiple meanings. Effective text representation helps capture the nauances of language.
 
-## One-Hot Encoding 
+### One-Hot Encoding 
 
 One-hot encoding is a representation method that represents each word as a vector of 0s and 1s. The length of the vector is equal to the size of the vocabulary. Each word is represented by a vector that has a 1 in the position that corresponds to the index of the word in the vocabulary and 0s in all other positions.
 
@@ -1004,7 +1002,7 @@ What are the problems with one-hot encoding?
 
 <img src="images/meme_word_representation.png" style="max-width:500px"/>
 
-## Bag-of-Words
+### Bag-of-Words
 
 Bag-of-Words (BoW) is a representation method that represents each document as a vector of numbers. The length of the vector is equal to the size of the vocabulary. Each document is represented by a vector that has the count of each word in the vocabulary.
 
@@ -1043,7 +1041,7 @@ What are the limitations of bag-of-words?
 - Sparse representations are inefficient. The challenge is for the models to harness so little information in such a large representational space.
 - Discarding word order ignores the context, and in turn meaning of words in the document (“this is interesting” vs “is this interesting”)
 
-## TF-IDF 
+### TF-IDF 
 
 Consider a word like "the". It appears in almost all documents, so it is not a good indicator of the topic of a document. We need to find a way to give more weight to words that are more informative. This is where TF-IDF comes in.
 
@@ -1052,7 +1050,7 @@ Consider a word like "the". It appears in almost all documents, so it is not a g
 
 $ w_{t,d} = tf_{t,d} \times idf_t $
 
-### Term Frequency
+#### Term Frequency
 
 $ tf_{t,d} = count(t, d) $
 
@@ -1074,7 +1072,7 @@ tf('fox', doc4) = 2
 tf('fox', doc5) = 1
 ```
 
-### Document Frequency
+#### Document Frequency
 
 Terms that are limited to a few documents are useful for discriminating those documents from the rest of the collection; terms that occur frequently across the entire collection aren’t as helpful. The document frequency ($df_t$) of a term $t$ is the number of documents that contain term $t$.
 
@@ -1090,7 +1088,7 @@ doc5 = "The brown dog chases the fox"
 df('fox') = 4
 ```
 
-### Inverse Document Frequency
+#### Inverse Document Frequency
 
 $ idf_t = log_{10}(\frac{N}{df_t}) $
 
@@ -1106,7 +1104,7 @@ doc5 = "The brown dog chases the fox"
 idf('fox') = log10(5/4) = 0.09691001300805642
 ```
 
-### TF-IDF
+#### TF-IDF
 
 $ w_{t,d} = tf_{t,d} \times idf_t $
 
@@ -1155,7 +1153,7 @@ print(tf_idf.toarray())
 ```
 
 
-#### Shakespeare Example
+##### Shakespeare Example
 
 Consider in the collection of Shakespeare’s 37 plays the two words `Romeo` and `action`. The words have identical collection frequencies but very different document frequencies, since `Romeo` only occurs in a single play. If our goal is to find documents about the romantic tribulations of `Romeo`, the word `Romeo` should be highly weighted, but not `action`.
 
@@ -1173,14 +1171,14 @@ Here's the raw counts in the Shakespeare term-document matrix, and the tf-idf we
 
 <img src="images/shakespeare_tf_idf.png" style="max-width:720px; margin-bottom:0px"/>
 
-# Naïve Bayes
+## Naïve Bayes
 
 Naïve Bayes is a simple (naïve) probabilistic classifier based on Bayes' theorem. It relies on very simple representation of documents: bag-of-words.
 
 Text classification is the task of assigning a predefined category to a document. For example, we might want to classify a document as `positive` or `negative` or `spam` or `not spam`.
 
 
-## Bayes Rule
+### Bayes Rule
 
 For a document $d$ and a class $c$:
 
@@ -1193,7 +1191,7 @@ $ P(d|c) $: Probability of document $d$ given class $c$
 $ P(c) $: Probability of class $c$
 
 
-## Classifier
+### Classifier
 
 We can use Bayes rule to compute the probability of a document belonging to a class. We can then assign the document to the class with the highest probability.
 
@@ -1213,7 +1211,7 @@ $$ C_\text{MAP} = \underset{c \in \text{C}}{\operatorname{argmax}} P(d|c)P(c) $$
 
 $$ C_\text{MAP} = \underset{c \in \text{C}}{\operatorname{argmax}} P(t_1, t_2, ..., t_n|c)P(c) $$
 
-## Naïve Bayes
+### Naïve Bayes
 
 The Naïve Bayes classifier assumes that position doesn't matter and the features are independent. This is a very **naïve** assumption, but it works surprisingly well in practice.
 
@@ -1226,7 +1224,7 @@ So, at test time, we can use the following formula and compute the probability o
 
 $$ C_\text{NB} = \underset{c \in \text{C}}{\operatorname{argmax}} \prod_{i=1}^{n} P(t_i|c)P(c) $$
 
-### Logarithm Trick
+#### Logarithm Trick
 
 The product of probabilities can be very small and lead to underflow. We can use the logarithm trick to avoid this problem.
 
@@ -1234,7 +1232,7 @@ $$ C_\text{NB} = \underset{c \in \text{C}}{\operatorname{argmax}} \prod_{i=1}^{n
 
 $$ C_\text{NB} = \underset{c \in \text{C}}{\operatorname{argmax}} \sum_{i=1}^{n} [\log(P(t_i|c)) + \log(P(c))] $$
 
-### Likelihood
+#### Likelihood
 
 We can simply use the frequency of each word in each class as the likelihood of that word given the class.
 
@@ -1244,7 +1242,7 @@ We can create mega-document for each class by concatenating all documents in tha
 
 $$ P(t_i|c) = \frac{count(t_i, c)}{\sum_{t \in V} count(t, c)} $$
 
-### Laplace Smoothing
+#### Laplace Smoothing
 
 What if we have seen no training documents with the word `HuggingFace` in a class $c$?
 
@@ -1256,7 +1254,7 @@ We can use Laplace smoothing to avoid this problem. The trick is to add 1 to the
 
 $$ \small{P(\text{"HuggingFace"}|c)= \frac{count(\text{"HuggingFace"}, c) + 1}{\sum_{t \in V} count(t, c) + |V|}} $$
 
-### Unknown Words
+#### Unknown Words
 
 🤔 What if we encounter a word that we have not seen in the training set?
 
@@ -1277,14 +1275,14 @@ Known which class has more unknown words is not generally helpful, so we simply 
 - A good dependable baseline for text classification
 
 
-#### Coding Time
+##### Coding Time
 
 Let's build a Naïve Bayes classifier from scratch!
 
 [Link to the notebook](https://colab.research.google.com/drive/1M1ZpPtAsq1fyTm8JKIdTrqmavnTRQuQQ?usp=sharing)
 
 
-#### N-gram
+##### N-gram
 
 An n-gram is a contiguous sequence of n items from a given sample of text. We used just one word as a feature in our Naïve Bayes classifier (Unigram). We can use multiple words as features (Bigram, Trigram, etc.).
 
@@ -1300,26 +1298,26 @@ Bigram: ['Snooker is', 'is a', 'a cue', 'cue sport', 'sport that', 'that origina
 Trigram: ['Snooker is a', 'is a cue', 'a cue sport', 'cue sport that', 'sport that originated', 'that originated among', 'originated among British', 'among British Army', 'British Army officers', 'Army officers stationed', 'officers stationed in', 'stationed in India', 'in India in', 'India in the', 'in the second', 'the second half', 'second half of', 'half of the', 'of the 19th', 'the 19th century', '19th century .']
 ```
 
-# Embeddings
+## Embeddings
 
 Embeddings are a representation of text where words that have the same meaning have a similar representation. They are a distributed representation where a word is represented by a vector of numbers (its features).
 
-## Word2Vec
+### Word2Vec
 
 Let's continue the topic based on [this article](https://jalammar.github.io/illustrated-word2vec/), because I think it's the best explanation of word embeddings and word2vec algorithm.
 
-### Coding Time
+#### Coding Time
 
 - Let's explore word embeddings a little bit more! [Link to the notebook](https://colab.research.google.com/drive/1zanKB_gxuSHPXGttjpiYOfwIvHSkVUvh?usp=sharing)
 
 - What about using word2vec as a recommender system? [Link to the notebook](https://colab.research.google.com/drive/19sbH7ApVVCO2c2qFCjFVwQ6uEgxF1MlW?usp=sharing)
 
 
-## Document Embeddings
+### Document Embeddings
 
 🤔 How we can represent a document as a vector?
 
-### Average Trick
+#### Average Trick
 
 One simple way is to average the word embeddings of the words in the document!
 
@@ -1328,7 +1326,7 @@ One simple way is to average the word embeddings of the words in the document!
 🙁 But the problem is that it ignores the order of words in the document.
 
 
-### Doc2Vec
+#### Doc2Vec
 
 Doc2Vec is an extension of Word2Vec that also learns a vector representation for the document.
 
@@ -1336,7 +1334,7 @@ The algorithm is very similar to Word2Vec. The only difference is that we add a 
 
 <img src="images/doc2vec.jpeg" style="max-width:720px; margin-bottom:0px"/>
 
-# Finishing Up
+## Finishing Up
 Thank you for keeping up with me until the end!
 
 If you have any questions or suggestions, please send me an email at [parsa.abbasi1996@gmail.com](mailto:parsa.abbasi1996@gmail.com?subject=Mail%20about%20nlp).
