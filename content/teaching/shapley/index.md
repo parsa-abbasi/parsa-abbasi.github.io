@@ -97,25 +97,25 @@ $$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{
 
 Shapley values have some provable properties that make them unique and fair. This is because of these *axioms* that Shapley values are mathematically strong and widely accepted. The axioms of Shapley values are as follows:
 
-### Efficiency
+### 🎯 Efficiency
 
 The sum of Shapley values of all players should be equal to the total gains of the grand coalition. In other words, if we sum the Shapley values of all players, it should be equal to the worth of the case where all players work together.
 
 $$ \sum_{i=1}^{|F|} \phi_i = v(F) $$
 
-### Symmetry
+### ⚖️ Symmetry
 
 If two players have the same contribution to every possible coalition, their Shapley values should be the same. 
 
 $$ \text{If } v(S \cup \{i\}) = v(S \cup \{j\}) \text{ for all } S \subseteq F \setminus \{i, j\}, \text{ then } \phi_i = \phi_j $$
 
-### Dummy/Null Player
+### ⭕ Dummy/Null Player
 
 If a player has no contribution to any coalition, its Shapley value should be zero.
 
 $$ \text{If } v(S \cup \{i\}) = v(S) \text{ for all } S \subseteq F \setminus \{i\}, \text{ then } \phi_i = 0 $$
 
-### Additivity
+### ➕ Additivity
 
 If we have two games (or two characteristic functions) and we calculate the Shapley values of players for each game separately, the Shapley value of a player in the combined game should be the sum of the Shapley values of the player in each game. This axiom is based on the assumption that any game played are independent of each other.
 
