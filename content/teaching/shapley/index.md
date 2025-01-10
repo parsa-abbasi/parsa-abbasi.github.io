@@ -89,7 +89,7 @@ The characteristic function $v$ takes a coalition/set as input, not a permutatio
 
 Now, we take the average of these contributions to calculate the Shapley value of player $4$. As we can see, some permutations have the same marginal contribution since their coalitions are the same. So, why don't we make it simpler and only calculate the distinct values of contributions and multiply them by the number of times they have been repeated in the permutations?
 
-To do this, we need to find how many permutations can be formed from each coalition. If you look at the table above, you can see that the term $v(\{1, 2, 3, 4\}) - v(\{1, 2, 3\})$ is repeated for all permutations that the player $4$ is added after the players $1$, $2$, and $3$. So, if $S=\{1, 2, 3\}$, the player $4$ can be added after theses players in $|S|! = 3! = 6$ different ways. Furthermore, the remaining players can be added to the coalition in $|F|-|S|-1 = 6-3-1 = 2$ different ways. So, the Shapley value of player $4$ can be calculated as follows:
+To do this, we need to find how many permutations can be formed from each coalition. If you look at the table above, you can see that the term $v(\{1, 2, 3, 4\}) - v(\{1, 2, 3\})$ is repeated for all permutations that the player $4$ is added after the players $1$, $2$, and $3$. So, if $S=\{1, 2, 3\}$, the player $4$ can be added after theses players in $|S|! = 3! = 6$ different ways. Furthermore, the remaining players can be added to the coalition in $(|F|-|S|-1)! = (6-3-1)! = 2!$ different ways. So, the Shapley value of player $4$ can be calculated as follows:
 
 $$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( v(S \cup \{i\}) - v(S) \right) $$
 
