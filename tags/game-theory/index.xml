@@ -102,13 +102,13 @@ $$ \phi_i = \frac{1}{|F|!} \sum_{p \in P} \left( v(S \cup \{i\}) - v(S) \right) 
 &lt;p>To do this, we need to find how many permutations can be formed from each coalition. If you look at the table above, you can see that the term $v(\{1, 2, 3, 4\}) - v(\{1, 2, 3\})$ is repeated for all permutations that the player $4$ is added after the players $1$, $2$, and $3$. So, if $S=\{1, 2, 3\}$, the player $4$ can be added after theses players in $|S|! = 3! = 6$ different ways. Furthermore, the remaining players can be added to the coalition in $(|F|-|S|-1)! = (6-3-1)! = 2!$ different ways. So, the Shapley value of player $4$ can be calculated as follows:&lt;/p>
 $$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( v(S \cup \{i\}) - v(S) \right) $$&lt;h2 id="axioms-of-shapley-values">Axioms of Shapley Values&lt;/h2>
 &lt;p>Shapley values have some provable properties that make them unique and fair. This is because of these &lt;em>axioms&lt;/em> that Shapley values are mathematically strong and widely accepted. The axioms of Shapley values are as follows:&lt;/p>
-&lt;h3 id="efficiency">Efficiency&lt;/h3>
+&lt;h3 id="-efficiency">🎯 Efficiency&lt;/h3>
 &lt;p>The sum of Shapley values of all players should be equal to the total gains of the grand coalition. In other words, if we sum the Shapley values of all players, it should be equal to the worth of the case where all players work together.&lt;/p>
-$$ \sum_{i=1}^{|F|} \phi_i = v(F) $$&lt;h3 id="symmetry">Symmetry&lt;/h3>
+$$ \sum_{i=1}^{|F|} \phi_i = v(F) $$&lt;h3 id="-symmetry">⚖️ Symmetry&lt;/h3>
 &lt;p>If two players have the same contribution to every possible coalition, their Shapley values should be the same.&lt;/p>
-$$ \text{If } v(S \cup \{i\}) = v(S \cup \{j\}) \text{ for all } S \subseteq F \setminus \{i, j\}, \text{ then } \phi_i = \phi_j $$&lt;h3 id="dummynull-player">Dummy/Null Player&lt;/h3>
+$$ \text{If } v(S \cup \{i\}) = v(S \cup \{j\}) \text{ for all } S \subseteq F \setminus \{i, j\}, \text{ then } \phi_i = \phi_j $$&lt;h3 id="-dummynull-player">⭕ Dummy/Null Player&lt;/h3>
 &lt;p>If a player has no contribution to any coalition, its Shapley value should be zero.&lt;/p>
-$$ \text{If } v(S \cup \{i\}) = v(S) \text{ for all } S \subseteq F \setminus \{i\}, \text{ then } \phi_i = 0 $$&lt;h3 id="additivity">Additivity&lt;/h3>
+$$ \text{If } v(S \cup \{i\}) = v(S) \text{ for all } S \subseteq F \setminus \{i\}, \text{ then } \phi_i = 0 $$&lt;h3 id="-additivity">➕ Additivity&lt;/h3>
 &lt;p>If we have two games (or two characteristic functions) and we calculate the Shapley values of players for each game separately, the Shapley value of a player in the combined game should be the sum of the Shapley values of the player in each game. This axiom is based on the assumption that any game played are independent of each other.&lt;/p>
 $$ \phi_i(u+v) = \phi_i(u) + \phi_i(v) $$&lt;h2 id="shap">SHAP&lt;/h2>
 &lt;p>To be continued&amp;hellip;&lt;/p>
