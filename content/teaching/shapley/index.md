@@ -31,7 +31,7 @@ To understand how Shapley values can explain the predictions of a machine learni
 
 Imagine that you gathered some of your friends to record an album together. Some of them are good at playing an instrument, some in singing, some in mixing, some may be helpful in providing recording equipment, marketing, etc. Each of them has a different role in the process of recording and releasing the album. When the album is released, it will generate some revenue. Let's say that the album is a hit and it generates €100,000 in revenue. Now, the question is: how should we distribute this revenue among the friends who contributed to the album? Yes, you can distribute it equally among all friends, but is it fair? Should the friend who played the drums get the same share as the friend who provided the recording equipment? Each friend had an impact on the success of the album, but their contributions are different. This is where Shapley values come into play.
 
-## Notation
+## Definitions
 
 Imagine we have $M$ playes (numbered from 1 to $M$) and let $F$ be the set of all players ($F = \{1, 2, \ldots, M\}$). A **coalition** is a subset of players $S \subseteq F$ which can be any combination of players. The set $F$ itself is also a coalition, which commonly referred to as the **grand coalition**. We can have $2^M$ possible coalitions in total (the empty set $\emptyset$ is also a coalition that has no players).
 
@@ -124,3 +124,15 @@ $$ \phi_i(u+v) = \phi_i(u) + \phi_i(v) $$
 ## SHAP
 
 To be continued...
+
+## 🗂️ Resources
+
+### 📰 Blog Posts
+
+* [Introduction to SHAP Values and their Application in Machine Learning](https://towardsdatascience.com/introduction-to-shap-values-and-their-application-in-machine-learning-8003718e6827) by *Reza Bagheri* on *Towards Data Science*
+
+* [Understanding Shapley value explanation algorithms for trees](https://hughchen.github.io/its_blog/index.html) by *Hugh Chen*, "Scott Lundberg", and "Su-In Lee" on *GitHub*
+
+### 🎞️ Videos
+
+* [SHAP playlist](https://youtube.com/playlist?list=PLqDyyww9y-1SJgMw92x90qPYpHgahDLIK&si=2VsAcTTC7GoZc-YC) by *A Data Odyssey* on *YouTube*
