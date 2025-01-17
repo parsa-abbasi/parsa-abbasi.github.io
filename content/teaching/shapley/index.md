@@ -165,6 +165,17 @@ $$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{
 $$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - f_S(x_S) \right) $$
 
 ```markdown
+{{</* spoiler text="👉 Click to view the solution" */>}}
+You found me!
+{{</* /spoiler */>}}
+```
+
+renders as
+
+{{< spoiler text="👉 Click to view the solution" >}} You found me 🎉 {{< /spoiler >}}
+
+
+```markdown
 {{</* spoiler text="🎯 Efficiency Property" */>}}
 If we use the efficiency property of Shapley values, we'll find out that the sum of Shapley values of all features should be equal to the difference between the model's prediction for the sample $x$ and the average prediction of the model for the samples in the training dataset.
 
