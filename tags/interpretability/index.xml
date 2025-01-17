@@ -170,6 +170,7 @@ $$ v(S) = v(\{x_{s1}, x_{s2}, \ldots, x_{sp}\}) = f_S(x_S) - E[f(x)] $$&lt;p>To 
 $$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - E[f(x)] - (f_S(x_S) - E[f(x)] \right) $$$$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - f_S(x_S) \right) $$&lt;details class="spoiler " id="spoiler-2">
 &lt;summary class="cursor-pointer">🎯 Efficiency Property&lt;/summary>
 &lt;div class="rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2">
+&lt;p>If we use the efficiency property of Shapley values, we&amp;rsquo;ll find out that the sum of Shapley values of all features should be equal to the difference between the model&amp;rsquo;s prediction for the sample $x$ and the average prediction of the model for the samples in the training dataset.&lt;/p>
 $$ \sum_{i=1}^{|F|} \phi_i = v(F) = f(x) - E[f(x)] $$
 &lt;/div>
 &lt;/details>
