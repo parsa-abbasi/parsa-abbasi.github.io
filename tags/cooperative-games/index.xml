@@ -167,23 +167,13 @@ $$ f_S(x_S) = f_S(x_{s1}, x_{s2}, \ldots, x_{sp}) $$&lt;p>There is two possible 
 &lt;/ol>
 &lt;p>Let&amp;rsquo;s assume that the model accepts &lt;code>NA&lt;/code> values and see how the Shapley values can be calculated, then discuss how we can handle the case when the model doesn&amp;rsquo;t support &lt;code>NA&lt;/code> values. The worth of the coalition $S$ can be calculated as follows:&lt;/p>
 $$ v(S) = v(\{x_{s1}, x_{s2}, \ldots, x_{sp}\}) = f_S(x_S) - E[f(x)] $$&lt;p>To calculate the Shapley value of the feature $X_i$, we need to consider all possible permutations of features and calculate the marginal contribution of the feature $X_i$ for each permutation. The Shapley value of the feature $X_i$ can be calculated as follows:&lt;/p>
-$$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - E[f(x)] - (f_S(x_S) - E[f(x)] \right) $$$$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - f_S(x_S) \right) $$&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">spoiler&lt;/span> &lt;span class="na">text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;👉 Click to view the solution&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">You found me!
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="nt">spoiler&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
-&lt;details class="spoiler " id="spoiler-2">
-&lt;summary class="cursor-pointer">👉 Click to view the solution&lt;/summary>
+$$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - E[f(x)] - (f_S(x_S) - E[f(x)] \right) $$$$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - f_S(x_S) \right) $$&lt;details class="spoiler " id="spoiler-2">
+&lt;summary class="cursor-pointer">🎯 Efficiency Property&lt;/summary>
 &lt;div class="rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2">
-You found me 🎉
+$$ \sum_{i=1}^{|F|} \phi_i = v(F) = f(x) - E[f(x)] $$
 &lt;/div>
 &lt;/details>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">spoiler&lt;/span> &lt;span class="na">text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;🎯 Efficiency Property&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">If we use the efficiency property of Shapley values, we&amp;#39;ll find out that the sum of Shapley values of all features should be equal to the difference between the model&amp;#39;s prediction for the sample $x$ and the average prediction of the model for the samples in the training dataset.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$$ \sum_{i=1}^{|F|} \phi_i = v(F) = f(x) - E[f(x)] $$
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="nt">spoiler&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="explainer-model">Explainer Model&lt;/h3>
+&lt;h3 id="explainer-model">Explainer Model&lt;/h3>
 &lt;p>As we are moving towards answering the question of how we can calculate and use Shapley values to explain the predictions of machine learning models, we need to discuss the concept of the &lt;strong>explainer model&lt;/strong> and formulate it. The explainer ($g$) is an interpretable model that takes $|F| = M$ binary variables as a vector input ($z'$).&lt;/p>
 $$ g(z') = g(z'_1, z'_2, \ldots, z'_M) \quad z'_i \in \{0, 1\} $$&lt;p>The coalition vector $z'$ represents a coalition of the available values of $x$. Those elements that are &lt;code>NA&lt;/code> in the original sample $x$ are replaced with $0$ in the vector $z'$ and the rest of the elements are replaced with $0$ or $1$. For example, suppose we have five features and the second feature for a given sample is &lt;code>NA&lt;/code>:&lt;/p>
 $$ x = [x_1, NA, x_3, x_4, x_5] $$&lt;p>We can define $x'$ as a &lt;em>simplified input features&lt;/em> to show if a feature is present or not in the sample $x$:&lt;/p>
