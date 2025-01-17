@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Explainability | Parsa Abbasi Personal Website</title><link>https://parsa-abbasi.github.io/tags/explainability/</link><atom:link href="https://parsa-abbasi.github.io/tags/explainability/index.xml" rel="self" type="application/rss+xml"/><description>Explainability</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate><image><url>https://parsa-abbasi.github.io/media/icon_hu12411768742163648625.png</url><title>Explainability</title><link>https://parsa-abbasi.github.io/tags/explainability/</link></image><item><title>Understanding Shapley Values and SHAP</title><link>https://parsa-abbasi.github.io/teaching/shapley/</link><pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/teaching/shapley/</guid><description>&lt;p>SHAP (SHapley Additive exPlanations) is a unified approach to explain the output of any machine learning model. In other words, it is a model-agnostic method that considers the model as a black box and only access the input and output of the model. It tries to explain the output of the model for a specific instance by computing the contribution of each component of the input to the output. The components can be features/columns in a tabular dataset, a set of pixels in an image, a word/token in a text document, etc. In this article, we first introduce the concept of Shapley values and then explain how SHAP uses Shapley values to explain the predictions of machine learning models. I will also provide some code examples and a list of resources to learn more about this topic.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Explainability | Parsa Abbasi Personal Website</title><link>https://parsa-abbasi.github.io/tags/explainability/</link><atom:link href="https://parsa-abbasi.github.io/tags/explainability/index.xml" rel="self" type="application/rss+xml"/><description>Explainability</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate><image><url>https://parsa-abbasi.github.io/media/icon_hu12411768742163648625.png</url><title>Explainability</title><link>https://parsa-abbasi.github.io/tags/explainability/</link></image><item><title>Understanding Shapley Values and SHAP</title><link>https://parsa-abbasi.github.io/teaching/shapley/</link><pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate><guid>https://parsa-abbasi.github.io/teaching/shapley/</guid><description>&lt;p>SHAP (SHapley Additive exPlanations) is a unified approach to explain the output of any machine learning model. In other words, it is a model-agnostic method that considers the model as a black box and only access the input and output of the model. It tries to explain the output of the model for a specific instance by computing the contribution of each component of the input to the output. The components can be features/columns in a tabular dataset, a set of pixels in an image, a word/token in a text document, etc. In this article, we first introduce the concept of Shapley values and then explain how SHAP uses Shapley values to explain the predictions of machine learning models.&lt;/p>
 &lt;h2 id="intuition">Intuition&lt;/h2>
 &lt;p>To be honest, &amp;ldquo;Shapley Values&amp;rdquo; is a term that I have been hearing a lot in the literature, but I was afraid to dive into it because it sounded too complex and there wasn&amp;rsquo;t a straightforward explanation of what it is and how it works. Recently, my supervisor shared me an article from &lt;a href="https://towardsdatascience.com/introduction-to-shap-values-and-their-application-in-machine-learning-8003718e6827" target="_blank" rel="noopener">Towards Data Science&lt;/a> that explained Shapley values comprehensively and I thought it was time to understand what Shapley values are, once and for all! However, the article was too long (around 120 pages in a PDF format) and I think many people would be discouraged to read it. So, I decided to write a blog post to summarize the key concepts which I learned from until now and share a more straightforward explanation of Shapley values. My explanation may not be as comprehensive (or even accurate) as the original article, but I will try to make it as simple as possible to allow everyone to easily understand this great concept.&lt;/p>
 &lt;h2 id="shapley-values">Shapley Values&lt;/h2>
@@ -8,7 +8,7 @@
 &lt;h2 id="definitions">Definitions&lt;/h2>
 &lt;p>Imagine we have $M$ playes (numbered from 1 to $M$) and let $F$ be the set of all players ($F = \{1, 2, \ldots, M\}$). A &lt;strong>coalition&lt;/strong> is a subset of players $S \subseteq F$ which can be any combination of players. The set $F$ itself is also a coalition, which commonly referred to as the &lt;strong>grand coalition&lt;/strong>. We can have $2^M$ possible coalitions in total (the empty set $\emptyset$ is also a coalition that has no players).&lt;/p>
 &lt;p>The &lt;strong>worth&lt;/strong> of a coalition is a real number that represents the total gains that the coalition can achieve and it is denoted by $v(S)$ for a coalition $S$. Note that $v$ is a function that takes a coalition as input and returns a real number as output, and commonly referred to as the &lt;strong>characteristic function&lt;/strong> of the game. The worth of the grand coalition is the total gains that all players can achieve together, i.e., $v(F)$. The worth of the empty set is zero, i.e., $v(\emptyset) = 0$. The worth of a coalition can be calculated in different ways depending on the game. For example, in our album example, the worth of a coalition can be the revenue generated by the album when the friends in the coalition work together.&lt;/p>
-&lt;h3 id="marginal-contribution-of-a-player">Marginal Contribution of a Player&lt;/h3>
+&lt;h2 id="marginal-contribution-of-a-player">Marginal Contribution of a Player&lt;/h2>
 &lt;p>Now the question is how we can compute the contribution of a player to the total gains of a coalition. Suppose that we have the following table and we assigned a number to each player.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -51,7 +51,7 @@ $$ \text{Marginal Contribution of Player 4} = v(\{1, 2, 3, 4\}) - v(\{1, 2, 3\})
 &lt;/span>
 &lt;span class="dark:text-neutral-300">Order of adding players to the coalition is important! Suppose $Thom$ ($1$) have started the band and recorded some songs. However, when $Colin$ ($2$) joined the band, they re-recorded some songs and their revenue increased by €10,000 (which is the contribution of $Colin$). Now, when $Jonny$ ($3$) joined the band, they re-recorded some songs again and their revenue increased by just €2,000. However, $Jonny$ feels unfair when comparing his contribution to $Colin$&amp;rsquo;s contribution. He believes that if he had joined the band before $Colin$, the revenue would have also increased by €10,000. So, we need to consider all possible orders of adding players to the coalition to calculate the contribution of a player fairly.&lt;/span>
 &lt;/div>
-&lt;h3 id="expected-marginal-contribution--shapley-value">Expected Marginal Contribution / Shapley Value&lt;/h3>
+&lt;h2 id="expected-marginal-contribution--shapley-value">Expected Marginal Contribution / Shapley Value&lt;/h2>
 &lt;p>We&amp;rsquo;ve seen how we can calculate the contribution of a player to the total gains of a specific coalition. However, as we mentioned earlier, the contribution of a player depends on the order of adding players to the coalition and we need to consider all possible orders. To do this, we compute the marginal contribution of a player for all possible permutations of players ($F$) and take the average of these contributions. This &lt;strong>Expected Marginal Contribution&lt;/strong> is called the &lt;strong>Shapley value&lt;/strong> of the player. As we will have $|F|!$ permutations in total, the Shapley value of player $i$, denoted by $\phi_i$, can be calculated as follows:&lt;/p>
 $$ \phi_i = \frac{1}{|F|!} \sum_{p \in P} \left( v(S \cup \{i\}) - v(S) \right) $$&lt;p>In this formula, $P$ is the set of all permutations of players, and $S$ is the coalition related to the permutation $p \in P$. The following table shows how we can calculate the Shapley value of player $4$ for each permutation of players.&lt;/p>
 &lt;table>
@@ -110,8 +110,165 @@ $$ \text{If } v(S \cup \{i\}) = v(S \cup \{j\}) \text{ for all } S \subseteq F \
 &lt;p>If a player has no contribution to any coalition, its Shapley value should be zero.&lt;/p>
 $$ \text{If } v(S \cup \{i\}) = v(S) \text{ for all } S \subseteq F \setminus \{i\}, \text{ then } \phi_i = 0 $$&lt;h3 id="-additivity">➕ Additivity&lt;/h3>
 &lt;p>If we have two games (or two characteristic functions) and we calculate the Shapley values of players for each game separately, the Shapley value of a player in the combined game should be the sum of the Shapley values of the player in each game. This axiom is based on the assumption that any game played are independent of each other.&lt;/p>
-$$ \phi_i(u+v) = \phi_i(u) + \phi_i(v) $$&lt;h2 id="shap">SHAP&lt;/h2>
-&lt;p>To be continued&amp;hellip;&lt;/p>
+$$ \phi_i(u+v) = \phi_i(u) + \phi_i(v) $$&lt;h2 id="shapley-values-in-machine-learning">Shapley Values in Machine Learning&lt;/h2>
+&lt;p>Now, let&amp;rsquo;s see how Shapley values can be used to explain the predictions of machine learning models.
+Suppose we have a training tabular dataset with $N$ samples and $M$ features. The following table shows the features ($X_1, X_2, \ldots, X_M$) and the target variable ($y$) of the dataset.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">$X_1$&lt;/th>
+&lt;th style="text-align: center">$X_2$&lt;/th>
+&lt;th style="text-align: center">$\ldots$&lt;/th>
+&lt;th style="text-align: center">$X_M$&lt;/th>
+&lt;th style="text-align: center">$y$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">$x_1^{(1)}$&lt;/td>
+&lt;td style="text-align: center">$x_2^{(1)}$&lt;/td>
+&lt;td style="text-align: center">$\ldots$&lt;/td>
+&lt;td style="text-align: center">$x_M^{(1)}$&lt;/td>
+&lt;td style="text-align: center">$y^{(1)}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">$x_1^{(2)}$&lt;/td>
+&lt;td style="text-align: center">$x_2^{(2)}$&lt;/td>
+&lt;td style="text-align: center">$\ldots$&lt;/td>
+&lt;td style="text-align: center">$x_M^{(2)}$&lt;/td>
+&lt;td style="text-align: center">$y^{(2)}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">$x_1^{(N)}$&lt;/td>
+&lt;td style="text-align: center">$x_2^{(N)}$&lt;/td>
+&lt;td style="text-align: center">$\ldots$&lt;/td>
+&lt;td style="text-align: center">$x_M^{(N)}$&lt;/td>
+&lt;td style="text-align: center">$y^{(N)}$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>We train a model ($f$) on this dataset and we want to explain the prediction of the model for a specific sample ($x$). The model/function $f$ takes the input sample $x$ and returns the output $f(x)$. By comparing $f(x)$ with the true target value $y$, we can calculate the prediction error of the model for the sample $x$. The question is: how can we explain the prediction of the model for the sample $x$? Which features of the sample $x$ have the most impact on the prediction of the model? This is where Shapley values come into play.&lt;/p>
+&lt;p>We can consider the model as a cooperative game where the players are the $M$ features. However, what should be the worth of a coalition in this game? We can define it using the $f(x)$ with a slight modification.
+As you may remember, the characteristic function $v$ should output $0$ when the coalition is empty. But how can the model predict the output when there are no features in the coalition? Most of the ML models doesn&amp;rsquo;t support &lt;code>NA&lt;/code> values, so we need to modify the characteristic function to handle this case. We can use a sample of training data (or all of them) and take the average of the predictions of the model for these samples as our best guess. Suppose we have a sample of $k \leq N$ samples, our prediction when we have no features in the coalition can be calculated as follows:&lt;/p>
+$$ f(x) = f(\text{NA}, \text{NA}, \ldots, \text{NA}) = \frac{1}{k} \sum_{i=1}^k f(x^{(i)}) $$&lt;p>Now, we can define the characteristic function $v$ as follows:&lt;/p>
+$$ v(F) = v({X_1, X_2, \ldots, X_M}) = f(x) - E[f(x)] = f(x) - \frac{1}{k} \sum_{i=1}^k f(x^{(i)}) $$&lt;p>$E(f(x))$ is the expected value of the model&amp;rsquo;s prediction when we have no features in the coalition. The worth of the grand coalition is the difference between the model&amp;rsquo;s prediction for the sample $x$ and the average prediction of the model for the samples in the training dataset. The worth of the empty set is zero, i.e., $v(\emptyset) = 0$ (as $f(x) = E[f(x)]$ when we have no features).&lt;/p>
+&lt;p>How can we apply the model to a subset of its original features (a coalition)? For example, if we have the coalition $S=\{X_{s1}, X_{s2}, \ldots, X_{sp}\}$, we need the marginal value of $f$ for these features which is called $f_S(x_S)$.&lt;/p>
+$$ f_S(x_S) = f_S(x_{s1}, x_{s2}, \ldots, x_{sp}) $$&lt;p>There is two possible ways to do this:&lt;/p>
+&lt;ol>
+&lt;li>We can retrain the same type of model on the features present in the coalition $S$&lt;/li>
+&lt;li>We can use the original model $f$ to calculate $f_S$ $\rightarrow$ Replace the features which are not available with &lt;code>NA&lt;/code> values&lt;/li>
+&lt;/ol>
+&lt;p>Let&amp;rsquo;s assume that the model accepts &lt;code>NA&lt;/code> values and see how the Shapley values can be calculated, then discuss how we can handle the case when the model doesn&amp;rsquo;t support &lt;code>NA&lt;/code> values. The worth of the coalition $S$ can be calculated as follows:&lt;/p>
+$$ v(S) = v(\{x_{s1}, x_{s2}, \ldots, x_{sp}\}) = f_S(x_S) - E[f(x)] $$&lt;p>To calculate the Shapley value of the feature $X_i$, we need to consider all possible permutations of features and calculate the marginal contribution of the feature $X_i$ for each permutation. The Shapley value of the feature $X_i$ can be calculated as follows:&lt;/p>
+$$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - E[f(x)] - (f_S(x_S) - E[f(x)] \right) $$$$ \phi_i = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! \cdot (|F|-|S|-1)!}{|F|!} \left( f_{S\cup \{i\}}(x_{S \cup \{i\}}) - f_S(x_S) \right) $$&lt;p>{{&amp;lt; spoiler text=&amp;quot;🎯 Efficiency Property&amp;quot; &amp;gt;}}&lt;/p>
+&lt;p>If we use the efficiency property of Shapley values, we&amp;rsquo;ll find out that the sum of Shapley values of all features should be equal to the difference between the model&amp;rsquo;s prediction for the sample $x$ and the average prediction of the model for the samples in the training dataset.&lt;/p>
+$$ \sum_{i=1}^{|F|} \phi_i = v(F) = f(x) - E[f(x)] $$&lt;p>{{&amp;lt; /spoiler &amp;gt;}}&lt;/p>
+&lt;h2 id="explainer-model">Explainer Model&lt;/h2>
+&lt;p>As we are moving towards answering the question of how we can calculate and use Shapley values to explain the predictions of machine learning models, we need to discuss the concept of the &lt;strong>explainer model&lt;/strong> and formulate it. The explainer ($g$) is an interpretable model that takes $|F| = M$ binary variables as a vector input ($z'$).&lt;/p>
+$$ g(z') = g(z'_1, z'_2, \ldots, z'_M) \quad z'_i \in \{0, 1\} $$&lt;p>The coalition vector $z'$ represents a coalition of the available values of $x$. Those elements that are &lt;code>NA&lt;/code> in the original sample $x$ are replaced with $0$ in the vector $z'$ and the rest of the elements are replaced with $0$ or $1$. For example, suppose we have five features and the second feature for a given sample is &lt;code>NA&lt;/code>:&lt;/p>
+$$ x = [x_1, NA, x_3, x_4, x_5] $$&lt;p>We can define $x'$ as a &lt;em>simplified input features&lt;/em> to show if a feature is present or not in the sample $x$:&lt;/p>
+$$ x' = [1, 0, 1, 1, 1] $$&lt;p>Furthermore, assume that there is a mapping function $h_x$ that maps the coalition vector $x'$ to the original sample $x$:&lt;/p>
+$$ h_x(x') = x$$&lt;p>Now, we can define any coalition vector $z'$. For example, the following coalition vector represents the coalition $S = \{X_1, X_3, X_4\}$:&lt;/p>
+$$ z' = [1, 0, 1, 1, 0] $$$$ z = h_x(z') = [x_1, NA, x_3, x_4, NA] $$&lt;p>We want the prediction of $f$ for $z$ to be as close as possible to the prediction of $g$ for $z'$:&lt;/p>
+$$ g(z') \approx f(h_x(z')) \quad \text{whenever} \enspace z' \approx x' $$&lt;h3 id="additive-feature-attribution-method">Additive Feature Attribution Method&lt;/h3>
+&lt;p>We can classify the explaination methods based on $g$. For instance, if $g$ is a linear model, we call it &lt;em>Additive Feature Attribution Method&lt;/em>. Suppose $c_i$ are some constants, then the prediction of $g$ can be calculated as follows:&lt;/p>
+$$ g(z') = \phi_0 + \phi_1 z'_1 + \phi_2 z'_2 + \ldots + \phi_M z'_M = \phi_0 + \sum_{i=1}^M \phi_i z'_i $$&lt;p>We can compute the Shapley values as follows:&lt;/p>
+$$ \phi_i(f,x) = \sum_{z' \subseteq x'} \frac{|z' - 1|! \cdot (|x'|-|z'|)!}{|x'|!} \left( f_x(z') - f_x(z' \setminus \{i\}) \right) $$&lt;p>Note that the $\phi_0$ is the average prediction of the model for the samples in the training dataset ($E[f(x)]$).&lt;/p>
+&lt;p>As model $g$ can mimic $f$ perfectly for a single prediction ($f(X)$) and is linear (therefore, interpretable), we can use it as an explainer model for $f$.&lt;/p>
+&lt;h2 id="shap">SHAP&lt;/h2>
+&lt;p>In the above section, we assumed that the model $f$ can handle &lt;code>NA&lt;/code> values and we can calculate the Shapley values directly. However, in practice most of the machine learning models don&amp;rsquo;t support &lt;code>NA&lt;/code> values and we need to find a way to calculate the Shapley values without using &lt;code>NA&lt;/code> values. &lt;strong>SHAP (SHapley Additive exPlanations)&lt;/strong> is an additive feature attribution method which proposes to use a conditional probability distribution to estimate the Shapley values.&lt;/p>
+$$ f_x(z') f(h_x(z'))= E[f(z) | z_s] $$&lt;p>However, how can we calculate the conditional expectations? There are different ways to do this. Let&amp;rsquo;s start with the simplest one. Suppose $x_{\bar{S}}$ denotes the part of original features which are not in the coalition $S$ and $f(x_{\bar{S}}, x_S)$ means that some of the parameters of $f$ belong to $x_S$ and the rest belong to $x_{\bar{S}}$.&lt;/p>
+$$ f_S(x_S) = E[f(x) | x_S] = E[f(x_{\bar{S}}, x_S) | x_S] = \int f(x_{\bar{S}}, x_S) P(x_{\bar{S}} | x_S) dx_{\bar{S}} $$&lt;p>We assume that the features are independent, as we don&amp;rsquo;t know the distribution of the features. Therefore, we can write the above equation as follows:&lt;/p>
+$$ f_S(x_S) = \int f(x_{\bar{S}}, x_S) P(x_{\bar{S}}) dx_{\bar{S}} $$&lt;p>We can approximate this integral with a sum over the a subset of the training samples.&lt;/p>
+$$ f_S(x_S) \approx E[f(x) | x_S] \approx \frac{1}{k} \sum_{i=1}^k f(x_{\bar{S}}^{(i)}, x_S) $$&lt;p>Let&amp;rsquo;s see how this works with an example. Suppose the model is trained on five features ($X_1$ to $X_5$) and the coalition is $S = \{X_1, X_3, X_4\}$. So, $X_{\bar{S}} = \{X_2, X_5\}$. The feature vector $x$ is as follows:&lt;/p>
+$$ x = [x_1, \text{NA}, x_3, x_4, \text{NA}] $$&lt;p>To calculate $f(X)$, we need a value for the &lt;code>NA&lt;/code> values. We borrow this value from the training samples. Suppose $i$-th training sample has the following values:&lt;/p>
+$$ x^{(i)} = [x_1^{(i)}, x_2^{(i)}, x_3^{(i)}, x_4^{(i)}, x_5^{(i)}] $$&lt;p>Then, we can calculate the prediction of the model for the sample $x$ as follows:&lt;/p>
+$$ f(x) = f([x_1, x_2^{(i)}, x_3, x_4, x_5^{(i)}]) $$&lt;p>We do this for all selected training samples and take the average of these predictions to calculate the Shapley values.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">Sample&lt;/th>
+&lt;th style="text-align: center">$x_1$&lt;/th>
+&lt;th style="text-align: center">$x_2$&lt;/th>
+&lt;th style="text-align: center">$x_3$&lt;/th>
+&lt;th style="text-align: center">$x_4$&lt;/th>
+&lt;th style="text-align: center">$x_5$&lt;/th>
+&lt;th style="text-align: center">$f(x)$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">$1$&lt;/td>
+&lt;td style="text-align: center">$x_1^{(1)}$&lt;/td>
+&lt;td style="text-align: center">$x_2^{(1)}$&lt;/td>
+&lt;td style="text-align: center">$x_3^{(1)}$&lt;/td>
+&lt;td style="text-align: center">$x_4^{(1)}$&lt;/td>
+&lt;td style="text-align: center">$x_5^{(1)}$&lt;/td>
+&lt;td style="text-align: center">$f([x_1, x_2^{(1)}, x_3, x_4, x_5^{(1)}])$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">$2$&lt;/td>
+&lt;td style="text-align: center">$x_1^{(2)}$&lt;/td>
+&lt;td style="text-align: center">$x_2^{(2)}$&lt;/td>
+&lt;td style="text-align: center">$x_3^{(2)}$&lt;/td>
+&lt;td style="text-align: center">$x_4^{(2)}$&lt;/td>
+&lt;td style="text-align: center">$x_5^{(2)}$&lt;/td>
+&lt;td style="text-align: center">$f([x_1, x_2^{(2)}, x_3, x_4, x_5^{(2)}])$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">$3$&lt;/td>
+&lt;td style="text-align: center">$x_1^{(3)}$&lt;/td>
+&lt;td style="text-align: center">$x_2^{(3)}$&lt;/td>
+&lt;td style="text-align: center">$x_3^{(3)}$&lt;/td>
+&lt;td style="text-align: center">$x_4^{(3)}$&lt;/td>
+&lt;td style="text-align: center">$x_5^{(3)}$&lt;/td>
+&lt;td style="text-align: center">$f([x_1, x_2^{(3)}, x_3, x_4, x_5^{(3)}])$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">$\vdots$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">$k$&lt;/td>
+&lt;td style="text-align: center">$x_1^{(k)}$&lt;/td>
+&lt;td style="text-align: center">$x_2^{(k)}$&lt;/td>
+&lt;td style="text-align: center">$x_3^{(k)}$&lt;/td>
+&lt;td style="text-align: center">$x_4^{(k)}$&lt;/td>
+&lt;td style="text-align: center">$x_5^{(k)}$&lt;/td>
+&lt;td style="text-align: center">$f([x_1, x_2^{(k)}, x_3, x_4, x_5^{(k)}])$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">$\text{Average}$&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">$\frac{1}{k} \sum_{i=1}^k f([x_1, x_2^{(i)}, x_3, x_4, x_5^{(i)})$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="linear-shap-without-dependence">Linear SHAP (without dependence)&lt;/h3>
+&lt;p>Suppose the model $f$ is a linear regression model which the features are independent. The prediction of the model can be calculated as follows:&lt;/p>
+$$ f(x) = w_0 + w_1 x_1 + w_2 x_2 + \ldots + w_M x_M = \sum_{i=0}^M w_i x_i \quad x_0 = 1 $$&lt;p>The Shapley value of the feature $X_i$ can be calculated as follows:&lt;/p>
+$$ \phi_i = c_i x_i - c_i \frac{1}{k} \sum_{j=1}^k x_i^{(j)} $$&lt;h3 id="linear-shap-with-dependence">Linear SHAP (with dependence)&lt;/h3>
+&lt;p>We can&amp;rsquo;t use the above formula for a linear model with feature dependence. In this case, we should calculate the SHAP values using all the possible coalitions.&lt;/p>
+&lt;h3 id="kernel-shap">Kernel SHAP&lt;/h3>
+&lt;p>To be continued&amp;hellip; [&lt;a href="#resources">See resources&lt;/a>]&lt;/p>
+&lt;h3 id="tree-shap">Tree SHAP&lt;/h3>
+&lt;p>To be continued&amp;hellip; [&lt;a href="#resources">See resources&lt;/a>]&lt;/p>
 &lt;h2 id="-resources">🗂️ Resources&lt;/h2>
 &lt;h3 id="-blog-posts">📰 Blog Posts&lt;/h3>
 &lt;ul>
@@ -119,10 +276,22 @@ $$ \phi_i(u+v) = \phi_i(u) + \phi_i(v) $$&lt;h2 id="shap">SHAP&lt;/h2>
 &lt;p>&lt;a href="https://towardsdatascience.com/introduction-to-shap-values-and-their-application-in-machine-learning-8003718e6827" target="_blank" rel="noopener">Introduction to SHAP Values and their Application in Machine Learning&lt;/a> by &lt;em>Reza Bagheri&lt;/em> on &lt;em>Towards Data Science&lt;/em>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://hughchen.github.io/its_blog/index.html" target="_blank" rel="noopener">Understanding Shapley value explanation algorithms for trees&lt;/a> by &lt;em>Hugh Chen&lt;/em>, &amp;ldquo;Scott Lundberg&amp;rdquo;, and &amp;ldquo;Su-In Lee&amp;rdquo; on &lt;em>GitHub&lt;/em>&lt;/p>
+&lt;p>&lt;a href="https://hughchen.github.io/its_blog/index.html" target="_blank" rel="noopener">Understanding Shapley value explanation algorithms for trees&lt;/a> by &lt;em>Hugh Chen&lt;/em>, &lt;em>Scott Lundberg&lt;/em>, and &lt;em>Su-In Lee&lt;/em> on &lt;em>GitHub&lt;/em>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="-videos">🎞️ Videos&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://youtube.com/playlist?list=PLqDyyww9y-1SJgMw92x90qPYpHgahDLIK&amp;amp;si=2VsAcTTC7GoZc-YC" target="_blank" rel="noopener">SHAP playlist&lt;/a> by &lt;em>A Data Odyssey&lt;/em> on &lt;em>YouTube&lt;/em>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://youtube.com/playlist?list=PLqDyyww9y-1SJgMw92x90qPYpHgahDLIK&amp;amp;si=2VsAcTTC7GoZc-YC" target="_blank" rel="noopener">SHAP playlist&lt;/a> by &lt;em>A Data Odyssey&lt;/em> on &lt;em>YouTube&lt;/em>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://youtu.be/VB9uV-x0gtg?si=c6NR2RxH0ZwWUecY" target="_blank" rel="noopener">Shapley Additive Explanations (SHAP)&lt;/a> by &lt;em>KIE&lt;/em>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://youtu.be/9haIOplEIGM?si=pr4NplT6vmpoJ9Le" target="_blank" rel="noopener">Explainable AI explained! | #4 SHAP&lt;/a> by &lt;em>DeepFindr&lt;/em>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="-coding">👨‍💻 Coding&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://shap.readthedocs.io/en/latest/#" target="_blank" rel="noopener">SHAP library&lt;/a> official documentation&lt;/li>
 &lt;/ul></description></item></channel></rss>
