@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Explainable AI | Parsa Abbasi</title>
+    <link>http://localhost:1313/tags/explainable-ai/</link>
+      <atom:link href="http://localhost:1313/tags/explainable-ai/index.xml" rel="self" type="application/rss+xml" />
+    <description>Explainable AI</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 05 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/logo.svg</url>
+      <title>Explainable AI</title>
+      <link>http://localhost:1313/tags/explainable-ai/</link>
+    </image>
+    
+    <item>
+      <title>CQD-SHAP: Explainable Complex Query Answering via Shapley Values</title>
+      <link>http://localhost:1313/publication/cqd-shap/</link>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/cqd-shap/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

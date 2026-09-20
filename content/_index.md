@@ -6,7 +6,7 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "6rem"
+  spacing: "2.5rem"
 
 sections:
   - block: resume-biography-3
@@ -16,8 +16,6 @@ sections:
       text: ""
       # Show a call-to-action button under your biography? (optional)
       button:
-        text: Download CV
-        url: uploads/resume.pdf
     design:
       css_class: dark
       background:
@@ -35,9 +33,14 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Right now, I'm in the process of literature review to understand the current open problems in the intersection of knowledge graph reasoning and explainable AI. We are interested in more complex reasoning tasks and how to do them in a way that is interpretable/explainable and scalable. Feel free to reach out if you have any ideas or want to collaborate!
+        **Knowledge graphs** are large networks of facts connecting entities such as people, places, and organizations. A **simple query** like *"Where was Beth Hart born?"* can be answered by finding the entity *Beth Hart* in the graph and following the relation that connects her to her birthplace. A **complex query** consists of multiple conditions combined together, for example: *"Which musicians have collaborated with Joe Bonamassa AND performed at the Royal Albert Hall?"* Answering it means combining several simple facts (collaborations, venues performed at) into one query.
+
+        Knowledge graphs are usually incomplete: they're built by collecting facts from limited sources, so some true facts (say, an obscure collaboration or a concert that was never logged anywhere) are simply missing. Because of this, my work is on a family of methods known as **Complex Query Answering (CQA)** that still find good answers even when facts are missing, by ranking candidate entities by how likely they are to be correct. The problem is that most CQA methods work like a black box, giving a ranking without explaining why. My research focuses on opening this black box: we introduced the first explainability approach in this domain, [*CQD-SHAP*](/publication/cqd-shap/), which measures how much each part of a query contributes to an answer's ranking, and we're now exploring approaches that work no matter which model produced the ranking, as well as other ways to explain these answers.
+
+        <span style="color: rgb(var(--color-primary-600));">If any of this sounds interesting to you and you'd like to collaborate, I'd love to hear from you!</span>
     design:
       columns: '1'
+      text_align: justify
   - block: collection
     content:
       title: Recent Publications
@@ -49,19 +52,9 @@ sections:
     design:
       view: citation
   - block: collection
-    id: talks
-    content:
-      title: Recent & Upcoming Talks
-      filters:
-        folders:
-          - event
-    design:
-      view: article-grid
-      columns: 1
-  - block: collection
     id: news
     content:
-      title: Recent Posts
+      title: News
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...
@@ -84,9 +77,22 @@ sections:
     design:
       # Choose a layout view
       view: date-title-summary
-      # Reduce spacing
-      spacing:
-        padding: [0, 0, 0, 0]
+  - block: collection
+    id: recent-posts
+    content:
+      title: Recent Posts
+      subtitle: ''
+      text: ''
+      filters:
+        folders:
+          - blog
+      # Choose how many pages you would like to display (0 = all pages)
+      count: 3
+      # Page order: descending (desc) or ascending (asc) date.
+      order: desc
+    design:
+      # Choose a layout view
+      view: date-title-summary
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
@@ -107,4 +113,26 @@ sections:
         # Card background color (CSS class)
         css_class: "bg-primary-700"
         css_style: ""
+  - block: markdown
+    id: contact
+    content:
+      title: 'Find My Office'
+      subtitle: ''
+      text: |-
+        **Data Science Junior Research Group**<br/>
+        Fürstenallee 11, 33102 Paderborn, Germany<br/>
+        Room FU.201.1
+
+        <iframe
+          width="100%"
+          height="350"
+          style="border:0; border-radius: 0.75rem;"
+          loading="lazy"
+          allowfullscreen
+          src="https://www.openstreetmap.org/export/embed.html?bbox=8.7308027%2C51.7296118%2C8.7388027%2C51.7336118&amp;layer=mapnik&amp;marker=51.7316118%2C8.7348027">
+        </iframe>
+
+        <small><a href="https://www.openstreetmap.org/?mlat=51.7316118&amp;mlon=8.7348027#map=17/51.7316118/8.7348027" target="_blank" rel="noopener">View larger map</a></small>
+    design:
+      columns: '1'
 ---

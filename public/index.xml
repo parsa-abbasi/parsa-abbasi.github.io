@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parsa Abbasi</title>
+    <link>http://localhost:1313/</link>
+      <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <description>Parsa Abbasi</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/logo.svg</url>
+      <title>Parsa Abbasi</title>
+      <link>http://localhost:1313/</link>
+    </image>
+    
+    <item>
+      <title>Teaching</title>
+      <link>http://localhost:1313/teaching/</link>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CQD-SHAP published by Springer</title>
+      <link>http://localhost:1313/post/cqd-shap-published/</link>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/cqd-shap-published/</guid>
+      <description>&lt;p&gt;Our paper, &lt;a href=&#34;http://localhost:1313/publication/cqd-shap/&#34;&gt;&lt;em&gt;CQD-SHAP: Explainable Complex Query Answering via Shapley Values&lt;/em&gt;&lt;/a&gt;, is now officially published in &lt;em&gt;Machine Learning and Knowledge Discovery in Databases&lt;/em&gt; (ECML PKDD 2026), Lecture Notes in Computer Science, by Springer. Read it on &lt;a href=&#34;https://doi.org/10.1007/978-3-032-37673-2_19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Springer&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CQD-SHAP: Explainable Complex Query Answering via Shapley Values</title>
+      <link>http://localhost:1313/publication/cqd-shap/</link>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/cqd-shap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CQD-SHAP preprint updated on arXiv</title>
+      <link>http://localhost:1313/post/cqd-shap-arxiv-update/</link>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/cqd-shap-arxiv-update/</guid>
+      <description>&lt;p&gt;We updated our preprint &lt;a href=&#34;https://arxiv.org/abs/2510.15623&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;CQD-SHAP: Explainable Complex Query Answering via Shapley Values&lt;/em&gt;&lt;/a&gt; on &lt;a href=&#34;https://arxiv.org/abs/2510.15623&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;arXiv&lt;/a&gt;. The updated codebase to reproduce our experiments is also available on &lt;a href=&#34;https://github.com/ds-jrg/CQD-SHAP&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CQD-SHAP accepted at ECML PKDD 2026</title>
+      <link>http://localhost:1313/post/cqd-shap-accepted/</link>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/cqd-shap-accepted/</guid>
+      <description>&lt;p&gt;Our paper, &lt;a href=&#34;http://localhost:1313/publication/cqd-shap/&#34;&gt;&lt;em&gt;CQD-SHAP: Explainable Complex Query Answering via Shapley Values&lt;/em&gt;&lt;/a&gt;, has been accepted at &lt;a href=&#34;https://ecmlpkdd.org/2026/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ECML PKDD 2026&lt;/a&gt; in Naples, Italy. Joint work with &lt;a href=&#34;https://www.uni-paderborn.de/person/11871&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Stefan Heindorf&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I will present the work on September 9 at 12:05 in the session &lt;em&gt;&amp;ldquo;Structured Graphs, Causal &amp;amp; Relational Learning.&amp;rdquo;&lt;/em&gt; The poster session will take place the same day, from 7 to 9 PM.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>http://localhost:1313/projects/</link>
+      <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experience</title>
+      <link>http://localhost:1313/experience/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DeepSentiPers: Novel Deep Learning Models Trained Over Proposed Augmented Persian Sentiment Corpus</title>
+      <link>http://localhost:1313/publication/deepsentipers/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/deepsentipers/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

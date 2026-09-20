@@ -33,6 +33,9 @@ profiles:
   - icon: at-symbol
     url: 'mailto:parsa.abbasi@uni-paderborn.de'
     label: E-mail Me
+  - icon: academic-cap
+    url: 'https://www.uni-paderborn.de/person/114220'
+    label: University Page
   - icon: brands/x
     url: https://twitter.com/ParsaAbbasi1996
   - icon: brands/github
@@ -45,13 +48,12 @@ profiles:
     url: https://stackoverflow.com/users/9346942/parsa-abbasi
 
 interests:
-  - Graph Neural Networks
+  - Explainable AI
   - Knowledge Graphs
-  - Multi-Relational Graphs
-  - Natural Language Processing
+  - Knowledge Graph Reasoning
 
 education:
-  - area: Doctoral Degree
+  - area: PhD Student
     institution: Paderborn University
     date_start: 2024-11-18
     date_end: ''
@@ -101,6 +103,101 @@ work:
       - Developed an educational support bot powered by Large Language Models (LLMs) to assist students in comprehending course materials
       - Managed the educational operations and mentorship program of a 60‑student data science bootcamp as an educational manager
       - Gained expertise in designing educational materials, course content, and objectives, while working with diverse teams
+teaching:
+  - position: Large Language Models for Explainable Link Prediction
+    company_name: 'Project Group (Master), Data Science Junior Research Group, Paderborn University — SS 2026 & WS 2026/27'
+    company_url: ''
+    company_logo: ''
+    date_start: 2026-04-01
+    date_end: ''
+    summary: |2-
+      Co-supervising a project group in which master's students design and evaluate LLM-based approaches for explainable link prediction over knowledge graphs.
+    button:
+      text: Course Page
+      url: 'https://en.cs.uni-paderborn.de/ds-jrg/teaching/courses/pg-llm4xlp'
+  - position: Explainable Artificial Intelligence
+    company_name: 'Teaching Assistant, Master Course, Paderborn University — SS 2026'
+    company_url: ''
+    company_logo: ''
+    date_start: 2026-04-01
+    date_end: 2026-09-30
+    summary: |2-
+      Assisted in teaching the group's master-level course on explainable AI, including preparing and running tutorials.
+    button:
+      text: Course Page
+      url: 'https://en.cs.uni-paderborn.de/ds-jrg/teaching/courses/xai-s26'
+  - position: Explainable Graph Query Answering
+    company_name: 'Project Group (Master), Data Science Junior Research Group, Paderborn University — SS 2025 & WS 2025/26'
+    company_url: ''
+    company_logo: ''
+    date_start: 2025-04-01
+    date_end: 2026-03-31
+    summary: |2-
+      Co-supervised a project group in which master's students developed explainability methods for complex query answering over knowledge graphs.
+    button:
+      text: Course Page
+      url: 'https://en.cs.uni-paderborn.de/ds-jrg/teaching/courses/pg-xgqa-25'
+  - position: Explainable Artificial Intelligence
+    company_name: 'Teaching Assistant, Master Course, Paderborn University — SS 2025'
+    company_url: ''
+    company_logo: ''
+    date_start: 2025-04-01
+    date_end: 2025-09-30
+    summary: |2-
+      Assisted in teaching the group's master-level course on explainable AI, including preparing and running tutorials.
+    button:
+      text: Course Page
+      url: 'https://en.cs.uni-paderborn.de/ds-jrg/teaching/courses/xai-s25'
+  - position: NLP & Machine Learning Instructor and Mentor
+    company_name: 'Quera Data Science Bootcamp, Online'
+    company_url: 'https://quera.org/'
+    company_logo: ''
+    date_start: 2022-12-01
+    date_end: 2023-11-30
+    summary: |2-
+      - Instructed a group of 60 students in Natural Language Processing fundamentals, using libraries such as NLTK, spaCy, Gensim, and HuggingFace
+      - Taught Python-based data wrangling, visualization, and machine learning techniques using NumPy, pandas, Matplotlib, Seaborn, Plotly, and scikit-learn
+      - Instructed web scraping tools (BeautifulSoup, Scrapy, Selenium) for data acquisition, with coding examples based on real-world scenarios
+      - Led a team of five students through exercises and projects, collaborating closely with other mentors
+  - position: Computer Vision Workshop Instructor
+    company_name: 'Quera Deep Learning Bootcamp, Online'
+    company_url: 'https://quera.org/'
+    company_logo: ''
+    date_start: 2020-09-01
+    date_end: 2021-08-31
+    summary: |2-
+      - Conducted a workshop on deep learning techniques for image processing, leveraging CNN, ResNet, and U-Net architectures
+      - Developed hands-on projects giving participants practical experience in solving classification and segmentation tasks
+  - position: 'Natural Language Processing — Teaching Assistant'
+    company_name: 'University of Guilan, Rasht, Iran'
+    company_url: ''
+    company_logo: ''
+    date_start: 2019-10-01
+    date_end: 2020-01-31
+    summary: |2-
+      Provided coding projects and homework to supplement educational materials.
+
+      Instructor: [Javad PourMostafa Roshan Sharami](https://scholar.google.com/citations?user=eEBGkzUAAAAJ)
+  - position: 'Language and Automata Theory — Teaching Assistant'
+    company_name: 'University of Guilan, Rasht, Iran'
+    company_url: ''
+    company_logo: ''
+    date_start: 2018-03-01
+    date_end: 2018-06-30
+    summary: |2-
+      Provided educational materials, including weekly homework assignments, and conducted weekly clarification sessions to ensure students understood course material.
+
+      Instructor: Dr. Seyed Mohammadhossein Shekarian
+  - position: 'Data Structures — Teaching Assistant'
+    company_name: 'University of Guilan, Rasht, Iran'
+    company_url: ''
+    company_logo: ''
+    date_start: 2017-09-01
+    date_end: 2017-12-31
+    summary: |2-
+      Collaborated with a team of teaching assistants to provide guidance and assessment for student projects.
+
+      Instructor: [Dr. Seyed Abolghasem Mirroshandel](https://scholar.google.de/citations?user=WGH3eIsAAAAJ&hl=en)
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
@@ -311,6 +408,8 @@ awards:
 
 ## About Me
 
-*Parsa* is currently pursuing a doctoral degree at [*Paderborn University*](https://www.uni-paderborn.de/en/) as a research associate in the [*Data Science Junior Research Group*](https://en.cs.uni-paderborn.de/ds-jrg).  He is conducting research under the supervision of [*Dr. Stefan Heindorf*](https://www.uni-paderborn.de/person/11871), focusing on explainable machine learning for knowledge graphs. He holds a Master's degree in Artificial Intelligence from [*Iran University of Science and Technology*](https://www.iust.ac.ir/en), where he conducted research aimed at improving graph neural networks for multi-relational graphs. His work sought to enhance existing architectures like *RAGAT* by proposing and developing a model with fewer training parameters that addresses static attention issues.
+*Parsa* is currently pursuing a doctoral degree at [*Paderborn University*](https://www.uni-paderborn.de/en/) as a research associate in the [*Data Science Junior Research Group*](https://en.cs.uni-paderborn.de/ds-jrg). He is conducting research under the supervision of [*Dr. Stefan Heindorf*](https://www.uni-paderborn.de/person/11871), focusing on explainable machine learning for knowledge graphs.
 
-*Parsa* also earned his BSc in Computer Engineering from the [*University of Guilan*](https://english.guilan.ac.ir/), where he explored areas such as natural language processing and deep learning. During his undergraduate studies, as a member of the [*Guilan NLP Group*](https://nlp.guilan.ac.ir/), he co-authored a research paper on designing sentiment analysis models using deep learning architectures for low-resource Persian language.
+His research focuses on complex query answering (CQA), a task that goes beyond standard link prediction by tackling multi-hop, logical queries over incomplete knowledge graphs. Since existing neural and neurosymbolic CQA models are largely black-box, *Parsa* designs explainability approaches for them. He developed [*CQD-SHAP*](/publication/cqd-shap/), the first explanation approach in this domain, which computes the contribution of each part of a query to an answer's ranking, and he is currently working on further explainability approaches for CQA.
+
+Alongside his research, *Parsa* has teaching responsibilities within the group: he assists with the *Explainable AI* course offered to master's students and supervises a master's project group every year.

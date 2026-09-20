@@ -35,7 +35,8 @@ header:
     show_search: true
     show_theme_chooser: true
     logo:
-      text: "Parsa Abbasi"
+      filename: "logo.svg"
+      text: "Parsa"
 
 # Site footer
 footer:
